@@ -1,0 +1,54 @@
+{
+  "name": "blanchard",
+  "version": "1.0.0",
+  "description": "Course project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zizi-shoot/blanchard.git"
+  },
+  "author": "Oleg Polyanskiy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zizi-shoot/blanchard/issues"
+  },
+  "homepage": "https://github.com/zizi-shoot/blanchard#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
+    "babel-loader": "^8.2.2",
+    "browser-sync": "^2.26.13",
+    "del": "^6.0.0",
+    "eslint": "^7.14.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-file-include": "^2.2.2",
+    "gulp-flatten": "^0.4.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-rev": "^9.0.0",
+    "gulp-rev-delete-original": "^0.2.3",
+    "gulp-rev-rewrite": "^4.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-svg-sprite": "^1.5.0",
+    "gulp-tinypng-compress": "^1.2.5",
+    "gulp-ttf2woff2": "^3.0.0",
+    "gulp-uglify-es": "^2.0.0",
+    "node-sass": "^5.0.0",
+    "sass": "^1.29.0",
+    "stylelint": "^13.8.0",
+    "stylelint-config-sass-guidelines": "^7.1.0",
+    "stylelint-config-standard": "^20.0.0",
+    "webpack": "^5.10.0",
+    "webpack-stream": "^6.1.1"
+  }
+}
