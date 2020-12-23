@@ -4,15 +4,25 @@
 <head>
 	<meta charset="UTF-8">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
-	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link href="img/favicon.png" rel="icon" sizes="16x16">
 	<meta content="IE=Edge" http-equiv="X-UA-Compatible">
-	<title>Title</title>
-	<script src="js/main.js"></script>
+	<title>Blanchard</title>
+	<link as="font" crossorigin="anonymous" href="fonts/OpenSans-Regular.woff2" rel="preload" type="font/woff2">
+	<link as="font" crossorigin="anonymous" href="fonts/OpenSans-Italic.woff2" rel="preload" type="font/woff2">
+	<link as="font" crossorigin="anonymous" href="fonts/OpenSans-SemiBold.woff2" rel="preload" type="font/woff2">
+	<link as="font" crossorigin="anonymous" href="fonts/OpenSans-Bold.woff2" rel="preload" type="font/woff2">
 	<link rel="stylesheet" href="css/main.min.css">
+	<script defer src="js/main.js"></script>
 </head>
 
 <body>
-
+	@include('components/Header/header.html')
+	<main class="main">
+		@include('components/Hero/hero.html')
+		@include('components/About/about.html')
+		@include('components/Gallery/gallery.html')
+		@include('components/Catalog/catalog.html')
+	</main>
 </body>
 
 </html>

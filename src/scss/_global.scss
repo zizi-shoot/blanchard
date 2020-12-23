@@ -1,0 +1,21 @@
+body {
+	background-color: var(--color-white);
+	color: var(--font-main);
+	font-size: 16px;
+	font-family: "Open Sans", sans-serif;
+	line-height: 32px;
+}
+
+.page-container {
+	max-width: 1700px;
+	margin: 0 auto;
+	padding: 0 50px;
+}
+
+.section-title {
+	margin: 0;
+	font-weight: 400;
+	font-size: 48px;
+	line-height: 65px;
+}
+

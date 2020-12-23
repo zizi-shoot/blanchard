@@ -1,6 +1,10 @@
-@import 'font-face';
-@import 'fonts';
-@import '../components/Header/header';
-@import '../components/Footer/footer';
+@import "vars";
+@import "mixins";
+@import "functions";
+@import "fonts";
+@import "vendor";
+@import "settings";
+@import "global";
+@import "components";
 
 

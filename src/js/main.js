@@ -1,3 +1,2 @@
-import '../components/Footer/_footer';
-import '../components/Header/_header';
-
+import '../components/Header/header';
+import '../components/Gallery/gallery';
