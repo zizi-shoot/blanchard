@@ -1,0 +1,395 @@
+.header {
+	background-color: var(--background-head-foot);
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+
+	&__logo {
+		max-width: 173px;
+	}
+
+	&__nav {
+		display: flex;
+		justify-content: space-between;
+		width: vw(896);
+		margin-right: vw(100);
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 25px;
+	}
+
+	&__link {
+		color: var(--font-alt);
+	}
+
+	&__enter-btn {
+		padding: 0;
+		border: none;
+		background-color: transparent;
+		color: var(--font-alt);
+		font-size: 18px;
+		line-height: 25px;
+	}
+
+	&__link,
+	&__enter-btn {
+		transition: color .2s;
+	}
+
+	&__link:hover,
+	&__enter-btn:hover {
+		color: var(--hover-alt);
+	}
+
+	&__link:active {
+		color: var(--focus_click);
+	}
+
+	&__enter-btn svg path {
+		transition: fill .2s;
+	}
+
+	&__enter-btn:hover svg path {
+		fill: var(--hover-alt)
+	}
+
+	&__enter-btn:focus {
+		outline: 2px solid var(--focus_click);
+		outline-offset: 4px;
+	}
+
+	&__enter-btn:active {
+		color: var(--font-link);
+	}
+
+	&__enter-btn:active svg path {
+		fill: var(--font-link);
+	}
+
+	&__bottom-bar {
+		position: absolute;
+		width: 100%;
+		background-color: rgba(0, 0, 0, .4);
+	}
+}
+
+.head-bar {
+	padding-top: 20px;
+	padding-bottom: 18px;
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__menu {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		width: vw(1036);
+	}
+
+	&__open-btn {
+		position: relative;
+		z-index: 1;
+		padding: 0;
+		border: none;
+		background-color: transparent;
+		color: var(--font-alt);
+		font-size: 18px;
+		line-height: 25px;
+		transition: color .2s;
+	}
+
+	&__open-btn:focus {
+		outline: 2px solid var(--focus_click);
+		outline-offset: 4px;
+	}
+
+	&__item:hover &__open-btn {
+		color: var(--font-link);
+	}
+
+	&__item &__open-btn:active {
+		color: var(--focus_click);
+	}
+
+	&__search * {
+		transition: border-color .2s, fill .2s;
+	}
+
+	&__item svg * {
+		transition: stroke .1s;
+	}
+
+	&__item:hover svg path {
+		stroke: var(--font-link);
+	}
+
+	&__open-btn:active svg path {
+		stroke: var(--focus_click);
+	}
+
+	&__search {
+		display: flex;
+		align-items: baseline;
+	}
+
+	&__search-btn {
+		position: relative;
+		top: 6px;
+		margin-right: 4px;
+		border: none;
+		background-color: transparent;
+	}
+
+	&__input {
+		width: 218px;
+		padding: 0 0 3px;
+		border: none;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+		background-color: transparent;
+		color: var(--font-alt);
+	}
+
+	&__search:focus-within {
+		outline: 2px solid var(--focus_click);
+		outline-offset: 4px;
+	}
+
+	&__input::placeholder {
+		color: var(--font-alt);
+		font-size: 18px;
+		line-height: 25px;
+		opacity: .85;
+	}
+
+	&__input:focus::placeholder {
+		opacity: 0;
+	}
+
+	&__search:hover &__input {
+		border-color: var(--hover-alt);
+	}
+
+	&__search:hover * path,
+	&__search:hover * rect {
+		fill: var(--hover-alt);
+	}
+
+	&__scrollbar-wrapper {
+		position: absolute;
+		top: 50px;
+		display: none;
+		width: 300px;
+		height: 300px;
+		padding: 40px;
+		background-color: rgba(0, 0, 0, .6);
+		opacity: 0;
+	}
+
+	&__artist-list {
+		width: 100%;
+		max-height: 100%;
+	}
+
+	&__artist-list:hover .simplebar-scrollbar {
+		background-color: var(--background-control);
+	}
+
+	&__item {
+		position: relative;
+	}
+
+	&__item::after {
+		content: "";
+		position: absolute;
+		top: .1em;
+		left: 0;
+		width: 100%;
+		height: 3em;
+	}
+
+	&__item:hover &__scrollbar-wrapper {
+		display: block;
+		animation: fade-in .3s both;
+	}
+
+	&__item:not(:hover) .did-fade-in {
+		display: block;
+		animation: fade-out .3s;
+	}
+
+	&__menu &__item &__scrollbar-wrapper--visible {
+		display: block;
+		animation: fade-in .3s both;
+	}
+
+	@keyframes fade-in {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+	@keyframes fade-out {
+		from {
+			opacity: 1;
+		}
+		to {
+			opacity: 0;
+		}
+	}
+
+	&__artist-item {
+		position: relative;
+		padding: 9px 15px 12px;
+		background: var(--background-safe) center/cover no-repeat;
+		outline: 2px solid transparent;
+		outline-offset: -2px;
+		line-height: 0;
+		transition: outline-color .2s;
+	}
+
+	&__artist-item:hover {
+		outline-color: var(--background-control)
+	}
+
+	&__artist-item:not(:last-child) {
+		margin-bottom: 20px;
+	}
+
+	&__artist {
+		color: var(--font-alt);
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 19px;
+	}
+
+	&__artist::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: transparent;
+		opacity: .4;
+	}
+
+	&__artist-item:active {
+		outline-color: var(--hover-main);
+	}
+
+	&__artist-item:active &__artist::after {
+		background-color: var(--hover-alt);
+	}
+}
+
+.simplebar {
+	.simplebar-track {
+		right: -19px;
+		width: 2px;
+		background-color: var(--background-head-foot);
+	}
+
+	&-scrollbar {
+		background-color: var(--font-alt);
+		transition: background-color .2s;
+	}
+}
+
+.tintoretto {
+	background-image: url("../img/header-tintoretto.jpg");
+}
+
+.friedrich {
+	background-image: url("../img/header-friedrich.jpg");
+}
+
+.leonardo {
+	background-image: url("../img/header-leonardo.jpg");
+}
+
+.verocchio {
+	background-image: url("../img/header-verocchio.jpg");
+}
+
+.manet {
+	background-image: url("../img/header-manet.jpg");
+}
+
+.monet {
+	background-image: url("../img/header-monet.jpg");
+}
+
+.renoir {
+	background-image: url("../img/header-renoir.jpg");
+}
+
+.sisley {
+	background-image: url("../img/header-sisley.jpg");
+}
+
+.van-gogh {
+	background-image: url("../img/header-van-gogh.jpg");
+}
+
+.cezanne {
+	background-image: url("../img/header-cezanne.jpg");
+}
+
+.gauguin {
+	background-image: url("../img/header-gauguin.jpg");
+}
+
+.seurat {
+	background-image: url("../img/header-seurat.jpg");
+}
+
+.kandinsky {
+	background-image: url("../img/header-kandinsky.jpg");
+}
+
+.marinetti {
+	background-image: url("../img/header-marinetti.jpg");
+}
+
+.malevich {
+	background-image: url("../img/header-malevich.jpg");
+}
+
+.picasso {
+	background-image: url("../img/header-picasso.jpg");
+}
+
+.carra {
+	background-image: url("../img/header-carra.jpg");
+}
+
+.pratella {
+	background-image: url("../img/header-pratella.jpg");
+}
+
+.severini {
+	background-image: url("../img/header-severini.jpg");
+}
+
+.balla {
+	background-image: url("../img/header-balla.jpg");
+}
+
+
+
+
+
+
+
+
+

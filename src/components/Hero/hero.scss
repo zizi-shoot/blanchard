@@ -1,0 +1,48 @@
+.hero {
+	padding-top: 139px;
+	padding-bottom: 123px;
+	background: #000 url("../img/hero-1.jpg") center bottom/cover no-repeat;
+	color: var(--font-alt);
+	font-weight: 700;
+
+	&__title,
+	&__descr {
+		max-width: 597px;
+	}
+
+	&__title {
+		margin: 0;
+		font-size: 72px;
+		line-height: 85px;
+	}
+
+	&__descr {
+		margin-bottom: 91px;
+		font-size: 18px;
+		line-height: 30px;
+	}
+
+	&__subscribe-btn {
+		padding: 19px 33px;
+		border: 3px solid transparent;
+		border-radius: 100px;
+		background: #9d5cd0;
+		color: var(--font-alt);
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 25px;
+	}
+
+	&__subscribe-btn:hover {
+		border-color: var(--hover-main);
+	}
+
+	&__subscribe-btn:focus {
+		border-color: var(--focus_click);
+	}
+
+	&__subscribe-btn:active {
+		border-color: var(--hover-main);
+		background-color: var(--focus_click);
+	}
+}
