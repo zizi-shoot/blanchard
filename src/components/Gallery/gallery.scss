@@ -88,7 +88,7 @@
 		right: 25px;
 		bottom: 25px;
 		left: 25px;
-		background: #00000080 url("../img/sprite.svg#lens") center/70% no-repeat;
+		background: #00000080 url("../img/sprite.svg#lens") center/60% no-repeat;
 	}
 
 	&-slide:hover::after {
@@ -128,7 +128,7 @@
 	&-button-prev {
 		width: unset;
 		height: unset;
-		padding: 10px;
+		padding: 8px;
 		border: 2px solid transparent;
 		border-radius: 50%;
 		background-color: var(--background-slider);

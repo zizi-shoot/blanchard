@@ -1,0 +1,164 @@
+
+.catalog {
+	padding-top: 80px;
+	padding-bottom: 80px;
+
+	&__container {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+
+	&__title {
+		margin-right: 40px;
+	}
+
+	&-nav {
+		&__list {
+			display: flex;
+			line-height: 0;
+		}
+
+		&__item:not(:last-child) {
+			margin-right: 50px;
+		}
+
+		&__btn {
+			padding: 0;
+			border: none;
+			border-radius: 50%;
+			line-height: 0;
+		}
+
+		&__icon {
+			max-height: 46px;
+		}
+	}
+
+	&-tab {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		width: 100%;
+		padding-top: 16px;
+
+		&__descr {
+			max-width: 1080px;
+			margin-bottom: 39px;
+		}
+
+		&__choice {
+			align-self: flex-start;
+			order: 1;
+			width: 50%;
+		}
+
+		&__artist {
+			width: calc(50% - 50px);
+		}
+	}
+}
+
+.artist-choice {
+	&__period-item {
+		border: none;
+	}
+
+	&__period-item:first-child {
+		margin-top: 0;
+		border-top: 1px solid var(--background-tip);
+	}
+
+	& &__period {
+		padding: 29px 0 34px;
+		border-bottom: 1px solid var(--background-tip);
+	}
+
+	& &__btn {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0;
+		font-weight: 600;
+		font-size: 24px;
+		font-family: "Open Sans", sans-serif;
+		line-height: 32px;
+
+		&::after {
+			display: none;
+		}
+
+		svg {
+			width: 50px;
+			height: 50px;
+			padding: 15px;
+			border-radius: 50%;
+			background-color: var(--background-accord);
+		}
+	}
+}
+
+.period-item {
+	&__wrapper {
+		border-bottom: 1px solid var(--background-control);
+	}
+
+	&__artist-list {
+		max-width: 758px;
+		height: 341px;
+		column-count: 3;
+		column-fill: auto;
+	}
+
+	&__artist-item {
+		width: 208px;
+	}
+
+	&__artist-btn {
+		padding: 0;
+		border: none;
+		background-color: transparent;
+		font-size: 16px;
+		font-family: "Open Sans", sans-serif;
+		line-height: 32px;
+	}
+}
+
+.artist {
+	line-height: 0;
+
+	&__pic {
+		margin-bottom: 30px;
+	}
+
+	&__name {
+		margin-bottom: 10px;
+		font-weight: 600;
+		font-size: 24px;
+		line-height: 32px;
+	}
+
+	&__lifetime {
+		display: block;
+		margin-bottom: 6px;
+		color: var(--font-light);
+		font-size: 12px;
+		line-height: 16px;
+	}
+
+	&__descr {
+		line-height: 32px;
+	}
+}
+
+.artist:not(:first-of-type) {
+	display: none;
+}
+
+.ac {
+	margin-top: 0;
+}
+
+.ac .ac-panel .ac-text {
+	padding: 25px 0;
+}

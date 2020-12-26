@@ -9,7 +9,8 @@ html {
 }
 
 h2,
-h3 {
+h3,
+h4 {
 	margin: 0;
 }
 
@@ -44,6 +45,11 @@ ul {
 
 input {
 	outline: none;
+}
+
+p {
+	margin: 0;
+	padding: 0;
 }
 
 .visually-hidden {

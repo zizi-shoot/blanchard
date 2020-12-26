@@ -1,6 +1,10 @@
 .about {
 	padding-top: 80px;
-	padding-bottom: 54px;
+	padding-bottom: 71px;
+
+	&__title {
+		margin-bottom: 16px;
+	}
 
 	&__descr {
 		max-width: vw(1080);

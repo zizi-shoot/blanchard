@@ -10,7 +10,9 @@
 	}
 
 	&__logo {
-		max-width: 173px;
+		object-fit: cover;
+		width: 173px;
+		height: 40px;
 	}
 
 	&__nav {
