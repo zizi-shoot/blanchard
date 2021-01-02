@@ -30,13 +30,15 @@ menu.addEventListener('click', (ev) => {
 	document.addEventListener('click', hideMenuFromOut);
 });
 
-document.addEventListener('animationstart', (e) => {
+const pageHeader = document.querySelector('header');
+
+pageHeader.addEventListener('animationstart', (e) => {
 	if (e.animationName === 'fade-in') {
 		e.target.classList.add('did-fade-in');
 	}
 });
 
-document.addEventListener('animationend', (e) => {
+pageHeader.addEventListener('animationend', (e) => {
 	if (e.animationName === 'fade-out') {
 		e.target.classList.remove('did-fade-in');
 	}

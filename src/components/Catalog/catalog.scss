@@ -24,10 +24,35 @@
 		}
 
 		&__btn {
+			position: relative;
 			padding: 0;
 			border: none;
 			border-radius: 50%;
 			line-height: 0;
+			transition: filter .2s, border-color .2s, box-shadow .2s;
+		}
+
+		&__btn:hover {
+			filter: drop-shadow(0px 0px 20px var(--background-control70));
+		}
+
+		&__btn:active {
+			box-shadow: 0 0 0 2px var(--background-control)
+		}
+
+		&__btn--active {
+			pointer-events: none;
+		}
+
+		&__btn--active::after {
+			content: "";
+			position: absolute;
+			top: -10px;
+			left: -10px;
+			width: 66px;
+			height: 66px;
+			border: 2px solid var(--background-control);
+			border-radius: 50%;
 		}
 
 		&__icon {
@@ -39,8 +64,20 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		width: 100%;
 		padding-top: 16px;
+
+		&__artist {
+			display: none;
+		}
+
+		&__artist--visible {
+			display: block;
+			animation: fade-in .2s both;
+		}
+
+		&__artist--hidden {
+			animation: fade-out .3s both;
+		}
 
 		&__descr {
 			max-width: 1080px;
@@ -53,9 +90,23 @@
 			width: 50%;
 		}
 
-		&__artist {
+		&__artist-wrapper {
+			position: relative;
 			width: calc(50% - 50px);
 		}
+	}
+
+	&__tab {
+		display: none;
+	}
+
+	&__tab--visible {
+		display: flex;
+		animation: fade-in .2s;
+	}
+
+	&__tab--hidden {
+		animation: fade-out .3s;
 	}
 }
 
@@ -122,12 +173,20 @@
 		font-family: "Open Sans", sans-serif;
 		line-height: 32px;
 	}
+
+	&__artist-btn--active {
+		color: var(--background-control);
+		pointer-events: none;
+	}
 }
 
 .artist {
 	line-height: 0;
 
 	&__pic {
+		object-fit: contain;
+		width: 100%;
+		max-height: 470px;
 		margin-bottom: 30px;
 	}
 
@@ -151,10 +210,6 @@
 	}
 }
 
-.artist:not(:first-of-type) {
-	display: none;
-}
-
 .ac {
 	margin-top: 0;
 }
@@ -162,3 +217,5 @@
 .ac .ac-panel .ac-text {
 	padding: 25px 0;
 }
+
+

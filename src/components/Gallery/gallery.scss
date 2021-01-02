@@ -48,10 +48,8 @@
 	&__auth-link:active {
 		color: var(--focus_click);
 	}
-}
 
-.swiper {
-	&-container {
+	&__swiper {
 		position: relative;
 		align-self: flex-end;
 		width: 1150px;
@@ -60,22 +58,22 @@
 		line-height: 0;
 	}
 
-	&-slide {
+	&__slide {
 		position: relative;
 		outline: 3px solid transparent;
 		outline-offset: -3px;
 		transition: outline-color .2s;
 	}
 
-	&-slide::before,
-	&-slide::after {
+	&__slide::before,
+	&__slide::after {
 		content: "";
 		position: absolute;
 		opacity: 0;
 		transition: opacity .2s;
 	}
 
-	&-slide::before {
+	&__slide::before {
 		top: 0;
 		right: 0;
 		bottom: 0;
@@ -83,7 +81,7 @@
 		background: var(--hover-alt);
 	}
 
-	&-slide::after {
+	&__slide::after {
 		top: 25px;
 		right: 25px;
 		bottom: 25px;
@@ -91,23 +89,23 @@
 		background: #00000080 url("../img/sprite.svg#lens") center/60% no-repeat;
 	}
 
-	&-slide:hover::after {
+	&__slide:hover::after {
 		opacity: 1;
 	}
 
-	&-slide:active::before {
+	&__slide:active::before {
 		opacity: .5;
 	}
 
-	&-slide:focus {
+	&__slide:focus {
 		outline-color: var(--focus_click);
 	}
 
-	&-slide:active {
+	&__slide:active {
 		outline-color: var(--hover-main);
 	}
 
-	&-controls {
+	&__controls {
 		position: absolute;
 		top: 24px;
 		left: 3px;
@@ -115,17 +113,13 @@
 		align-items: center;
 	}
 
-	&-controls > * {
+	&__controls > * {
 		position: static;
 		margin: 0;
 	}
 
-	&-pagination {
-		margin: 0 18px;
-	}
-
-	&-button-next,
-	&-button-prev {
+	&__next-btn,
+	&__prev-btn {
 		width: unset;
 		height: unset;
 		padding: 8px;
@@ -135,31 +129,35 @@
 		transition: border-color .2s, background-color .2s;
 	}
 
-	&-button-next:focus,
-	&-button-prev:focus {
+	&__next-btn:focus,
+	&__prev-btn:focus {
 		border-color: var(--focus_click);
 	}
 
-	&-button-next:hover,
-	&-button-prev:hover {
+	&__next-btn:hover,
+	&__prev-btn:hover {
 		background-color: var(--background-control);
 	}
 
-	&-button-next:active,
-	&-button-prev:active {
+	&__next-btn:active,
+	&__prev-btn:active {
 		border-color: var(--hover-main);
 		background-color: var(--focus_click);
 	}
 
-	&-button-next svg,
-	&-button-prev svg {
+	&__next-btn svg,
+	&__prev-btn svg {
 		width: 10px;
 		height: 10px;
 	}
 
-	&-button-next::after,
-	&-button-prev::after {
+	&__next-btn::after,
+	&__prev-btn::after {
 		content: "";
+	}
+
+	&__pagination {
+		margin: 0 18px;
 	}
 }
 

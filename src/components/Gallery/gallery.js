@@ -9,7 +9,7 @@ const choices = new Choices(element, {
 
 Swiper.use([Navigation, Pagination]);
 
-const mySwiper = new Swiper('.swiper-container', {
+const gallerySwiper = new Swiper('.gallery__swiper', {
 	spaceBetween: 50,
 	slidesPerView: 3,
 	slidesPerColumn: 2,
@@ -23,4 +23,5 @@ const mySwiper = new Swiper('.swiper-container', {
 		el: '.swiper-pagination',
 		type: 'fraction',
 	},
-}).setGrabCursor();
+});
+gallerySwiper.setGrabCursor();
