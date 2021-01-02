@@ -35,6 +35,7 @@ function addTabListener(itemList, tabName, tabClass, btnClass, dataName) {
 		el.addEventListener('click', (event) => {
 			if (tabName === 'country') accordion.destroy();
 			const item = createItem(event, tabName, tabClass, btnClass, dataName);
+
 			item.prev().classList.add(`${tabClass}--hidden`);
 			item.btnNext.classList.add(`${btnClass}--active`);
 			item.btnPrev.classList.remove(`${btnClass}--active`);

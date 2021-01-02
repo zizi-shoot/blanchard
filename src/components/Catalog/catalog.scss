@@ -111,6 +111,12 @@
 }
 
 .artist-choice {
+	&__period-list {
+		.is-active svg path {
+			transform: rotateX(180deg);
+		}
+	}
+
 	&__period-item {
 		border: none;
 	}
@@ -142,9 +148,61 @@
 		svg {
 			width: 50px;
 			height: 50px;
-			padding: 15px;
+			padding: 13px;
+			border: 2px solid transparent;
 			border-radius: 50%;
 			background-color: var(--background-accord);
+			transition: border-color .3s, background-color .3s;
+
+			path {
+				transition: stroke .3s, transform .3s;
+				transform-origin: center;
+			}
+		}
+
+		span {
+			outline: 2px solid transparent;
+			outline-offset: 2px;
+			transition: outline-color .2s, color .2s;
+		}
+
+		&:hover {
+			span {
+				color: var(--background-control);
+			}
+
+			svg {
+				background-color: var(--background-control);
+
+				path {
+					stroke: var(--font-alt);
+				}
+			}
+		}
+
+		&:focus-visible {
+			span {
+				outline-color: var(--focus_click);
+			}
+
+			svg {
+				border-color: var(--focus_click);
+			}
+		}
+
+		&:active {
+			span {
+				color: var(--background-control);
+			}
+
+			svg {
+				border-color: var(--hover-main);
+				background-color: var(--focus_click);
+
+				path {
+					stroke: var(--font-alt)
+				}
+			}
 		}
 	}
 }
@@ -156,22 +214,39 @@
 
 	&__artist-list {
 		max-width: 758px;
-		height: 341px;
 		column-count: 3;
-		column-fill: auto;
 	}
 
 	&__artist-item {
 		width: 208px;
+		margin-bottom: 7px;
+		padding-top: 1px;
 	}
 
 	&__artist-btn {
 		padding: 0;
 		border: none;
 		background-color: transparent;
+		outline: 2px solid transparent;
+		outline-offset: 2px;
 		font-size: 16px;
 		font-family: "Open Sans", sans-serif;
-		line-height: 32px;
+		line-height: 1;
+		text-decoration: underline transparent;
+		transition: color .2s, outline-color .2s, text-decoration-color .2s;
+	}
+
+	&__artist-btn:hover {
+		color: var(--font-link);
+		text-decoration-color: var(--font-link);
+	}
+
+	&__artist-btn:active {
+		color: var(--focus_click);
+	}
+
+	&__artist-btn:focus-visible {
+		outline-color: var(--focus_click);
 	}
 
 	&__artist-btn--active {
@@ -215,7 +290,13 @@
 }
 
 .ac .ac-panel .ac-text {
-	padding: 25px 0;
+	padding: 29px 0 25px 4px;
 }
+
+.ac .ac-trigger:focus {
+	color: var(--font-main);
+}
+
+
 
 
