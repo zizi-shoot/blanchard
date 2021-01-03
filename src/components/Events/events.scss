@@ -18,8 +18,10 @@
 		margin-bottom: 50px;
 	}
 
-	&__item--hidden {
-		display: none;
+	&__item {
+		&--hidden {
+			display: none;
+		}
 	}
 
 	&__more-btn {
@@ -28,9 +30,28 @@
 		border-radius: 100px;
 		background-color: transparent;
 		color: var(--background-control);
+		outline: 2px solid transparent;
 		font-weight: 700;
 		font-size: 18px;
 		line-height: 25px;
+		transition-duration: .3s;
+		transition-property: color, outline-color, background-color, border-color;
+
+		&:focus-visible {
+			outline-color: var(--focus_click);
+			outline-offset: -18px;
+		}
+
+		&:hover {
+			background-color: var(--background-control);
+			color: var(--font-alt);
+		}
+
+		&:active {
+			border-color: var(--hover-main);
+			background-color: var(--focus_click);
+			color: var(--font-alt);
+		}
 	}
 }
 
@@ -70,7 +91,22 @@
 		align-self: flex-start;
 		border-bottom: 1px solid var(--font-link);
 		color: var(--font-link);
+		outline: 2px solid transparent;
 		line-height: 26px;
+		transition-duration: .3s;
+		transition-property: outline-color, font-weight, color;
+
+		&:focus-visible {
+			outline-color: var(--focus_click);
+		}
+
+		&:hover {
+			font-weight: 700;
+		}
+
+		&:active {
+			color: var(--focus_click);
+		}
 	}
 }
 

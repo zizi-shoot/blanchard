@@ -26,11 +26,6 @@ a {
 	text-decoration: none;
 }
 
-a:focus {
-	outline: 2px solid var(--focus_click);
-	outline-offset: 5px;
-}
-
 button {
 	outline: none;
 	cursor: pointer;
