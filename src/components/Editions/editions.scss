@@ -1,0 +1,168 @@
+.editions {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	background: url("/img/editions-back.jpg");
+	color: var(--font-alt);
+
+	&__container {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	&__title {
+		width: 100%;
+	}
+
+	&__filters {
+		max-width: 400px;
+	}
+
+	&__prices,
+	&__categories {
+		border: none;
+	}
+
+	&__swiper {
+		position: relative;
+		width: 1150px;
+		margin: 0;
+		padding-top: 30px;
+	}
+
+	&__controls {
+		position: absolute;
+		top: 24px;
+		left: 3px;
+		display: flex;
+		align-items: center;
+	}
+
+	&__controls > * {
+		position: static;
+		margin: 0;
+	}
+
+	&__btn-next,
+	&__btn-prev {
+		width: unset;
+		height: unset;
+		padding: 8px;
+		border: 2px solid transparent;
+		border-radius: 50%;
+		background-color: var(--background-slider);
+		transition: border-color .2s, background-color .2s;
+	}
+
+	&__btn-next:focus,
+	&__btn-prev:focus {
+		border-color: var(--focus_click);
+	}
+
+	&__btn-next:hover,
+	&__btn-prev:hover {
+		background-color: var(--background-control);
+	}
+
+	&__btn-next:active,
+	&__btn-prev:active {
+		border-color: var(--hover-main);
+		background-color: var(--focus_click);
+	}
+
+	&__btn-next svg,
+	&__btn-prev svg {
+		width: 10px;
+		height: 10px;
+	}
+
+	&__btn-next::after,
+	&__btn-prev::after {
+		content: "";
+	}
+
+	&__pagination {
+		margin: 0 18px;
+	}
+}
+
+.categories {
+	display: flex;
+	flex-direction: column;
+}
+
+.prices {
+	&__wrapper {
+		display: flex;
+		padding: 0 7px;
+		border: 1px solid #898989;
+		border-radius: 6px;
+
+		span {
+			padding: 0 12px;
+		}
+	}
+
+	&__label {
+		display: flex;
+	}
+
+	&__input {
+		max-width: 42px;
+		border: none;
+		background: rgba(157, 92, 208, 0.5);
+	}
+
+	&__controls {
+		position: absolute;
+		top: 24px;
+		left: 3px;
+		display: flex;
+		align-items: center;
+	}
+
+	&__controls > * {
+		position: static;
+		margin: 0;
+	}
+}
+
+.edition {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	&__pic {
+		margin-bottom: 20px;
+	}
+
+	&__wrapper {
+		width: 70%;
+		margin-bottom: 15px;
+		line-height: normal;
+	}
+
+	&__title {
+		font-size: 16px;
+	}
+
+	&__price {
+		font-style: italic;
+		line-height: normal;
+
+		&::after {
+			content: "руб";
+			padding-left: 5px;
+		}
+	}
+
+	&__btn-order {
+		padding: 8px 14px;
+		border: 2px solid var(--background-control);
+		border-radius: 100px;
+		background: transparent;
+		color: var(--font-alt);
+		font-weight: 700;
+	}
+}
