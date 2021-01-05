@@ -1,5 +1,6 @@
 html {
 	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
 *,
@@ -42,9 +43,12 @@ input {
 	outline: none;
 }
 
-p {
+p,
+fieldset {
 	margin: 0;
 	padding: 0;
 }
+
+
 
 

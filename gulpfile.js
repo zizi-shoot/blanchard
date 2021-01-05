@@ -365,7 +365,7 @@ const fullFontsStyle = (done) => {
 				const font = fontname.split('-')[0];
 				const weight = checkWeight(fontname);
 				if (c_fontname !== fontname) {
-					fs.appendFile(srcFonts, `@include font-face("${font}", "${fontname}", ${weight});\r\n`, cb);
+					fs.appendFile(srcFonts, `@include font-face("${font}", "${fontname}", ${weight}, ${style});\r\n`, cb);
 				}
 				c_fontname = fontname;
 			}

@@ -1,27 +1,34 @@
-<section class="editions">
+<section class="editions" id="editions">
 	<div class="editions__container page-container">
 		<h2 class="editions__title section-title">Издания</h2>
 		<form class="editions__filters">
 			<fieldset class="editions__categories categories">
 				<legend class="categories__title">Категории</legend>
-				<label class="categories__label"><input class="categories__input" type="checkbox"><span></span>Бестселлеры</label>
-				<label class="categories__label"><input class="categories__input" type="checkbox"><span></span>Искусство</label>
-				<label class="categories__label"><input class="categories__input" type="checkbox"><span></span>Архитектура</label>
-				<label class="categories__label"><input class="categories__input" type="checkbox"><span></span>Дизайн</label>
-				<label class="categories__label"><input class="categories__input" type="checkbox"><span></span>Мода</label>
-				<label class="categories__label"><input class="categories__input" type="checkbox"><span></span>Детям</label>
-				<label class="categories__label"><input class="categories__input" type="checkbox"><span></span>Художественная литература</label>
-				<label class="categories__label"><input class="categories__input" type="checkbox"><span></span>Публицистика</label>
-				<label class="categories__label"><input class="categories__input" type="checkbox"><span></span>Путеводители</label>
-				<label class="categories__label"><input class="categories__input" type="checkbox"><span></span>Философия</label>
-				<label class="categories__label"><input class="categories__input" type="checkbox"><span></span>Учебная литература</label>
-				<label class="categories__label"><input class="categories__input" type="checkbox"><span></span>Журналы и газеты</label>
+				<label class="categories__label"><input class="categories__input visually-hidden"
+				                                        type="checkbox"><span></span><span>Бестселлеры</span></label>
+				<label class="categories__label"><input class="categories__input visually-hidden" type="checkbox"><span></span><span>Искусство</span></label>
+				<label class="categories__label"><input class="categories__input visually-hidden"
+				                                        type="checkbox"><span></span><span>Архитектура</span></label>
+				<label class="categories__label"><input checked class="categories__input visually-hidden"
+				                                        type="checkbox"><span></span><span>Дизайн</span></label>
+				<label class="categories__label"><input class="categories__input visually-hidden" type="checkbox"><span></span><span>Мода</span></label>
+				<label class="categories__label"><input class="categories__input visually-hidden" type="checkbox"><span></span><span>Детям</span></label>
+				<label class="categories__label"><input class="categories__input visually-hidden"
+				                                        type="checkbox"><span></span><span>Художественная литература</span></label>
+				<label class="categories__label"><input class="categories__input visually-hidden"
+				                                        type="checkbox"><span></span><span>Публицистика</span></label>
+				<label class="categories__label"><input class="categories__input visually-hidden"
+				                                        type="checkbox"><span></span><span>Путеводители</span></label>
+				<label class="categories__label"><input class="categories__input visually-hidden" type="checkbox"><span></span><span>Философия</span></label>
+				<label class="categories__label"><input class="categories__input visually-hidden" type="checkbox"><span></span><span>Учебная литература</span></label>
+				<label class="categories__label"><input class="categories__input visually-hidden"
+				                                        type="checkbox"><span></span><span>Журналы и газеты</span></label>
 			</fieldset>
 			<fieldset class="editions__prices prices">
 				<legend class="prices__title">Цена</legend>
 				<div class="prices__wrapper">
-					<label class="prices__label min-price"><span>От</span><input class="prices__input" type="number"></label>
-					<label class="prices__label max-price"><span>до</span><input class="prices__input" type="number"></label>
+					<label class="prices__label min-price"><span>От</span><input class="prices__input" placeholder="50" type="number"></label>
+					<label class="prices__label max-price"><span>до</span><input class="prices__input" placeholder="25 000" type="number"></label>
 					<span class="prices__currency">рублей</span>
 				</div>
 			</fieldset>

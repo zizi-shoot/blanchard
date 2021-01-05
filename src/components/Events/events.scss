@@ -1,5 +1,5 @@
 .events {
-	padding-bottom: 80px;
+	padding-bottom: 78px;
 
 	&__title {
 		margin-bottom: 16px;
@@ -31,6 +31,7 @@
 		background-color: transparent;
 		color: var(--background-control);
 		outline: 2px solid transparent;
+		outline-offset: -18px;
 		font-weight: 700;
 		font-size: 18px;
 		line-height: 25px;
@@ -39,7 +40,6 @@
 
 		&:focus-visible {
 			outline-color: var(--focus_click);
-			outline-offset: -18px;
 		}
 
 		&:hover {
