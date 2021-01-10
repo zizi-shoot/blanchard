@@ -1,0 +1,122 @@
+.contacts {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	&__title {
+		width: 100%;
+		margin-bottom: 15px;
+	}
+
+	&__connect {
+		display: flex;
+		flex-wrap: wrap;
+		align-content: center;
+		max-width: vw(682);
+		padding: 0 vw(122) 0 160px;
+		border: 1px solid var(--background-tip);
+	}
+
+	&-subtitle {
+		width: 100%;
+		margin-bottom: 15px;
+		font-weight: 400;
+		font-size: 24px;
+		line-height: 32px;
+	}
+
+	&__showroom-name {
+		font-weight: 600;
+		font-size: 24px;
+	}
+
+	&__address {
+		margin-bottom: 30px;
+		font-style: normal;
+	}
+
+	&__callback {
+		margin-bottom: 36px;
+	}
+
+	&__messenger {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background: no-repeat center/cover;
+		outline: none;
+		transition-duration: .3s;
+		transition-property: filter, box-shadow;
+
+		&:not(:last-child) {
+			margin-right: 20px;
+		}
+
+		&:focus-visible {
+			box-shadow: 0 0 0 3px var(--focus_click);
+		}
+
+		&:hover {
+			filter: brightness(.7);
+		}
+
+		&:active {
+			filter: brightness(.5);
+		}
+	}
+
+	&__map {
+		width: vw(1238);
+		height: 700px;
+	}
+}
+
+.callback-form {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	&__input {
+		margin-bottom: 23px;
+		padding: 10px 24px;
+		border: 1px solid var(--font-main);
+		border-radius: 100px;
+		font-size: 16px;
+	}
+
+	&__btn-submit {
+		align-self: flex-start;
+		padding: 16px 32px;
+		border: 2px solid var(--background-control);
+		border-radius: 100px;
+		background-color: transparent;
+		color: var(--background-control);
+		outline: 2px solid transparent;
+		outline-offset: -18px;
+		font-weight: 700;
+		font-size: 18px;
+		font-family: "Open Sans", sans-serif;
+		line-height: 25px;
+		transition-duration: .3s;
+		transition-property: color, outline-color, background-color, border-color;
+
+		&:focus-visible {
+			outline-color: var(--focus_click);
+		}
+
+		&:hover {
+			background-color: var(--background-control);
+			color: var(--font-alt);
+		}
+
+		&:active {
+			border-color: var(--hover-main);
+			background-color: var(--focus_click);
+			color: var(--font-alt);
+		}
+	}
+}
+
+[class$="ground-pane"] {
+	filter: grayscale(1);
+}
