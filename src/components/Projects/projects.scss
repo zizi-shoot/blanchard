@@ -1,0 +1,245 @@
+.projects {
+	padding: 80px 0;
+
+	&__container {
+		position: relative;
+	}
+
+	&__title {
+		margin-bottom: 16px;
+	}
+
+	&__descr {
+		max-width: vw(1080);
+		margin-bottom: 20px;
+	}
+
+	&__tooltip {
+		vertical-align: middle;
+		width: 16px;
+		height: 16px;
+		padding: 0;
+		border: none;
+		background: url("/img/sprite.svg#tooltip") no-repeat center/cover;
+	}
+
+	&__link-more {
+		color: var(--font-link);
+		outline: 2px solid transparent;
+		outline-offset: 2px;
+		font-weight: 600;
+		text-decoration: underline transparent;
+		transition-duration: .3s;
+		transition-property: outline-color, text-decoration-color, color;
+
+		&:focus-visible {
+			outline-color: var(--focus_click);
+		}
+
+		&:hover {
+			text-decoration-color: inherit;
+		}
+
+		&:active {
+			color: var(--focus_click);
+			text-decoration-color: inherit;
+		}
+
+		&__subtitle {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__swiper {
+		max-width: vw(1450);
+		height: 150px;
+	}
+
+	&__partners-item {
+		a {
+			position: relative;
+			display: block;
+			height: 100%;
+			background-size: contain;
+			background-repeat: no-repeat;
+			font-size: 0;
+			line-height: 0;
+		}
+	}
+
+	&__btn-next,
+	&__btn-prev {
+		top: unset;
+		bottom: 75px;
+		width: unset;
+		height: unset;
+		padding: 8px;
+		border: 2px solid transparent;
+		border-radius: 50%;
+		background-color: var(--background-accord);
+		outline: none;
+		transition: border-color .2s, background-color .2s;
+		transform: translateY(50%);
+
+		svg path {
+			transition: stroke .3s;
+		}
+
+		&:after {
+			content: "";
+		}
+	}
+
+	&__btn-prev {
+		left: 50px;
+	}
+
+	&_btn-_btnt {
+		right: 50px;
+	}
+
+	&__btn-next:focus,
+	&__btn-prev:focus {
+		border-color: var(--focus_click);
+	}
+
+	&__btn-next:hover,
+	&__btn-prev:hover {
+		background-color: var(--background-control);
+
+		svg path {
+			stroke: var(--font-alt)
+		}
+	}
+
+	&__btn-next:active,
+	&__btn-prev:active {
+		border-color: var(--hover-main);
+		background-color: var(--focus_click);
+	}
+
+	&__btn-next svg,
+	&__btn-prev svg {
+		width: 10px;
+		height: 10px;
+	}
+}
+
+.partner {
+	position: relative;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: no-repeat center/contain;
+		opacity: 0;
+		transition: opacity .3s;
+	}
+
+	&:hover::after {
+		opacity: 1;
+	}
+}
+
+.tippy-box[data-theme~='tooltip'] {
+	border-radius: 0;
+	background-color: var(--background-tip);
+	color: var(--font-alt);
+}
+
+.tippy-box[data-theme~='tooltip'][data-placement^='top'] > .tippy-arrow::before {
+	border-top-color: var(--background-tip);
+}
+
+.tippy-box[data-theme~='tooltip'][data-placement^='bottom'] > .tippy-arrow::before {
+	border-bottom-color: var(--background-tip);
+}
+
+.tippy-box[data-theme~='tooltip'][data-placement^='left'] > .tippy-arrow::before {
+	border-left-color: var(--background-tip);
+}
+
+.tippy-box[data-theme~='tooltip'][data-placement^='right'] > .tippy-arrow::before {
+	border-right-color: var(--background-tip);
+}
+
+.tippy-content {
+	font-size: 12px;
+	text-align: center;
+}
+
+.partner-1 {
+	background-image: url('/img/projects-gs-1.jpg');
+
+	&::after {
+		background-image: url("/img/projects-1.jpg");
+	}
+}
+
+.partner-2 {
+	background-image: url('/img/projects-gs-2.jpg');
+
+	&::after {
+		background-image: url("/img/projects-2.jpg");
+	}
+}
+
+.partner-3 {
+	background-image: url('/img/projects-gs-3.jpg');
+
+	&::after {
+		background-image: url("/img/projects-3.jpg");
+	}
+}
+
+.partner-4 {
+	background-image: url('/img/projects-gs-4.jpg');
+
+	&::after {
+		background-image: url("/img/projects-4.jpg");
+	}
+}
+
+.partner-5 {
+	background-image: url('/img/projects-gs-5.jpg');
+
+	&::after {
+		background-image: url("/img/projects-5.jpg");
+	}
+}
+
+.partner-6 {
+	background-image: url('/img/projects-gs-6.jpg');
+
+	&::after {
+		background-image: url("/img/projects-6.jpg");
+	}
+}
+
+.partner-7 {
+	background-image: url('/img/projects-gs-7.jpg');
+
+	&::after {
+		background-image: url("/img/projects-7.jpg");
+	}
+}
+
+.partner-8 {
+	background-image: url('/img/projects-gs-8.jpg');
+
+	&::after {
+		background-image: url("/img/projects-8.jpg");
+	}
+}
+
+.partner-9 {
+	background-image: url('/img/projects-gs-9.jpg');
+
+	&::after {
+		background-image: url("/img/projects-9.jpg");
+	}
+}
