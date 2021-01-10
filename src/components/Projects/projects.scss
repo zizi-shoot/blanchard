@@ -44,10 +44,10 @@
 			color: var(--focus_click);
 			text-decoration-color: inherit;
 		}
+	}
 
-		&__subtitle {
-			margin-bottom: 24px;
-		}
+	&__subtitle {
+		margin-bottom: 24px;
 	}
 
 	&__swiper {
@@ -94,7 +94,7 @@
 		left: 50px;
 	}
 
-	&_btn-_btnt {
+	&__btn-next {
 		right: 50px;
 	}
 
