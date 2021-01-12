@@ -36,6 +36,10 @@
 		color: var(--font-alt);
 		font-size: 18px;
 		line-height: 25px;
+
+		svg {
+			margin-right: 5px;
+		}
 	}
 
 	&__link,
