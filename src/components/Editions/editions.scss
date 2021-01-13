@@ -7,38 +7,36 @@
 
 	&__container {
 		position: relative;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
+		display: grid;
+		grid-template: repeat(3, auto)/341px 1fr 341px;
+		column-gap: vw(109);
 	}
 
 	&__title {
-		width: 100%;
 		margin-bottom: 16px;
 	}
 
-	&__filters {
-		max-width: 400px;
+	&__categories {
+		grid-row: 2/3;
 	}
 
-	&__prices,
-	&__categories {
-		border: none;
+	&__prices {
+		grid-row: 3/4
 	}
 
 	&__swiper {
-		position: relative;
-		width: 1150px;
+		grid-row: 2/-1;
+		grid-column: 2/-1;
 		margin: 0;
 		padding-top: 13px;
 	}
 
 	&__controls {
-		position: absolute;
-		top: 32px;
-		right: 1070px;
+		position: relative;
+		top: 7px;
 		display: flex;
 		align-items: center;
+		justify-self: start;
 	}
 
 	&__controls > * {
