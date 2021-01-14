@@ -31,18 +31,20 @@
 		outline: 2px solid transparent;
 		outline-offset: 4px;
 		transition: color .2s, outline-color .2s;
-	}
 
-	&__auth-link:focus {
-		outline-color: var(--focus_click);
-	}
+		&:focus-visible {
+			outline-color: var(--focus_click);
+		}
 
-	&__auth-link:hover {
-		text-decoration: underline;
-	}
+		@media (pointer: fine) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 
-	&__auth-link:active {
-		color: var(--focus_click);
+		&:active {
+			color: var(--focus_click);
+		}
 	}
 
 	&__swiper {
@@ -60,97 +62,53 @@
 		outline: 3px solid transparent;
 		outline-offset: -3px;
 		transition: outline-color .2s;
-	}
 
-	&__slide::before,
-	&__slide::after {
-		content: "";
-		position: absolute;
-		opacity: 0;
-		transition: opacity .2s;
-	}
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			opacity: 0;
+			transition: opacity .2s;
+		}
 
-	&__slide::before {
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		background: var(--hover-alt);
-	}
+		&::before {
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: var(--hover-alt);
+		}
 
-	&__slide::after {
-		top: 25px;
-		right: 25px;
-		bottom: 25px;
-		left: 25px;
-		background: #00000080 url("../img/sprite.svg#lens") center/60% no-repeat;
-	}
+		&::after {
+			top: 25px;
+			right: 25px;
+			bottom: 25px;
+			left: 25px;
+			background: #00000080 url("../img/sprite.svg#lens") center/60% no-repeat;
+		}
 
-	&__slide:hover::after {
-		opacity: 1;
-	}
+		&:focus-visible {
+			outline-color: var(--focus_click);
+		}
 
-	&__slide:active::before {
-		opacity: .5;
-	}
+		@media (pointer: fine) {
+			&:hover::after {
+				opacity: 1;
+			}
+		}
 
-	&__slide:focus {
-		outline-color: var(--focus_click);
-	}
+		&:active::before {
+			opacity: .5;
+		}
 
-	&__slide:active {
-		outline-color: var(--hover-main);
+		&:active {
+			outline-color: var(--hover-main);
+		}
 	}
 
 	&__controls {
-		position: absolute;
 		top: 24px;
 		left: 3px;
-		display: flex;
-		align-items: center;
-	}
-
-	&__controls > * {
-		position: static;
-		margin: 0;
-	}
-
-	&__next-btn,
-	&__prev-btn {
-		width: unset;
-		height: unset;
-		padding: 8px;
-		border: 2px solid transparent;
-		border-radius: 50%;
-		background-color: var(--background-slider);
-		transition: border-color .2s, background-color .2s;
-	}
-
-	&__next-btn:focus,
-	&__prev-btn:focus {
-		border-color: var(--focus_click);
-	}
-
-	&__next-btn:hover,
-	&__prev-btn:hover {
-		background-color: var(--background-control);
-	}
-
-	&__next-btn:active,
-	&__prev-btn:active {
-		border-color: var(--hover-main);
-		background-color: var(--focus_click);
-	}
-
-	&__next-btn svg,
-	&__prev-btn svg {
-		width: 10px;
-		height: 10px;
-	}
-
-	&__next-btn::after,
-	&__prev-btn::after {
-		content: "";
 	}
 
 	&__pagination {
@@ -183,20 +141,22 @@
 		border-radius: 6px;
 	}
 
-	&[data-type*=select-one] &__inner {
-		padding-bottom: 3px;
-	}
+	&[data-type*=select-one] {
+		&__inner {
+			padding-bottom: 3px;
+		}
 
-	&[data-type*=select-one]::after {
-		content: url("../img/sprite.svg#gallery-filter-button");
-		position: absolute;
-		top: 50%;
-		right: 0;
-		width: 40px;
-		height: unset;
-		margin-top: 0;
-		border: none;
-		transform: translateY(-50%);
+		&::after {
+			content: url("../img/sprite.svg#gallery-filter-button");
+			position: absolute;
+			top: 50%;
+			right: 0;
+			width: 40px;
+			height: unset;
+			margin-top: 0;
+			border: none;
+			transform: translateY(-50%);
+		}
 	}
 
 	&[data-type*=select-one].is-open::after {
@@ -207,23 +167,23 @@
 	&__list {
 		border-color: var(--font-light);
 		border-radius: 6px;
+
+		&--single {
+			padding: 0;
+		}
+
+		.is-selected {
+			display: none;
+		}
 	}
 
 	&__list--dropdown &__item--selectable {
 		padding-right: 10px;
 	}
 
-	&__list--single {
-		padding: 0;
-	}
-
 	&__list--dropdown &__item {
 		padding: 3px 19px 2px;
 		border-bottom: 1px solid var(--font-light);
-	}
-
-	&__list .is-selected {
-		display: none;
 	}
 }
 

@@ -9,12 +9,6 @@
 		padding-bottom: 30px;
 	}
 
-	&__logo {
-		object-fit: cover;
-		width: 173px;
-		height: 40px;
-	}
-
 	&__nav {
 		display: flex;
 		justify-content: space-between;
@@ -25,8 +19,30 @@
 		line-height: 25px;
 	}
 
+	&__link,
+	&__enter-btn {
+		outline: 2px solid transparent;
+		outline-offset: var(--offset);
+		transition-duration: .3s;
+		transition-property: color, outline-color;
+
+		&:focus-visible {
+			outline-color: var(--focus_click);
+		}
+
+		@media (pointer: fine) {
+			&:hover {
+				color: var(--hover-alt);
+			}
+		}
+	}
+
 	&__link {
 		color: var(--font-alt);
+
+		&:active {
+			color: var(--focus_click);
+		}
 	}
 
 	&__enter-btn {
@@ -39,42 +55,25 @@
 
 		svg {
 			margin-right: 5px;
+
+			path {
+				transition: fill .2s;
+			}
 		}
-	}
 
-	&__link,
-	&__enter-btn {
-		transition: color .2s;
-	}
+		@media (pointer: fine) {
+			&:hover svg path {
+				fill: var(--hover-alt)
+			}
+		}
 
-	&__link:hover,
-	&__enter-btn:hover {
-		color: var(--hover-alt);
-	}
+		&:active {
+			color: var(--font-link);
 
-	&__link:active {
-		color: var(--focus_click);
-	}
-
-	&__enter-btn svg path {
-		transition: fill .2s;
-	}
-
-	&__enter-btn:hover svg path {
-		fill: var(--hover-alt)
-	}
-
-	&__enter-btn:focus {
-		outline: 2px solid var(--focus_click);
-		outline-offset: 4px;
-	}
-
-	&__enter-btn:active {
-		color: var(--font-link);
-	}
-
-	&__enter-btn:active svg path {
-		fill: var(--font-link);
+			svg path {
+				fill: var(--font-link);
+			}
+		}
 	}
 
 	&__bottom-bar {
@@ -107,43 +106,94 @@
 		border: none;
 		background-color: transparent;
 		color: var(--font-alt);
+		outline: 2px solid transparent;
+		outline-offset: var(--offset);
 		font-size: 18px;
 		line-height: 25px;
-		transition: color .2s;
+		transition-duration: .3s;
+		transition-property: color, outline-color;
+
+		&:focus-visible {
+			outline-color: var(--focus_click);
+		}
 	}
 
-	&__open-btn:focus {
-		outline: 2px solid var(--focus_click);
-		outline-offset: 4px;
-	}
+	&__item {
+		position: relative;
 
-	&__item:hover &__open-btn {
-		color: var(--font-link);
+		svg * {
+			transition: stroke .3s;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: .1em;
+			left: 0;
+			width: 100%;
+			height: 3em;
+		}
+
+		@media (pointer: fine) {
+			&:hover {
+				.head-bar__open-btn {
+					color: var(--font-link);
+				}
+
+				.head-bar__scrollbar-wrapper {
+					display: block;
+					animation: fade-in .3s both;
+				}
+
+				svg path {
+					stroke: var(--font-link);
+				}
+			}
+			&:not(:hover) .did-fade-in {
+				display: block;
+				animation: fade-out .3s;
+			}
+		}
 	}
 
 	&__item &__open-btn:active {
 		color: var(--focus_click);
-	}
 
-	&__search * {
-		transition: border-color .2s, fill .2s;
-	}
-
-	&__item svg * {
-		transition: stroke .1s;
-	}
-
-	&__item:hover svg path {
-		stroke: var(--font-link);
-	}
-
-	&__open-btn:active svg path {
-		stroke: var(--focus_click);
+		svg path {
+			stroke: var(--focus_click);
+		}
 	}
 
 	&__search {
 		display: flex;
 		align-items: baseline;
+		outline: 2px solid transparent;
+		outline-offset: var(--offset);
+		transition: outline-color .3s;
+
+		* {
+			transition-duration: .3s;
+			transition-property: border-color, fill;
+		}
+
+		&:focus-within {
+			outline-color: var(--focus_click);
+		}
+
+		@media (pointer: fine) {
+			&:hover {
+				.head-bar__input {
+					border-color: var(--hover-alt);
+				}
+
+				* {
+					path,
+					rect {
+						fill: var(--hover-alt);
+					}
+				}
+			}
+		}
 	}
 
 	&__search-btn {
@@ -161,31 +211,17 @@
 		border-bottom: 1px solid rgba(255, 255, 255, 0.85);
 		background-color: transparent;
 		color: var(--font-alt);
-	}
 
-	&__search:focus-within {
-		outline: 2px solid var(--focus_click);
-		outline-offset: 4px;
-	}
+		&::placeholder {
+			color: var(--font-alt);
+			font-size: 18px;
+			line-height: 25px;
+			opacity: .85;
+		}
 
-	&__input::placeholder {
-		color: var(--font-alt);
-		font-size: 18px;
-		line-height: 25px;
-		opacity: .85;
-	}
-
-	&__input:focus::placeholder {
-		opacity: 0;
-	}
-
-	&__search:hover &__input {
-		border-color: var(--hover-alt);
-	}
-
-	&__search:hover * path,
-	&__search:hover * rect {
-		fill: var(--hover-alt);
+		&:focus-visible::placeholder {
+			opacity: 0;
+		}
 	}
 
 	&__scrollbar-wrapper {
@@ -202,33 +238,11 @@
 	&__artist-list {
 		width: 100%;
 		max-height: 100%;
-	}
-
-	&__artist-list:hover .simplebar-scrollbar {
-		background-color: var(--background-control);
-	}
-
-	&__item {
-		position: relative;
-	}
-
-	&__item::after {
-		content: "";
-		position: absolute;
-		top: .1em;
-		left: 0;
-		width: 100%;
-		height: 3em;
-	}
-
-	&__item:hover &__scrollbar-wrapper {
-		display: block;
-		animation: fade-in .3s both;
-	}
-
-	&__item:not(:hover) .did-fade-in {
-		display: block;
-		animation: fade-out .3s;
+		@media (pointer: fine) {
+			&:hover .simplebar-scrollbar {
+				background-color: var(--background-control);
+			}
+		}
 	}
 
 	&__menu &__item &__scrollbar-wrapper--visible {
@@ -261,40 +275,48 @@
 		outline-offset: -2px;
 		line-height: 0;
 		transition: outline-color .2s;
-	}
 
-	&__artist-item:hover {
-		outline-color: var(--background-control)
-	}
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
 
-	&__artist-item:not(:last-child) {
-		margin-bottom: 20px;
+		@media (pointer: fine) {
+			&:hover {
+				outline-color: var(--background-control);
+			}
+		}
+
+		&:active {
+			outline-color: var(--hover-main);
+
+			.head-bar__artist::after {
+				background-color: var(--hover-alt);
+			}
+		}
 	}
 
 	&__artist {
 		color: var(--font-alt);
+		outline: 2px solid transparent;
+		outline-offset: var(--offset);
 		font-weight: 600;
 		font-size: 14px;
 		line-height: 19px;
-	}
 
-	&__artist::after {
-		content: "";
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		background-color: transparent;
-		opacity: .4;
-	}
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background-color: transparent;
+			opacity: .4;
+		}
 
-	&__artist-item:active {
-		outline-color: var(--hover-main);
-	}
-
-	&__artist-item:active &__artist::after {
-		background-color: var(--hover-alt);
+		&:focus-visible {
+			outline-color: var(--focus_click);
+		}
 	}
 }
 
@@ -390,12 +412,3 @@
 .balla {
 	background-image: url("../img/header-balla.jpg");
 }
-
-
-
-
-
-
-
-
-

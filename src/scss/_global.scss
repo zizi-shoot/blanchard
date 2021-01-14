@@ -24,7 +24,74 @@ body {
 	line-height: 32px;
 }
 
+.logo {
+	object-fit: cover;
+	width: 173px;
+	height: 40px;
+}
+
+.btn {
+	border-radius: 100px;
+	outline: transparent solid 2px;
+	outline-offset: var(--offset);
+	font-weight: 700;
+	transition-duration: .3s;
+}
+
+.swiper-controls {
+	position: absolute;
+	display: flex;
+	align-items: center;
+
+	> * {
+		position: static;
+		margin: 0;
+	}
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	width: unset;
+	height: unset;
+	padding: 8px;
+	border: 2px solid transparent;
+	border-radius: 50%;
+	background-color: var(--background-slider);
+	transition-duration: .3s;
+	transition-property: border-color, background-color;
+
+	svg {
+		width: 10px;
+		height: 10px;
+	}
+
+	&::after {
+		display: none;
+	}
+
+	&:focus-visible {
+		border-color: var(--focus_click);
+	}
+
+	@media (pointer: fine) {
+		&:hover {
+			background-color: var(--background-control);
+		}
+	}
+
+	&:active {
+		border-color: var(--hover-main);
+		background-color: var(--focus_click);
+	}
+}
+
+.swiper-pagination {
+	margin: 0 18px;
+}
+
 .visually-hidden {
 	@include visually-hidden;
 }
+
+
 
