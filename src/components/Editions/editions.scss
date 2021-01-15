@@ -34,56 +34,7 @@
 	&__controls {
 		position: relative;
 		top: 7px;
-		display: flex;
-		align-items: center;
 		justify-self: start;
-	}
-
-	&__controls > * {
-		position: static;
-		margin: 0;
-	}
-
-	&__btn-next,
-	&__btn-prev {
-		width: unset;
-		height: unset;
-		padding: 8px;
-		border: 2px solid transparent;
-		border-radius: 50%;
-		background-color: var(--background-slider);
-		transition: border-color .2s, background-color .2s;
-	}
-
-	&__btn-next:focus,
-	&__btn-prev:focus {
-		border-color: var(--focus_click);
-	}
-
-	&__btn-next:hover,
-	&__btn-prev:hover {
-		background-color: var(--background-control);
-	}
-
-	&__btn-next:active,
-	&__btn-prev:active {
-		border-color: var(--hover-main);
-		background-color: var(--focus_click);
-	}
-
-	&__btn-next svg,
-	&__btn-prev svg {
-		width: 10px;
-		height: 10px;
-	}
-
-	&__btn-next::after,
-	&__btn-prev::after {
-		content: "";
-	}
-
-	&__pagination {
-		margin: 0 18px;
 	}
 }
 
@@ -159,16 +110,18 @@
 			outline-color: var(--focus_click);
 		}
 
-		&:hover {
-			+ span {
-				border-color: var(--hover-alt);
-
-				&::before {
-					opacity: 1;
-				}
-
+		@media (pointer: fine) {
+			&:hover {
 				+ span {
-					color: var(--hover-alt);
+					border-color: var(--hover-alt);
+
+					&::before {
+						opacity: 1;
+					}
+
+					+ span {
+						color: var(--hover-alt);
+					}
 				}
 			}
 		}
@@ -267,28 +220,11 @@
 	&__btn-order {
 		padding: 6px 20px;
 		border: 2px solid var(--background-control);
-		border-radius: 100px;
 		background: transparent;
 		color: var(--font-alt);
-		outline: 2px solid transparent;
 		outline-offset: -11px;
-		font-weight: 700;
 		font-size: 16px;
 		font-family: inherit;
-		transition-duration: .3s;
 		transition-property: color, outline-color, background-color, border-color;
-
-		&:focus-visible {
-			outline-color: var(--focus_click);
-		}
-
-		&:hover {
-			background-color: var(--background-control);
-		}
-
-		&:active {
-			border-color: var(--hover-main);
-			background-color: var(--focus_click);
-		}
 	}
 }

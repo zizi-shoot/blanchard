@@ -36,6 +36,21 @@ body {
 	outline-offset: var(--offset);
 	font-weight: 700;
 	transition-duration: .3s;
+
+	&:focus-visible {
+		outline-color: var(--focus_click);
+	}
+
+	@media (pointer: fine) {
+		&:hover {
+			background-color: var(--background-control);
+		}
+	}
+
+	&:active {
+		border-color: var(--hover-main);
+		background-color: var(--focus_click);
+	}
 }
 
 .swiper-controls {
@@ -70,7 +85,7 @@ body {
 	}
 
 	&:focus-visible {
-		border-color: var(--focus_click);
+		box-shadow: 0 0 0 3px var(--focus_click);
 	}
 
 	@media (pointer: fine) {

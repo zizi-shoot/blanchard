@@ -118,6 +118,11 @@
 
 .choices {
 	margin-top: 10px;
+	border-radius: 6px;
+
+	&:focus-visible {
+		box-shadow: 0 0 0 2px var(--focus_click);
+	}
 
 	&__inner,
 	&__list,
@@ -135,6 +140,19 @@
 		padding-left: 15px;
 		border-color: var(--font-alt);
 		border-radius: 6px;
+		outline: none;
+		transition-duration: .3s;
+		transition-property: background-color, border-color;
+
+		&:focus-visible {
+			border-color: var(--focus_click);
+		}
+
+		@media (pointer: fine) {
+			&:hover {
+				background-color: var(--background-control);
+			}
+		}
 	}
 
 	.is-open &__inner {
@@ -179,11 +197,29 @@
 
 	&__list--dropdown &__item--selectable {
 		padding-right: 10px;
+		transition: background-color .3s;
+	}
+
+	&__list--dropdown &__item--selectable.is-highlighted {
+		background-color: var(--background-control);
 	}
 
 	&__list--dropdown &__item {
 		padding: 3px 19px 2px;
 		border-bottom: 1px solid var(--font-light);
+		outline: none;
+		transition-duration: .3s;
+		transition-property: background-color, border-color;
+
+		&:focus-visible {
+			border-color: var(--focus_click);
+		}
+
+		@media (pointer: fine) {
+			&:hover {
+				background-color: var(--background-control);
+			}
+		}
 	}
 }
 

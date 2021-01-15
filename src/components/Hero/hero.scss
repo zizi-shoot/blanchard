@@ -27,6 +27,7 @@
 		border: 3px solid transparent;
 		background: #9d5cd0;
 		color: var(--font-alt);
+		outline: none;
 		font-size: 18px;
 		line-height: 25px;
 
@@ -40,9 +41,5 @@
 			}
 		}
 
-		&:active {
-			border-color: var(--hover-main);
-			background-color: var(--focus_click);
-		}
 	}
 }

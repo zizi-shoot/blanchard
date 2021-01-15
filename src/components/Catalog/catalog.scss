@@ -29,30 +29,37 @@
 			border: none;
 			border-radius: 50%;
 			line-height: 0;
-			transition: filter .2s, border-color .2s, box-shadow .2s;
-		}
+			transition-duration: .3s;
+			transition-property: filter, border-color, box-shadow;
 
-		&__btn:hover {
-			filter: drop-shadow(0px 0px 20px var(--background-control70));
-		}
+			&:focus-visible {
+				box-shadow: 0 0 0 4px var(--focus_click);
+			}
 
-		&__btn:active {
-			box-shadow: 0 0 0 2px var(--background-control)
+			@media (pointer: fine) {
+				&:hover {
+					box-shadow: 0 0 20px var(--background-control70);
+				}
+			}
+
+			&:active {
+				box-shadow: 0 0 0 2px var(--background-control)
+			}
 		}
 
 		&__btn--active {
 			pointer-events: none;
-		}
 
-		&__btn--active::after {
-			content: "";
-			position: absolute;
-			top: -10px;
-			left: -10px;
-			width: 66px;
-			height: 66px;
-			border: 2px solid var(--background-control);
-			border-radius: 50%;
+			&::after {
+				content: "";
+				position: absolute;
+				top: -10px;
+				left: -10px;
+				width: 66px;
+				height: 66px;
+				border: 2px solid var(--background-control);
+				border-radius: 50%;
+			}
 		}
 
 		&__icon {
@@ -80,7 +87,7 @@
 		}
 
 		&__descr {
-			max-width: 1080px;
+			max-width: calc(65% + 40px);
 			margin-bottom: 39px;
 		}
 
@@ -119,11 +126,11 @@
 
 	&__period-item {
 		border: none;
-	}
 
-	&__period-item:first-child {
-		margin-top: 0;
-		border-top: 1px solid var(--background-tip);
+		&:first-child {
+			margin-top: 0;
+			border-top: 1px solid var(--background-tip);
+		}
 	}
 
 	& &__period {
@@ -152,10 +159,12 @@
 			border: 2px solid transparent;
 			border-radius: 50%;
 			background-color: var(--background-accord);
-			transition: border-color .3s, background-color .3s;
+			transition-duration: .3s;
+			transition-property: border-color, background-color;
 
 			path {
-				transition: stroke .3s, transform .3s;
+				transition-duration: .3s;
+				transition-property: stroke, transform;
 				transform-origin: center;
 			}
 		}
@@ -163,21 +172,8 @@
 		span {
 			outline: 2px solid transparent;
 			outline-offset: 2px;
-			transition: outline-color .2s, color .2s;
-		}
-
-		&:hover {
-			span {
-				color: var(--background-control);
-			}
-
-			svg {
-				background-color: var(--background-control);
-
-				path {
-					stroke: var(--font-alt);
-				}
-			}
+			transition-duration: .3s;
+			transition-property: outline-color, color;
 		}
 
 		&:focus-visible {
@@ -187,6 +183,22 @@
 
 			svg {
 				border-color: var(--focus_click);
+			}
+		}
+
+		@media (pointer: fine) {
+			&:hover {
+				span {
+					color: var(--background-control);
+				}
+
+				svg {
+					background-color: var(--background-control);
+
+					path {
+						stroke: var(--font-alt);
+					}
+				}
 			}
 		}
 
@@ -233,20 +245,23 @@
 		font-family: "Open Sans", sans-serif;
 		line-height: 1;
 		text-decoration: underline transparent;
-		transition: color .2s, outline-color .2s, text-decoration-color .2s;
-	}
+		transition-property: color, outline-color, text-decoration-color;
+		animation-duration: .3s;
 
-	&__artist-btn:hover {
-		color: var(--font-link);
-		text-decoration-color: var(--font-link);
-	}
+		&:focus-visible {
+			outline-color: var(--focus_click);
+		}
 
-	&__artist-btn:active {
-		color: var(--focus_click);
-	}
+		@media (pointer: fine) {
+			&:hover {
+				color: var(--font-link);
+				text-decoration-color: var(--font-link);
+			}
+		}
 
-	&__artist-btn:focus-visible {
-		outline-color: var(--focus_click);
+		&:active {
+			color: var(--focus_click);
+		}
 	}
 
 	&__artist-btn--active {
@@ -293,7 +308,7 @@
 	padding: 29px 0 31px 4px;
 }
 
-.ac .ac-trigger:focus {
+.ac .ac-trigger:focus-visible {
 	color: var(--font-main);
 }
 

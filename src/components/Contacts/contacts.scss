@@ -56,8 +56,10 @@
 			box-shadow: 0 0 0 3px var(--focus_click);
 		}
 
-		&:hover {
-			filter: brightness(.7);
+		@media (pointer: fine) {
+			&:hover {
+				filter: brightness(.7);
+			}
 		}
 
 		&:active {
@@ -82,6 +84,11 @@
 		border: 1px solid var(--font-main);
 		border-radius: 100px;
 		font-size: 16px;
+		transition: box-shadow .3s;
+
+		&:focus {
+			box-shadow: 0 0 0 2px var(--focus_click);
+		}
 	}
 
 	&__btn-submit {
@@ -104,9 +111,11 @@
 			outline-color: var(--focus_click);
 		}
 
-		&:hover {
-			background-color: var(--background-control);
-			color: var(--font-alt);
+		@media (pointer: fine) {
+			&:hover {
+				background-color: var(--background-control);
+				color: var(--font-alt);
+			}
 		}
 
 		&:active {

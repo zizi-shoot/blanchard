@@ -6,9 +6,10 @@
 		line-height: 0;
 		transition-duration: .3s;
 		transition-property: outline-color, filter;
-
-		&:hover {
-			filter: brightness(.7);
+		@media (pointer: fine) {
+			&:hover {
+				filter: brightness(.7);
+			}
 		}
 
 		&:active {
@@ -43,7 +44,7 @@
 			transition: box-shadow .3s;
 
 			&:focus-visible {
-				box-shadow: 0 0 0 3px var(--focus_click);
+				box-shadow: 0 0 0 5px var(--focus_click);
 			}
 
 			img {

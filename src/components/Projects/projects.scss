@@ -127,6 +127,11 @@
 
 .partner {
 	position: relative;
+	outline: none;
+
+	&:focus-visible::after {
+		opacity: 1;
+	}
 
 	&::after {
 		content: "";

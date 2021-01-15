@@ -23,5 +23,12 @@ const gallerySwiper = new Swiper('.gallery__swiper', {
 		el: '.swiper-pagination',
 		type: 'fraction',
 	},
+	a11y: {
+		enabled: true,
+		prevSlideMessage: 'Предыдущий слайд',
+		nextSlideMessage: 'Следующий слайд',
+		firstSlideMessage: 'Это первый слайд',
+		lastSlideMessage: 'Это последний слайд',
+	},
 });
 gallerySwiper.setGrabCursor();

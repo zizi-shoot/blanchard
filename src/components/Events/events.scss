@@ -27,29 +27,19 @@
 	&__more-btn {
 		padding: 16px 32px;
 		border: 2px solid var(--background-control);
-		border-radius: 100px;
 		background-color: transparent;
 		color: var(--background-control);
-		outline: 2px solid transparent;
 		outline-offset: -18px;
-		font-weight: 700;
 		font-size: 18px;
 		line-height: 25px;
-		transition-duration: .3s;
 		transition-property: color, outline-color, background-color, border-color;
-
-		&:focus-visible {
-			outline-color: var(--focus_click);
-		}
-
-		&:hover {
-			background-color: var(--background-control);
-			color: var(--font-alt);
+		@media (pointer: fine) {
+			&:hover {
+				color: var(--font-alt);
+			}
 		}
 
 		&:active {
-			border-color: var(--hover-main);
-			background-color: var(--focus_click);
 			color: var(--font-alt);
 		}
 	}
@@ -110,23 +100,10 @@
 	}
 }
 
-.event-1 {
-	background-image: url("/img/event-1.jpg");
-}
 
-.event-2 {
-	background-image: url("/img/event-2.jpg");
-}
 
-.event-3 {
-	background-image: url("/img/event-3.jpg");
-}
 
-.event-4 {
-	background-image: url("/img/event-4.jpg");
-}
 
-.event-5 {
-	background-image: url("/img/event-5.jpg");
-}
+
+
 
