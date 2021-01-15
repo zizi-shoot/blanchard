@@ -10,39 +10,8 @@
 	}
 
 	&__nav {
-		display: flex;
-		justify-content: space-between;
 		width: vw(896);
 		margin-right: vw(100);
-		font-weight: 600;
-		font-size: 18px;
-		line-height: 25px;
-	}
-
-	&__link,
-	&__enter-btn {
-		outline: 2px solid transparent;
-		outline-offset: var(--offset);
-		transition-duration: .3s;
-		transition-property: color, outline-color;
-
-		&:focus-visible {
-			outline-color: var(--focus_click);
-		}
-
-		@media (pointer: fine) {
-			&:hover {
-				color: var(--hover-alt);
-			}
-		}
-	}
-
-	&__link {
-		color: var(--font-alt);
-
-		&:active {
-			color: var(--focus_click);
-		}
 	}
 
 	&__enter-btn {
@@ -62,8 +31,12 @@
 		}
 
 		@media (pointer: fine) {
-			&:hover svg path {
-				fill: var(--hover-alt)
+			&:hover {
+				color: var(--hover-alt);
+
+				svg path {
+					fill: var(--hover-alt)
+				}
 			}
 		}
 
@@ -80,6 +53,41 @@
 		position: absolute;
 		width: 100%;
 		background-color: rgba(0, 0, 0, .4);
+	}
+}
+
+.head-nav {
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 25px;
+	}
+
+	&__link {
+		color: var(--font-alt);
+		@media (pointer: fine) {
+			&:hover {
+				color: var(--hover-alt);
+			}
+		}
+
+		&:active {
+			color: var(--focus_click);
+		}
+	}
+}
+
+.head-nav__link,
+.header__enter-btn {
+	outline: 2px solid transparent;
+	outline-offset: var(--offset);
+	transition-duration: .3s;
+	transition-property: color, outline-color;
+
+	&:focus-visible {
+		outline-color: var(--focus_click);
 	}
 }
 
@@ -205,6 +213,7 @@
 	}
 
 	&__input {
+		order: 1;
 		width: 218px;
 		padding: 0 0 3px;
 		border: none;
