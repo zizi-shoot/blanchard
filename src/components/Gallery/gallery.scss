@@ -160,8 +160,8 @@
 	}
 
 	&[data-type*=select-one] {
-		&__inner {
-			padding-bottom: 3px;
+		.choices__inner {
+			padding-bottom: 2.5px;
 		}
 
 		&::after {
