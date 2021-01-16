@@ -11,6 +11,15 @@ const projectsSwiper = new Swiper('.projects__swiper', {
 		nextEl: '.projects__btn-next',
 		prevEl: '.projects__btn-prev',
 	},
+
+	breakpoints: {
+		1200: {
+			spaceBetween: 30,
+		},
+		1400: {
+			spaceBetween: 50,
+		},
+	},
 });
 
 tippy('#tooltip-1', {

@@ -25,7 +25,7 @@ menu.addEventListener('click', (ev) => {
 			e.classList.remove('head-bar__scrollbar-wrapper--visible');
 		}
 	});
-	const target = ev.target.localName === 'button' ? ev.target : ev.target.querySelector('.head-bar__open-btn');
+	const target = ev.target.localName === 'button' ? ev.target : ev.target.querySelector('.head-bar__btn-open');
 	target.nextElementSibling.classList.toggle('head-bar__scrollbar-wrapper--visible');
 	document.addEventListener('click', hideMenuFromOut);
 });

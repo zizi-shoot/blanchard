@@ -6,7 +6,8 @@
 
 	&__container {
 		display: grid;
-		grid-template: repeat(4, auto)/400px 1fr;
+		grid-template-rows: repeat(4, auto);
+		grid-template-columns: 400px 1fr;
 		column-gap: vw(50);
 	}
 
@@ -220,6 +221,12 @@
 				background-color: var(--background-control);
 			}
 		}
+	}
+}
+
+@media (max-width: 1400px) {
+	.gallery__container {
+		grid-template-columns: 330px 1fr;
 	}
 }
 

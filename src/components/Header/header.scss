@@ -14,7 +14,7 @@
 		margin-right: vw(100);
 	}
 
-	&__enter-btn {
+	&__btn-enter {
 		padding: 0;
 		border: none;
 		background-color: transparent;
@@ -80,7 +80,7 @@
 }
 
 .head-nav__link,
-.header__enter-btn {
+.header__btn-enter {
 	outline: 2px solid transparent;
 	outline-offset: var(--offset);
 	transition-duration: .3s;
@@ -107,7 +107,7 @@
 		width: vw(1036);
 	}
 
-	&__open-btn {
+	&__btn-open {
 		position: relative;
 		z-index: 1;
 		padding: 0;
@@ -144,7 +144,7 @@
 
 		@media (pointer: fine) {
 			&:hover {
-				.head-bar__open-btn {
+				.head-bar__btn-open {
 					color: var(--font-link);
 				}
 
@@ -164,7 +164,7 @@
 		}
 	}
 
-	&__item &__open-btn:active {
+	&__item &__btn-open:active {
 		color: var(--focus_click);
 
 		svg path {
@@ -204,7 +204,7 @@
 		}
 	}
 
-	&__search-btn {
+	&__btn-search {
 		position: relative;
 		top: 6px;
 		margin-right: 4px;
@@ -420,4 +420,14 @@
 
 .balla {
 	background-image: url("../img/header-balla.jpg");
+}
+
+@media (max-width: 1400px) {
+	.header__nav {
+		width: 60%;
+		margin-right: 0;
+	}
+	.head-bar__menu {
+		width: 70%;
+	}
 }

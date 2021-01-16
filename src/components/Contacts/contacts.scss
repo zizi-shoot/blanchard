@@ -129,3 +129,15 @@
 [class$="ground-pane"] {
 	filter: grayscale(1);
 }
+
+@media (max-width: 1400px) {
+	.contacts {
+		&__connect {
+			max-width: calc(50% - 25px);
+		}
+
+		&__map {
+			max-width: calc(50% + 25px);
+		}
+	}
+}

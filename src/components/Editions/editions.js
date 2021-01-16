@@ -15,4 +15,12 @@ const editionsSwiper = new Swiper('.editions__swiper', {
 	slidesPerView: 3,
 	spaceBetween: 50,
 	slidesPerGroup: 3,
+	breakpoints: {
+		1200: {
+			spaceBetween: 30,
+		},
+		1400: {
+			spaceBetween: 50,
+		},
+	},
 });

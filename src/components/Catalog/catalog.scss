@@ -235,7 +235,7 @@
 		padding-top: 1px;
 	}
 
-	&__artist-btn {
+	&__btn-artist {
 		padding: 0;
 		border: none;
 		background-color: transparent;
@@ -264,7 +264,7 @@
 		}
 	}
 
-	&__artist-btn--active {
+	&__btn-artist--active {
 		color: var(--background-control);
 		pointer-events: none;
 	}
@@ -312,6 +312,18 @@
 	color: var(--font-main);
 }
 
+@media (max-width: 1400px) {
+	.catalog-tab {
+		&__descr {
+			max-width: 90%;
+		}
 
+		&__choice {
+			width: 55%;
+		}
 
-
+		&__artist-wrapper {
+			max-width: calc(45% - 30px);
+		}
+	}
+}

@@ -2,7 +2,7 @@
 	<div class="editions__container page-container">
 		<h2 class="editions__title section-title">Издания</h2>
 		<form class="editions__categories categories">
-			<h3 class="categories__title">Категории</h3>
+			<h3 class="categories__title filters-title">Категории</h3>
 			<label class="categories__label"><input class="categories__input visually-hidden"
 			                                        type="checkbox"><span></span><span>Бестселлеры</span></label>
 			<label class="categories__label"><input class="categories__input visually-hidden" type="checkbox"><span></span><span>Искусство</span></label>
@@ -26,14 +26,14 @@
 
 		</form>
 		<form class="editions__prices prices">
-			<h3 class="prices__title">Цена</h3>
+			<h3 class="prices__title filters-title">Цена</h3>
 			<div class="prices__wrapper">
 				<label class="prices__label min-price"><span>От</span><input class="prices__input" placeholder="50" type="number"></label>
 				<label class="prices__label max-price"><span>до</span><input class="prices__input" placeholder="25 000" type="number"></label>
 				<span class="prices__currency">рублей</span>
 			</div>
 		</form>
-		<div class="editions__controls swiper-controls">
+		<div aria-hidden="true" class="editions__controls swiper-controls">
 			<button class="editions__btn-prev swiper-button-prev">
 				<svg fill="none" height="12" viewBox="0 0 11 12" width="11" xmlns="http://www.w3.org/2000/svg">
 					<path d="M6 11L0.999995 6L6 0.999998" stroke="white" />
@@ -46,7 +46,7 @@
 				</svg>
 			</button>
 		</div>
-		<div aria-hidden="true" class="editions__swiper swiper-container">
+		<div class="editions__swiper swiper-container">
 
 			<ul class="editions__list swiper-wrapper" title="Издания">
 				<li class="swiper-slide">
@@ -54,7 +54,7 @@
 						<img alt="Обложка издания" class="edition__pic" src="img/editions-1.jpg">
 						<div class="edition__wrapper">
 							<h3 class="edition__title">Искусство цвета</h3>
-							<p class="edition__author">Иттен, Иоханнес </p>
+							<p class="edition__author">Иттен, Иоханнес</p>
 						</div>
 						<p class="edition__price">620</p>
 						<button class="edition__btn-order btn">Заказать</button>

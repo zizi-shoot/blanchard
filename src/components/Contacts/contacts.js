@@ -30,3 +30,9 @@ function init() {
 
 	myMap.geoObjects.add(myPlacemark1);
 }
+
+window.addEventListener('resize', () => {
+	const pageContainer = document.querySelector('.page-container');
+	const connectForm = document.querySelector('.contacts__connect');
+	connectForm.style.paddingLeft = `${pageContainer.offsetLeft + 50}px`;
+});

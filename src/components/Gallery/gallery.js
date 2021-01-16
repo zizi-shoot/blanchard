@@ -23,6 +23,14 @@ const gallerySwiper = new Swiper('.gallery__swiper', {
 		el: '.swiper-pagination',
 		type: 'fraction',
 	},
+	breakpoints: {
+		1200: {
+			spaceBetween: 30,
+		},
+		1400: {
+			spaceBetween: 50,
+		},
+	},
 
 });
 gallerySwiper.setGrabCursor();

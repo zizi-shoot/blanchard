@@ -11,11 +11,11 @@ const openedAccordions = {
 	5: 1, // Belgium
 };
 const countryBtns = document.querySelectorAll('.catalog-nav__btn');
-const artistBtns = document.querySelectorAll('.period-item__artist-btn');
+const artistBtns = document.querySelectorAll('.period-item__btn-artist');
 
 function createItem(event, tabName, tabClass, btnClass, dataName) {
 	const target = tabClass === 'catalog-tab__artist' ? event.currentTarget.closest('section') : document;
-	const targetList = tabClass === 'catalog-tab__artist' ? event.currentTarget.closest('section').querySelectorAll('.period-item__artist-btn') : countryBtns;
+	const targetList = tabClass === 'catalog-tab__artist' ? event.currentTarget.closest('section').querySelectorAll('.period-item__btn-artist') : countryBtns;
 	return {
 		btnPrev: Array.from(targetList).find((targetItem) => targetItem.classList.contains(`${btnClass}--active`)),
 		btnNext: event.currentTarget,
@@ -64,4 +64,4 @@ function addTabListener(itemList, tabName, tabClass, btnClass, dataName) {
 }
 
 addTabListener(countryBtns, 'country', 'catalog__tab', 'catalog-nav__btn', 'country_btn');
-addTabListener(artistBtns, 'artist', 'catalog-tab__artist', 'period-item__artist-btn', 'artist_btn');
+addTabListener(artistBtns, 'artist', 'catalog-tab__artist', 'period-item__btn-artist', 'artist_btn');

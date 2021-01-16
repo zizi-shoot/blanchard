@@ -14,7 +14,7 @@
 	&__list {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
-		gap: 50px;
+		gap: vw(50);
 		margin-bottom: 50px;
 	}
 
@@ -24,7 +24,7 @@
 		}
 	}
 
-	&__more-btn {
+	&__btn-more {
 		padding: 16px 32px;
 		border: 2px solid var(--background-control);
 		background-color: transparent;
@@ -48,7 +48,8 @@
 .event {
 	display: flex;
 	flex-direction: column;
-	height: 700px;
+	height: 100%;
+	min-height: 700px;
 	padding: 315px 30px 42px 50px;
 	border: 1px solid var(--background-tip);
 	background: no-repeat top/contain;
@@ -97,6 +98,13 @@
 		&:active {
 			color: var(--focus_click);
 		}
+	}
+}
+
+@media (max-width: 1400px) {
+	.event {
+		padding-top: 250px;
+		padding-left: 30px;
 	}
 }
 

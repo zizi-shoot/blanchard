@@ -1,4 +1,4 @@
-const moreBtn = document.querySelector('.events__more-btn');
+const moreBtn = document.querySelector('.events__btn-more');
 
 function showMoreEvents() {
 	const hiddenEvents = document.querySelectorAll('.events__item--hidden');
