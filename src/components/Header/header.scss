@@ -35,7 +35,7 @@
 				color: var(--hover-alt);
 
 				svg path {
-					fill: var(--hover-alt)
+					fill: var(--hover-alt);
 				}
 			}
 		}
@@ -220,6 +220,7 @@
 		border-bottom: 1px solid rgba(255, 255, 255, 0.85);
 		background-color: transparent;
 		color: var(--font-alt);
+		font-size: 16px;
 
 		&::placeholder {
 			color: var(--font-alt);
@@ -429,5 +430,30 @@
 	}
 	.head-bar__menu {
 		width: 70%;
+	}
+}
+
+@media (max-width: 1200px) {
+	.head-nav__link {
+		font-weight: 400;
+		font-size: 16px;
+	}
+	.head-bar {
+		&__btn-open {
+			font-size: 16px;
+		}
+
+		&__btn-search svg {
+			width: 18px;
+		}
+
+		&__input {
+			width: 180px;
+			font-size: 14px;
+
+			&::placeholder {
+				font-size: 14px;
+			}
+		}
 	}
 }

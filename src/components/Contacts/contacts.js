@@ -27,12 +27,14 @@ function init() {
 		iconImageSize: [40, 40],
 		iconImageOffset: [-15, -27],
 	});
-
 	myMap.geoObjects.add(myPlacemark1);
 }
 
-window.addEventListener('resize', () => {
+function calcFormPaddingLeft() {
 	const pageContainer = document.querySelector('.page-container');
 	const connectForm = document.querySelector('.contacts__connect');
 	connectForm.style.paddingLeft = `${pageContainer.offsetLeft + 50}px`;
-});
+}
+
+document.addEventListener('DOMContentLoaded', calcFormPaddingLeft);
+window.addEventListener('resize', calcFormPaddingLeft);

@@ -22,7 +22,8 @@
 	}
 
 	&__prices {
-		grid-row: 3/4
+		grid-row: 3/4;
+		align-self: end;
 	}
 
 	&__swiper {
@@ -48,10 +49,6 @@
 		position: relative;
 		padding-left: 24px;
 		cursor: pointer;
-
-		&:focus-visible {
-			color: #00a5bb;
-		}
 	}
 
 	&__input {

@@ -1,7 +1,6 @@
 import Swiper, { Navigation, Pagination } from 'swiper';
 
 Swiper.use([Navigation, Pagination]);
-
 const editionsSwiper = new Swiper('.editions__swiper', {
 	pagination: {
 		el: '.editions__pagination',
@@ -11,15 +10,19 @@ const editionsSwiper = new Swiper('.editions__swiper', {
 		nextEl: '.editions__btn-next',
 		prevEl: '.editions__btn-prev',
 	},
-
-	slidesPerView: 3,
-	spaceBetween: 50,
-	slidesPerGroup: 3,
 	breakpoints: {
-		1200: {
-			spaceBetween: 30,
+		320: {
+			slidesPerView: 1,
+			slidesPerGroup: 1,
+		},
+		576: {
+			slidesPerView: 2,
+			slidesPerGroup: 2,
+			spaceBetween: 34,
 		},
 		1400: {
+			slidesPerView: 3,
+			slidesPerGroup: 3,
 			spaceBetween: 50,
 		},
 	},

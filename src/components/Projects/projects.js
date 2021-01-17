@@ -2,26 +2,28 @@ import Swiper, { Navigation } from 'swiper';
 import tippy from 'tippy.js';
 
 Swiper.use([Navigation]);
-
 const projectsSwiper = new Swiper('.projects__swiper', {
-	slidesPerView: 3,
-	spaceBetween: 50,
-	slidesPerGroup: 3,
 	navigation: {
 		nextEl: '.projects__btn-next',
 		prevEl: '.projects__btn-prev',
 	},
-
 	breakpoints: {
-		1200: {
-			spaceBetween: 30,
+		320: {
+			slidesPerView: 1,
+			slidesPerGroup: 1,
+		},
+		576: {
+			slidesPerView: 2,
+			slidesPerGroup: 2,
+			spaceBetween: 34,
 		},
 		1400: {
+			slidesPerView: 3,
+			slidesPerGroup: 3,
 			spaceBetween: 50,
 		},
 	},
 });
-
 tippy('#tooltip-1', {
 	content: 'Пример современных тенденций - современная методология разработки',
 	theme: 'tooltip',

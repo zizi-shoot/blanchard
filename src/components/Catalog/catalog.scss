@@ -43,7 +43,7 @@
 			}
 
 			&:active {
-				box-shadow: 0 0 0 2px var(--background-control)
+				box-shadow: 0 0 0 2px var(--background-control);
 			}
 		}
 
@@ -212,7 +212,7 @@
 				background-color: var(--focus_click);
 
 				path {
-					stroke: var(--font-alt)
+					stroke: var(--font-alt);
 				}
 			}
 		}
@@ -325,5 +325,17 @@
 		&__artist-wrapper {
 			max-width: calc(45% - 30px);
 		}
+	}
+}
+
+@media (max-width: 1200px) {
+	.catalog-tab {
+		&__artist-wrapper,
+		&__choice {
+			max-width: calc(50% - 25px);
+		}
+	}
+	.period-item__artist-list {
+		column-count: 2;
 	}
 }
