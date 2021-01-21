@@ -98,8 +98,7 @@
 		}
 
 		&__artist-wrapper {
-			position: relative;
-			width: calc(50% - 50px);
+			max-width: calc(50% - 50px);
 		}
 	}
 
@@ -312,24 +311,12 @@
 	color: var(--font-main);
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1366px) {
 	.catalog-tab {
 		&__descr {
 			max-width: 90%;
 		}
 
-		&__choice {
-			width: 55%;
-		}
-
-		&__artist-wrapper {
-			max-width: calc(45% - 30px);
-		}
-	}
-}
-
-@media (max-width: 1200px) {
-	.catalog-tab {
 		&__artist-wrapper,
 		&__choice {
 			max-width: calc(50% - 25px);
@@ -339,3 +326,29 @@
 		column-count: 2;
 	}
 }
+
+//@media (max-width: 1024px) {
+//	.catalog {
+//		&__nav {
+//			position: relative;
+//			top: 9px;
+//		}
+//	}
+//	.catalog-tab {
+//		&__descr {
+//			max-width: 100%;
+//		}
+//	}
+//	.period-item {
+//		&__artist-list {
+//			column-gap: 60px;
+//		}
+//
+//		&__artist-item:nth-last-child(-n+2) {
+//			display: none;
+//		}
+//	}
+//	.ac .ac-panel .ac-text {
+//		padding-bottom: 25px;
+//	}
+//}

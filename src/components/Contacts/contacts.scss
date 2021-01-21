@@ -130,7 +130,7 @@
 	filter: grayscale(1);
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1366px) {
 	.contacts {
 		&__connect {
 			max-width: calc(50% - 25px);
@@ -139,5 +139,11 @@
 		&__map {
 			max-width: calc(50% + 25px);
 		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.contacts__connect {
+		padding-right: vw(102, 1024);
 	}
 }

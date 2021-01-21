@@ -8,11 +8,12 @@
 
 	&__descr {
 		max-width: calc(65% + 40px);
+		@media (max-width: 1366px) {
+			max-width: 90%;
+		}
+		@media (max-width: 1024px) {
+			max-width: 100%;
+		}
 	}
 }
 
-@media (max-width: 1400px) {
-	.about__descr {
-		max-width: 90%;
-	}
-}

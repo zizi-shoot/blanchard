@@ -17,24 +17,38 @@ const gallerySwiper = new Swiper('.gallery__swiper', {
 		type: 'fraction',
 	},
 	breakpoints: {
-		320: {
-			slidesPerView: 1,
-			slidesPerGroup: 1,
-		},
-		576: {
-			slidesPerView: 2,
-			slidesPerGroup: 2,
-			slidesPerColumnFill: 'row',
+		1024: {
+			slidesPerView: 3,
+			slidesPerGroup: 3,
 			slidesPerColumn: 2,
+			slidesPerColumnFill: 'row',
 			spaceBetween: 34,
 		},
-		1400: {
+		1366: {
 			slidesPerView: 3,
 			slidesPerGroup: 3,
 			slidesPerColumn: 2,
 			slidesPerColumnFill: 'row',
 			spaceBetween: 50,
 		},
+		// 	320: {
+		// 		slidesPerView: 1,
+		// 		slidesPerGroup: 1,
+		// 	},
+		// 	576: {
+		// 		slidesPerView: 2,
+		// 		slidesPerGroup: 2,
+		// 		slidesPerColumnFill: 'row',
+		// 		slidesPerColumn: 2,
+		// 		spaceBetween: 34,
+		// 	},
+		// 	1400: {
+		// 		slidesPerView: 3,
+		// 		slidesPerGroup: 3,
+		// 		slidesPerColumn: 2,
+		// 		slidesPerColumnFill: 'row',
+		// 		spaceBetween: 50,
+		// 	},
 	},
 });
 gallerySwiper.setGrabCursor();
