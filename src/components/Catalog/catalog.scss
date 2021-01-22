@@ -327,28 +327,28 @@
 	}
 }
 
-//@media (max-width: 1024px) {
-//	.catalog {
-//		&__nav {
-//			position: relative;
-//			top: 9px;
-//		}
-//	}
-//	.catalog-tab {
-//		&__descr {
-//			max-width: 100%;
-//		}
-//	}
-//	.period-item {
-//		&__artist-list {
-//			column-gap: 60px;
-//		}
-//
-//		&__artist-item:nth-last-child(-n+2) {
-//			display: none;
-//		}
-//	}
-//	.ac .ac-panel .ac-text {
-//		padding-bottom: 25px;
-//	}
-//}
+@media (max-width: 1024px) {
+	.catalog {
+		&__nav {
+			position: relative;
+			top: 9px;
+		}
+	}
+	.catalog-tab {
+		&__descr {
+			max-width: 100%;
+		}
+	}
+	.period-item {
+		&__artist-list {
+			column-gap: 60px;
+		}
+
+		&__artist-item:nth-last-child(-n+2) {
+			display: none;
+		}
+	}
+	.ac .ac-panel .ac-text {
+		padding-bottom: 25px;
+	}
+}

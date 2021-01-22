@@ -609,30 +609,30 @@
 //	}
 //}
 //
-//@media (max-width: 1024px) {
-//	.header {
-//		&__container {
-//			padding-top: 28px;
-//			padding-bottom: 28px;
-//		}
-//
-//		&__logo {
-//			width: 187px;
-//			height: 44px;
-//		}
-//
-//		&__nav,
-//		&__enter,
-//		&__bottom-bar {
-//			display: none;
-//		}
-//
-//		&__burger,
-//		&__search {
-//			display: flex;
-//		}
-//	}
-//}
+@media (max-width: 1024px) {
+	.header {
+		&__container {
+			padding-top: 28px;
+			padding-bottom: 28px;
+		}
+
+		&__logo {
+			width: 187px;
+			height: 44px;
+		}
+
+		&__nav,
+		&__enter,
+		&__bottom-bar {
+			display: none;
+		}
+
+		&__burger,
+		&__search {
+			display: flex;
+		}
+	}
+}
 
 
 
