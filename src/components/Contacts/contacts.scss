@@ -1,3 +1,6 @@
+#map-mobile {
+	display: none;
+}
 .contacts {
 	display: flex;
 	flex-wrap: wrap;
@@ -145,5 +148,14 @@
 @media (max-width: 1024px) {
 	.contacts__connect {
 		padding-right: vw(102, 1024);
+	}
+}
+
+@media (max-width: 576px) {
+	#map-mobile {
+		display: block;
+	}
+	#map {
+		display: none;
 	}
 }

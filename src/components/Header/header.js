@@ -1,5 +1,13 @@
 import SimpleBar from 'simplebar';
 
+const menu = document.querySelector('.head-bar__menu');
+const scrollbarWrappers = document.querySelectorAll('.head-bar__scrollbar-wrapper');
+const burgerBtn = document.querySelector('.burger');
+const searchBtn = document.querySelector('.header__btn-search');
+const searchForm = document.querySelector('.header__search');
+const pageHeader = document.querySelector('header');
+const burgerMenu = document.querySelector('.header__nav');
+
 Array.prototype.forEach.call(
 	document.querySelectorAll('.simplebar'),
 	(el) => new SimpleBar(el, {
@@ -7,16 +15,19 @@ Array.prototype.forEach.call(
 		scrollbarMaxSize: 28,
 	}),
 );
-const menu = document.querySelector('.head-bar__menu');
-const scrollbarWrappers = document.querySelectorAll('.head-bar__scrollbar-wrapper');
-const burgerBtn = document.querySelector('.burger');
-const searchBtn = document.querySelector('.header__search');
-const searchForm = document.querySelector('.header__search');
-burgerBtn.addEventListener('click', () => {
-	document.querySelectorAll('.burger__line').forEach((el) => {
-		el.classList.toggle(`${el.classList[1]}--active`);
-	});
+
+burgerBtn.addEventListener('click', (ev) => {
+	ev.currentTarget.classList.toggle('burger--active');
+	burgerMenu.classList.toggle('header__nav--opened');
 });
+
+burgerMenu.addEventListener('click', () => {
+	setTimeout(() => {
+		burgerBtn.classList.remove('burger--active');
+		burgerMenu.classList.remove('header__nav--opened');
+	}, 700);
+});
+
 searchBtn.addEventListener('click', (ev) => {
 	if (!searchForm.classList.contains('header__search--expanded')) {
 		searchForm.classList.add('header__search--expanded');
@@ -48,7 +59,7 @@ menu.addEventListener('click', (ev) => {
 	target.nextElementSibling.classList.toggle('head-bar__scrollbar-wrapper--visible');
 	document.addEventListener('click', hideMenuFromOut);
 });
-const pageHeader = document.querySelector('header');
+
 pageHeader.addEventListener('animationstart', (e) => {
 	if (e.animationName === 'fade-in') {
 		e.target.classList.add('did-fade-in');

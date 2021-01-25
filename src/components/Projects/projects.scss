@@ -6,7 +6,7 @@
 		display: grid;
 		grid-template-rows: repeat(4, auto);
 		grid-template-columns: 30px 1fr 30px;
-		gap: 0 vw(45);
+		column-gap: vw(45);
 	}
 
 	&__title {
@@ -31,6 +31,7 @@
 	}
 
 	&__link-more {
+		display: inline-block;
 		color: var(--font-link);
 		outline: 2px solid transparent;
 		outline-offset: 2px;
@@ -71,10 +72,11 @@
 	&__partners-item {
 		a {
 			position: relative;
-			display: block;
-			height: 100%;
-			background-size: contain;
-			background-repeat: no-repeat;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 150px;
+			border: 1px solid var(--background-tip);
 			font-size: 0;
 			line-height: 0;
 		}
@@ -138,21 +140,14 @@
 		opacity: 1;
 	}
 
-	&::after {
-		content: "";
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		background: no-repeat center/contain;
-		opacity: 0;
-		transition: opacity .3s;
+	img {
+		filter: contrast(3) opacity(0.3) grayscale(1);
+		transition: filter .3s;
 	}
 
 	@media (pointer: fine) {
-		&:hover::after {
-			opacity: 1;
+		&:hover img {
+			filter: unset;
 		}
 	}
 }
@@ -185,60 +180,6 @@
 	text-align: center;
 }
 
-.partner-1 {
-	&::after {
-		background-image: url("/img/projects-1.jpg");
-	}
-}
-
-.partner-2 {
-	&::after {
-		background-image: url("/img/projects-2.jpg");
-	}
-}
-
-.partner-3 {
-	&::after {
-		background-image: url("/img/projects-3.jpg");
-	}
-}
-
-.partner-4 {
-	&::after {
-		background-image: url("/img/projects-4.jpg");
-	}
-}
-
-.partner-5 {
-	&::after {
-		background-image: url("/img/projects-5.jpg");
-	}
-}
-
-.partner-6 {
-	&::after {
-		background-image: url("/img/projects-6.jpg");
-	}
-}
-
-.partner-7 {
-	&::after {
-		background-image: url("/img/projects-7.jpg");
-	}
-}
-
-.partner-8 {
-	&::after {
-		background-image: url("/img/projects-8.jpg");
-	}
-}
-
-.partner-9 {
-	&::after {
-		background-image: url("/img/projects-9.jpg");
-	}
-}
-
 @media (max-width: 1366px) {
 	.projects__descr {
 		max-width: 90%;
@@ -248,5 +189,22 @@
 @media (max-width: 1024px) {
 	.projects__descr {
 		max-width: 100%;
+	}
+}
+
+@media (max-width: 992px) {
+	.projects {
+		&__container {
+			column-gap: 23px;
+		}
+
+		&__descr {
+			margin-bottom: 26px;
+			padding-right: 12px;
+		}
+
+		&__subtitle {
+			margin-bottom: 29px;
+		}
 	}
 }

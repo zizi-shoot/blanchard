@@ -352,3 +352,48 @@
 		padding-bottom: 25px;
 	}
 }
+
+@media (max-width: 992px) {
+	.catalog {
+		padding-bottom: 72px;
+	}
+	.catalog__tab-wrapper {
+		max-width: 100%;
+	}
+	.catalog-nav {
+		top: 3px;
+
+		&__item:not(:last-child) {
+			margin-right: 53.9px;
+		}
+	}
+	.catalog-tab {
+		&__descr {
+			margin-bottom: 20px;
+		}
+
+		&__choice,
+		&__artist-wrapper {
+			width: 100%;
+			max-width: 100%;
+		}
+
+		&__choice {
+			order: 0;
+			margin-bottom: 46px;
+		}
+	}
+	.period-item {
+		&__artist-list {
+			column-gap: 50px;
+			column-count: 3;
+		}
+
+		&__artist-item:nth-last-child(-n+2) {
+			display: list-item;
+		}
+	}
+	.ac .ac-panel .ac-text {
+		padding-bottom: 31px;
+	}
+}

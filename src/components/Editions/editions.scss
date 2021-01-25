@@ -243,3 +243,40 @@
 		margin-bottom: 14px;
 	}
 }
+
+@media (max-width: 992px) {
+	.editions {
+		padding-bottom: 37px;
+
+		&__container {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		&__controls {
+			margin-bottom: 23px;
+		}
+
+		&__swiper {
+			max-width: calc(100% - 27px * 2);
+			margin: 0 auto;
+		}
+	}
+	.categories {
+		display: grid;
+		grid-template-rows: repeat(5, auto);
+		grid-template-columns: repeat(3, auto);
+		grid-auto-flow: column;
+		column-gap: 50px;
+		width: 100%;
+		margin-bottom: 22px;
+
+		&__title {
+			grid-column: 1/-1;
+		}
+	}
+	.prices {
+		margin-bottom: 42px;
+	}
+}

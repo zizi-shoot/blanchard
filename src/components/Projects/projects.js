@@ -17,10 +17,10 @@ const projectsSwiper = new Swiper('.projects__swiper', {
 		// 		slidesPerGroup: 2,
 		// 		spaceBetween: 34,
 		// 	},
-		1024: {
+		768: {
 			slidesPerView: 2,
 			slidesPerGroup: 2,
-			spaceBetween: 50,
+			spaceBetween: 34,
 		},
 		1366: {
 			slidesPerView: 3,

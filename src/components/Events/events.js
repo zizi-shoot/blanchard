@@ -1,4 +1,21 @@
 const moreBtn = document.querySelector('.events__btn-more');
+const events = document.querySelectorAll('.events__item');
+
+function calcEventsPerLine() {
+	let eventsPerLine = null;
+	const windowWidth = window.innerWidth;
+	if (windowWidth <= 576) eventsPerLine = 1;
+	if (windowWidth > 576) eventsPerLine = 2;
+	if (windowWidth > 992) eventsPerLine = 3;
+	events.forEach((ev) => ev.classList.remove('events__item--hidden'));
+	for (let i = eventsPerLine; i < events.length; i++) {
+		events[i].classList.toggle('events__item--hidden');
+	}
+	return eventsPerLine;
+}
+
+document.addEventListener('DOMContentLoaded', calcEventsPerLine);
+window.addEventListener('resize', calcEventsPerLine);
 
 function showMoreEvents() {
 	const hiddenEvents = document.querySelectorAll('.events__item--hidden');
@@ -9,8 +26,8 @@ function showMoreEvents() {
 }
 
 function showLessEvents() {
-	const events = document.querySelectorAll('.events__item');
-	for (let i = 3; i < events.length; i++) {
+	const eventsPerLine = calcEventsPerLine();
+	for (let i = eventsPerLine; i < events.length; i++) {
 		events[i].classList.add('events__item--hidden');
 		moreBtn.innerText = 'Все события';
 	}
