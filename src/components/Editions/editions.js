@@ -20,6 +20,11 @@ const editionsSwiper = new Swiper('.editions__swiper', {
 			slidesPerGroup: 2,
 			spaceBetween: 34,
 		},
+		1024: {
+			slidesPerView: 2,
+			slidesPerGroup: 2,
+			spaceBetween: 50,
+		},
 		1366: {
 			slidesPerView: 3,
 			slidesPerGroup: 3,

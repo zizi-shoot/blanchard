@@ -13,7 +13,7 @@
 
 	&__list {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: repeat(3, 1fr);
 		gap: 50px;
 		margin-bottom: 50px;
 	}
@@ -163,6 +163,34 @@
 
 		&__descr {
 			padding-right: 12px;
+		}
+	}
+}
+
+@media (max-width: 992px) {
+	.events {
+		padding-bottom: 82px;
+
+		&__list {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 34px;
+		}
+	}
+	.event {
+		padding-bottom: 48px;
+
+		&__pic {
+			max-height: 200px;
+		}
+
+		&__text-wrapper {
+			max-height: 291px;
+			margin-bottom: 68px;
+			padding-right: 24px;
+		}
+
+		&__title {
+			margin-bottom: 0;
 		}
 	}
 }

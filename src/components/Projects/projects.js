@@ -8,19 +8,22 @@ const projectsSwiper = new Swiper('.projects__swiper', {
 		prevEl: '.projects__btn-prev',
 	},
 	breakpoints: {
-		// 	320: {
-		// 		slidesPerView: 1,
-		// 		slidesPerGroup: 1,
-		// 	},
+
 		// 	576: {
 		// 		slidesPerView: 2,
 		// 		slidesPerGroup: 2,
 		// 		spaceBetween: 34,
 		// 	},
+
 		768: {
 			slidesPerView: 2,
 			slidesPerGroup: 2,
 			spaceBetween: 34,
+		},
+		1024: {
+			slidesPerView: 2,
+			slidesPerGroup: 2,
+			spaceBetween: 50,
 		},
 		1366: {
 			slidesPerView: 3,

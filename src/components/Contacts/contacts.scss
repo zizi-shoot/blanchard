@@ -151,6 +151,23 @@
 	}
 }
 
+@media (max-width: 992px) {
+	.contacts {
+		&__connect {
+			max-width: calc(50% + 46px);
+			padding-right: 44px;
+		}
+
+		&__callback {
+			margin-bottom: 36px;
+		}
+
+		&__map {
+			max-width: calc(50% - 46px);
+		}
+	}
+}
+
 @media (max-width: 576px) {
 	#map-mobile {
 		display: block;
