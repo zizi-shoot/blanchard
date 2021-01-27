@@ -17,7 +17,12 @@ const gallerySwiper = new Swiper('.gallery__swiper', {
 		type: 'fraction',
 	},
 	breakpoints: {
-		768: {
+		576: {
+			slidesPerView: 2,
+			slidesPerGroup: 2,
+			spaceBetween: 34,
+		},
+		767: {
 			slidesPerView: 2,
 			slidesPerGroup: 2,
 			slidesPerColumn: 2,

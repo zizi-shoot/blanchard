@@ -1,6 +1,7 @@
 #map-mobile {
 	display: none;
 }
+
 .contacts {
 	display: flex;
 	flex-wrap: wrap;
@@ -43,6 +44,7 @@
 	}
 
 	&__messenger {
+		display: inline-block;
 		width: 40px;
 		height: 40px;
 		border-radius: 50%;
@@ -168,11 +170,35 @@
 	}
 }
 
-@media (max-width: 576px) {
+@media (max-width: 767px) {
 	#map-mobile {
 		display: block;
 	}
 	#map {
 		display: none;
+	}
+	.contacts {
+		padding: 0 50px 25px;
+
+		&__title {
+			padding: 0;
+		}
+
+		&__connect {
+			flex-flow: column nowrap;
+			width: 100%;
+			max-width: 100%;
+			padding: 0;
+			border: none;
+		}
+
+		&__map {
+			position: relative;
+			left: -50px;
+			width: 100vw;
+			max-width: 100vw;
+			height: 420px;
+			margin-bottom: 20px;
+		}
 	}
 }

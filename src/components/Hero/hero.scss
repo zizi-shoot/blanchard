@@ -40,6 +40,10 @@
 				border-color: var(--hover-main);
 			}
 		}
+		@media (max-width: 767px) {
+			display: block;
+			margin: 0 auto;
+		}
 	}
 
 	@media (max-width: 1024px) {
@@ -53,5 +57,23 @@
 			margin-bottom: 133px;
 		}
 	}
+	@media (max-width: 767px) {
+		&__title {
+			margin-bottom: 16px;
+			font-size: 60px;
+		}
+		&__descr {
+			margin-bottom: 48px;
+			font-weight: 400;
+			font-size: 20px;
+		}
+		&__title,
+		&__descr {
+			line-height: 1.15;
+			text-align: center;
+		}
+	}
 }
+
+
 

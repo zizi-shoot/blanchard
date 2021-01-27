@@ -46,7 +46,9 @@ function calcFormPaddingLeft() {
 	const pageContainer = document.querySelector('.page-container');
 	const connectForm = document.querySelector('.contacts__connect');
 	const containerPadding = window.innerWidth <= 1024 ? 50 : 30;
-	connectForm.style.paddingLeft = `${pageContainer.offsetLeft + containerPadding}px`;
+	if (window.innerWidth > 767) {
+		connectForm.style.paddingLeft = `${pageContainer.offsetLeft + containerPadding}px`;
+	}
 }
 
 document.addEventListener('DOMContentLoaded', calcFormPaddingLeft);

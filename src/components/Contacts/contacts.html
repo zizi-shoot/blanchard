@@ -2,8 +2,8 @@
 	<h2 class="contacts__title section-title page-container">Контакты</h2>
 	<div class="contacts__connect">
 		<h3 class="contacts__showroom-name">Шоурум №2</h3>
-		<div aria-label="Шоурумы на карте" class="contacts__map" id="map-mobile"></div>
 		<address class="contacts__address">Покровский бульвар, дом 24, строение 3</address>
+		<div aria-label="Шоурумы на карте" class="contacts__map" id="map-mobile"></div>
 		<h3 class="contacts__callback-title contacts-subtitle">Заказать обратный звонок</h3>
 		<form action="#" class="contacts__callback callback-form">
 			<input aria-label="Имя пользователя" autocomplete="name" class="callback-form__input" name="user-name" placeholder="Имя*" type="text">
@@ -12,8 +12,10 @@
 			<button class="callback-form__btn-submit" type="submit">Заказать</button>
 		</form>
 		<h3 class="contacts__messengers-title contacts-subtitle">Связаться в один клик</h3>
-		<a aria-label="Перейти в Вотсапп" class="contacts__messenger" href="" style="background-image: url('/img/sprite.svg#whatsapp');"></a>
-		<a aria-label="Перейти в Телеграмм" class="contacts__messenger" href="" style="background-image: url('/img/sprite.svg#telegram');"></a>
+		<div class="contacts__messenger-wrapper">
+			<a aria-label="Перейти в Вотсапп" class="contacts__messenger" href="" style="background-image: url('/img/sprite.svg#whatsapp');"></a>
+			<a aria-label="Перейти в Телеграмм" class="contacts__messenger" href="" style="background-image: url('/img/sprite.svg#telegram');"></a>
+		</div>
 	</div>
 	<div aria-label="Шоурумы на карте" class="contacts__map" id="map"></div>
 </section>

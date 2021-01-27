@@ -280,3 +280,25 @@
 		margin-bottom: 42px;
 	}
 }
+
+@media (max-width: 767px) {
+	.categories {
+		grid-template-columns: repeat(2, auto);
+		grid-auto-flow: row;
+	}
+	.edition {
+		flex-direction: column;
+
+		&__wrapper {
+			width: 100%;
+		}
+
+		&__title,
+		&__author {
+			display: -webkit-box;
+			overflow: hidden;
+			-webkit-line-clamp: 1;
+			-webkit-box-orient: vertical;
+		}
+	}
+}

@@ -11,8 +11,10 @@ body {
 	margin: 0 auto;
 	padding: 0 30px;
 	@media (max-width: 1024px) {
-		max-width: 1700px;
 		padding: 0 50px;
+	}
+	@media (max-width: 576px) {
+		padding: 0 15px;
 	}
 }
 
@@ -20,6 +22,11 @@ body {
 	font-weight: 400;
 	font-size: 48px;
 	line-height: 65px;
+	@media (max-width: 576px) {
+		font-weight: 400;
+		font-size: 28px;
+		line-height: 38px;
+	}
 }
 
 .section-subtitle {

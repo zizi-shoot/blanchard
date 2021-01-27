@@ -397,3 +397,9 @@
 		padding-bottom: 31px;
 	}
 }
+
+@media (max-width: 767px) {
+	.period-item__artist-list {
+		column-count: 2;
+	}
+}

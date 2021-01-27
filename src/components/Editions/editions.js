@@ -15,7 +15,12 @@ const editionsSwiper = new Swiper('.editions__swiper', {
 		// 		slidesPerView: 1,
 		// 		slidesPerGroup: 1,
 		// 	},
-		768: {
+		576: {
+			slidesPerView: 2,
+			slidesPerGroup: 2,
+			spaceBetween: 34,
+		},
+		767: {
 			slidesPerView: 2,
 			slidesPerGroup: 2,
 			spaceBetween: 34,
