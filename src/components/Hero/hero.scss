@@ -44,6 +44,11 @@
 			display: block;
 			margin: 0 auto;
 		}
+		@media (max-width: 576px) {
+			padding: 8px 18px;
+			font-size: 12px;
+			line-height: 16px;
+		}
 	}
 
 	@media (max-width: 1024px) {
@@ -71,6 +76,22 @@
 		&__descr {
 			line-height: 1.15;
 			text-align: center;
+		}
+	}
+	@media (max-width: 576px) {
+		padding-top: 30px;
+		padding-bottom: 46px;
+		&__title {
+			margin-bottom: 12px;
+			font-weight: 700;
+			font-size: 32px;
+			line-height: 39px;
+		}
+		&__descr {
+			max-width: 90%;
+			margin: 0 auto 42px;
+			font-size: 12px;
+			line-height: 16px;
 		}
 	}
 }

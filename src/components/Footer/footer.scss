@@ -71,3 +71,25 @@
 		padding: 25px 0;
 	}
 }
+
+@media (max-width: 576px) {
+	.footer {
+		padding: 9px 0 10px;
+
+		&__networks-item {
+			&:not(:last-child) {
+				margin-right: 13px;
+			}
+
+			a img {
+				width: 25px;
+				height: 25px;
+			}
+		}
+	}
+	.logo {
+		width: 96px;
+		height: 23px;
+	}
+}
+

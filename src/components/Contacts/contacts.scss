@@ -178,27 +178,90 @@
 		display: none;
 	}
 	.contacts {
-		padding: 0 50px 25px;
+		padding-bottom: 40px;
 
 		&__title {
-			padding: 0;
+			padding: 0 50px;
+		}
+
+		&__showroom-name {
+			font-size: 18px;
+			line-height: 25px;
+		}
+
+		&__address {
+			margin-bottom: 17px;
+			font-size: 14px;
+			line-height: 16px;
 		}
 
 		&__connect {
 			flex-flow: column nowrap;
+			align-items: flex-start;
 			width: 100%;
 			max-width: 100%;
 			padding: 0;
 			border: none;
+
+			& > *:not(.contacts__map) {
+				padding-right: 50px;
+				padding-left: 50px;
+			}
 		}
 
 		&__map {
-			position: relative;
-			left: -50px;
-			width: 100vw;
-			max-width: 100vw;
-			height: 420px;
+			width: 100%;
+			max-width: 100%;
+			height: 100vw;
 			margin-bottom: 20px;
 		}
+	}
+	.callback-form__input {
+		max-width: 70%;
+		padding: 16px 32px;
+	}
+}
+
+@media (max-width: 576px) {
+	.contacts {
+		&__title {
+			margin-bottom: 12px;
+			padding: 0 15px;
+		}
+
+		&__connect > *:not(&__map) {
+			padding: 0 15px;
+		}
+
+		&__callback {
+			margin-bottom: 18px;
+		}
+
+		&__messengers-wrapper {
+			line-height: 0;
+		}
+
+		&__messengers-title {
+			margin-bottom: 7px;
+		}
+	}
+	.contacts-subtitle {
+		font-size: 18px;
+	}
+	.callback-form {
+		&__input {
+			max-width: 100%;
+			margin-bottom: 19px;
+			padding: 11px 24px;
+		}
+
+		&__btn-submit {
+			padding: 11px 33px;
+			font-size: 12px;
+			line-height: 16px;
+		}
+	}
+	.contacts__messenger:not(:last-child) {
+		margin-right: 15px;
 	}
 }

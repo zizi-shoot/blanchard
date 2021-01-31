@@ -14,6 +14,18 @@
 		@media (max-width: 1024px) {
 			max-width: 100%;
 		}
+		@media (max-width: 576px) {
+			font-size: 14px;
+			line-height: 28px;
+		}
+	}
+
+	@media (max-width: 576px) {
+		padding-top: 50px;
+		padding-bottom: 41px;
+		&__title {
+			margin-bottom: 12px;
+		}
 	}
 }
 

@@ -1,5 +1,33 @@
+import Swiper, { Pagination } from 'swiper';
+
+Swiper.use([Pagination]);
+
 const moreBtn = document.querySelector('.events__btn-more');
 const events = document.querySelectorAll('.events__item');
+let isInit = false;
+let eventsSwiper = null;
+
+const eventsProps = {
+	pagination: {
+		el: '.events__pagination',
+		clickable: true,
+	},
+};
+
+function swiperMode(swiper, selector, props, media) {
+	const matchMedia = window.matchMedia(media);
+	if (matchMedia.matches) {
+		if (!isInit) {
+			isInit = true;
+			swiper = new Swiper(selector, props);
+		}
+		return;
+	}
+	if (isInit) {
+		swiper.destroy(false);
+		isInit = false;
+	}
+}
 
 function calcEventsPerLine() {
 	let eventsPerLine = null;
@@ -37,3 +65,11 @@ function showLessEvents() {
 }
 
 moreBtn.addEventListener('click', showMoreEvents);
+
+window.addEventListener('load', () => {
+	swiperMode(eventsSwiper, '.events__wrapper', eventsProps, '(max-width: 576px)');
+});
+
+window.addEventListener('resize', () => {
+	swiperMode(eventsSwiper, '.events__wrapper', eventsProps, '(max-width: 576px)');
+});
