@@ -59,7 +59,7 @@
 
 	&__slide {
 		position: relative;
-		height: unset;
+		height: max-content;
 		outline: 3px solid transparent;
 		outline-offset: -3px;
 		transition: outline-color .2s;

@@ -1,4 +1,5 @@
 import './vendor';
+import './lib';
 import '../components/Header/header';
 import '../components/Gallery/gallery';
 import '../components/Catalog/catalog';

@@ -1,12 +1,12 @@
-import Swiper, { Navigation, Pagination } from 'swiper';
+import toggleSwiper from '../../js/lib';
 
 const categories = document.querySelectorAll('.categories__label');
 const form = document.querySelector('.categories');
 const root = document.documentElement;
 const title = document.querySelector('.categories__title');
-let isInit = false;
+const editionsSwiperTarget = document.querySelector('.editions__swiper');
+// eslint-disable-next-line prefer-const
 let editionsSwiper = null;
-
 const editionsProps = {
 	pagination: {
 		el: '.editions__pagination',
@@ -40,23 +40,6 @@ const editionsProps = {
 	},
 };
 
-Swiper.use([Navigation, Pagination]);
-
-function swiperMode(swiper, selector, props, media) {
-	const matchMedia = window.matchMedia(media);
-	if (matchMedia.matches) {
-		if (!isInit) {
-			isInit = true;
-			swiper = new Swiper(selector, props);
-		}
-		return;
-	}
-	if (isInit) {
-		swiper.destroy(false);
-		isInit = false;
-	}
-}
-
 function expandForm(target) {
 	const totalHeight = title.offsetHeight + (title.offsetHeight - 1) * categories.length;
 	target.classList.remove('categories--collapsed');
@@ -77,15 +60,13 @@ function calcFormHeight() {
 	return title.offsetHeight + (title.offsetHeight - 1) * selectedCategories.length;
 }
 
-window.addEventListener('load', () => {
-	swiperMode(editionsSwiper, '.editions__swiper', editionsProps, '(min-width: 577px)');
-});
+collapseForm(form, calcFormHeight());
+editionsSwiper = toggleSwiper(editionsSwiper, editionsProps, editionsSwiperTarget, 'min-width: 577px');
 
 window.addEventListener('resize', () => {
-	swiperMode(editionsSwiper, '.editions__swiper', editionsProps, '(min-width: 577px)');
+	editionsSwiper = toggleSwiper(editionsSwiper, editionsProps, editionsSwiperTarget, 'min-width: 577px');
 });
 
-collapseForm(form, calcFormHeight());
 title.addEventListener('click', () => {
 	const isExpanded = form.classList.contains('categories--expanded');
 	isExpanded ? collapseForm(form, calcFormHeight()) : expandForm(form);

@@ -189,8 +189,16 @@
 		&__descr {
 			max-width: 100%;
 		}
+
+		&__tooltip {
+			background-image: url(/img/sprite.svg#tooltip-touch);
+
+			&[aria-describedby*="tippy"] {
+				background-image: url(/img/sprite.svg#tooltip-touch--active);
+			}
+		}
 	}
-	.partners {
+	.partner {
 		height: 128px;
 	}
 }
@@ -241,5 +249,11 @@
 	}
 	.partner {
 		height: 65px;
+		padding-top: 15px;
+		padding-bottom: 11px;
+
+		img {
+			max-height: 100%;
+		}
 	}
 }
