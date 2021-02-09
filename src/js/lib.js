@@ -4,7 +4,6 @@ Swiper.use([Pagination]);
 
 export default function toggleSwiper(swiper, props, target, media) {
 	const matchMedia = window.matchMedia(`(${media})`);
-	console.log(target, matchMedia.matches);
 	if (matchMedia.matches) {
 		if (target.dataset.swiper === 'false') {
 			target.dataset.swiper = 'true';
