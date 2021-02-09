@@ -13,18 +13,8 @@ function init() {
 	});
 	const zoomControl = {
 		size: 'small',
-		float: 'none',
-		position: {
-			bottom: '350px',
-			right: '30px',
-		},
 	};
 	const geolocationControl = {
-		float: 'none',
-		position: {
-			bottom: '300px',
-			right: '30px',
-		},
 	};
 	const myPlacemark1 = new ymaps.Placemark([55.758463, 37.601079], {}, {
 		iconLayout: 'default#image',
@@ -46,9 +36,7 @@ function calcFormPaddingLeft() {
 	const pageContainer = document.querySelector('.page-container');
 	const connectForm = document.querySelector('.contacts__connect');
 	const containerPadding = window.innerWidth <= 1024 ? 50 : 30;
-	if (window.innerWidth > 767) {
-		connectForm.style.paddingLeft = `${pageContainer.offsetLeft + containerPadding}px`;
-	}
+	connectForm.style.paddingLeft = window.innerWidth > 767 ? `${pageContainer.offsetLeft + containerPadding}px` : '0';
 }
 
 document.addEventListener('DOMContentLoaded', calcFormPaddingLeft);
