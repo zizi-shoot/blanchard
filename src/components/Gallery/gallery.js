@@ -1,7 +1,6 @@
 import Choices from 'choices.js';
-import Swiper, { Navigation, Pagination } from 'swiper';
-
-Swiper.use([Navigation, Pagination]);
+import Splide from '@splidejs/splide';
+import Grid from '@splidejs/splide-extension-grid';
 
 const element = document.getElementById('gallery-filter');
 const choices = new Choices(element, {
@@ -9,45 +8,87 @@ const choices = new Choices(element, {
 	itemSelectText: '',
 
 });
-const gallerySwiper = new Swiper('.gallery__swiper', {
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
+const sliderList = document.querySelector('.gallery__list');
+const galleryOptions = {
+	pagination: false,
+	gap: '50px',
+	grid: {
+		rows: 2,
+		cols: 3,
+		gap: {
+			col: '50px',
+			row: '50px',
+		},
 	},
-	pagination: {
-		el: '.swiper-pagination',
-		type: 'fraction',
+	classes: {
+		arrows: 'gallery__arrows splide__arrows',
+		arrow: 'gallery__arrow splide__arrow',
+		prev: 'gallery__arrow--prev splide__arrow--prev',
+		next: 'gallery__arrow--next splide__arrow--next',
 	},
 	breakpoints: {
-		320: {
-			spaceBetween: 30,
-			slidesPerView: 1,
-			slidesPerGroup: 1,
+		1366: {
+			gap: '34px',
+			grid: {
+				cols: 2,
+				rows: 2,
+				gap: {
+					col: '34px',
+					row: '34px',
+				},
+			},
 		},
-		576: {
-			slidesPerView: 2,
-			slidesPerGroup: 2,
-			spaceBetween: 34,
+		992: {
+			heightRatio: 0.89,
+			gap: '34px',
+			grid: {
+				cols: 2,
+				rows: 2,
+				gap: {
+					col: '34px',
+					row: '34px',
+				},
+			},
 		},
 		767: {
-			slidesPerView: 2,
-			slidesPerGroup: 2,
-			slidesPerColumn: 2,
-			slidesPerColumnFill: 'row',
-			spaceBetween: 34,
+			heightRatio: 0.89,
+			gap: '34px',
+			grid: {
+				cols: 2,
+				rows: 2,
+				gap: {
+					col: '34px',
+					row: '34px',
+				},
+			},
 		},
-		1366: {
-			slidesPerView: 3,
-			slidesPerGroup: 3,
-			slidesPerColumn: 2,
-			slidesPerColumnFill: 'row',
-			spaceBetween: 50,
+		576: {
+			gap: '30px',
+			heightRatio: 1.26,
+			grid: false,
 		},
 	},
-});
-gallerySwiper.setGrabCursor();
-window.addEventListener('resize', () => {
-	gallerySwiper.update();
-	gallerySwiper.updateSlides();
+};
+const gallerySlider = new Splide('.gallery__slider', galleryOptions);
 
-});
+function calcFraction() {
+	const activeSlide = document.querySelector('.splide__list > .splide__slide.is-active');
+	const activeSlideIndex = Array.from(sliderList.children).indexOf(activeSlide);
+	const sliderLength = sliderList.children.length;
+	return {
+		activeSlideIndex,
+		sliderLength,
+	};
+}
+
+function displayFraction() {
+	const { activeSlideIndex: index, sliderLength: length } = calcFraction();
+	const sliderArrows = document.querySelector('.gallery__arrows');
+	sliderArrows.setAttribute('data-fractions', `${index + 1} / ${length}`);
+}
+
+gallerySlider
+	.mount({ Grid })
+	.on('active', () => {
+		displayFraction();
+	});
