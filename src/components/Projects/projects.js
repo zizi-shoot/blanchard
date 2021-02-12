@@ -43,3 +43,19 @@ tippy('#tooltip-3', {
 	maxWidth: 264,
 	animation: 'perspective-extreme',
 });
+
+const tooltips = document.querySelectorAll('[id*="tooltip-"]');
+const isIOS = /iPhone|iPad|iPod/.test(navigator.platform);
+tooltips.forEach((button) => {
+	tippy(button, {
+		onShow() {
+			if (isIOS) {
+				button.click();
+				console.log(isIOS);
+			}
+		},
+	});
+	button.addEventListener('click', (ev) => {
+		console.log(ev.currentTarget.getAttribute('id'));
+	});
+});

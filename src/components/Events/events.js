@@ -50,6 +50,6 @@ moreBtn.addEventListener('click', showMoreEvents);
 eventsSwiper = toggleSwiper(eventsSwiper, eventsProps, eventsSwiperTarget, 'max-width: 576px');
 window.addEventListener('resize', calcEventsPerLine);
 window.addEventListener('resize', () => {
+	// debugger;
 	eventsSwiper = toggleSwiper(eventsSwiper, eventsProps, eventsSwiperTarget, 'max-width: 576px');
 });
-
