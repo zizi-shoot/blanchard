@@ -1,20 +1,23 @@
-import toggleSwiper from '../../js/lib';
+import Splide from '@splidejs/splide';
 
 const moreBtn = document.querySelector('.events__btn-more');
 const events = document.querySelectorAll('.events__item');
-const eventsSwiperTarget = document.querySelector('.events__wrapper');
-// eslint-disable-next-line prefer-const
-let eventsSwiper = null;
-const eventsProps = {
-	pagination: {
-		el: '.events__pagination',
-		clickable: true,
+const eventsOptions = {
+	destroy: true,
+	arrows: false,
+	breakpoints: {
+		576: {
+			perPage: 1,
+			gap: '27px',
+		},
 	},
 };
+const eventsSlider = new Splide('.events__slider', eventsOptions);
 
 function calcEventsPerLine() {
 	let eventsPerLine = null;
 	const windowWidth = window.innerWidth;
+	console.log(windowWidth);
 	if (windowWidth <= 576) eventsPerLine = 1;
 	if (windowWidth > 576) eventsPerLine = 2;
 	if (windowWidth > 992) eventsPerLine = 3;
@@ -45,11 +48,7 @@ function showLessEvents() {
 	moreBtn.addEventListener('click', showMoreEvents);
 }
 
+eventsSlider.mount();
 calcEventsPerLine();
 moreBtn.addEventListener('click', showMoreEvents);
-eventsSwiper = toggleSwiper(eventsSwiper, eventsProps, eventsSwiperTarget, 'max-width: 576px');
 window.addEventListener('resize', calcEventsPerLine);
-window.addEventListener('resize', () => {
-	// debugger;
-	eventsSwiper = toggleSwiper(eventsSwiper, eventsProps, eventsSwiperTarget, 'max-width: 576px');
-});
