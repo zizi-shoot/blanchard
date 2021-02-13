@@ -112,6 +112,10 @@
 		}
 	}
 
+	&__pagination {
+		display: none;
+	}
+
 	&__arrows {
 		position: relative;
 		display: flex;
@@ -121,7 +125,7 @@
 		margin-left: 3px;
 
 		&::after {
-			content: attr(data-fractions);
+			content: attr(data-gallery-fractions);
 			position: absolute;
 			top: 50%;
 			width: 100%;

@@ -17,7 +17,6 @@ const eventsSlider = new Splide('.events__slider', eventsOptions);
 function calcEventsPerLine() {
 	let eventsPerLine = null;
 	const windowWidth = window.innerWidth;
-	console.log(windowWidth);
 	if (windowWidth <= 576) eventsPerLine = 1;
 	if (windowWidth > 576) eventsPerLine = 2;
 	if (windowWidth > 992) eventsPerLine = 3;

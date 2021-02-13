@@ -25,21 +25,20 @@ const projectsSwiper = new Swiper('.projects__swiper', {
 		},
 	},
 });
-tippy('#tooltip-1', {
-	content: 'Пример современных тенденций - современная методология разработки',
+const tippySettings = {
 	theme: 'tooltip',
 	maxWidth: 264,
-	animation: 'perspective-extreme',
+};
+
+tippy('#tooltip-1', {
+	content: 'Пример современных тенденций - современная методология разработки',
+	...tippySettings,
 });
 tippy('#tooltip-2', {
 	content: 'Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции',
-	theme: 'tooltip',
-	maxWidth: 264,
-	animation: 'perspective-extreme',
+	...tippySettings,
 });
 tippy('#tooltip-3', {
 	content: 'В стремлении повысить качество',
-	theme: 'tooltip',
-	maxWidth: 264,
-	animation: 'perspective-extreme',
+	...tippySettings,
 });
