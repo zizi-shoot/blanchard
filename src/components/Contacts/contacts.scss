@@ -17,7 +17,7 @@
 		flex-wrap: wrap;
 		align-content: center;
 		max-width: vw(682);
-		padding: 12px vw(122) 0 160px;
+		padding: 0 vw(122) 0 Max(30px, calc((100vw - 1600px) / 2));
 		border: 1px solid var(--background-tip);
 	}
 

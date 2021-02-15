@@ -27,13 +27,3 @@ function init() {
 		.add('geolocationControl', {});
 	mobMap.geoObjects.add(myPlacemark1);
 }
-
-function calcFormPaddingLeft() {
-	const pageContainer = document.querySelector('.page-container');
-	const connectForm = document.querySelector('.contacts__connect');
-	const containerPadding = window.innerWidth <= 1024 ? 50 : 30;
-	connectForm.style.paddingLeft = window.innerWidth > 767 ? `${pageContainer.offsetLeft + containerPadding}px` : '0';
-}
-
-document.addEventListener('DOMContentLoaded', calcFormPaddingLeft);
-window.addEventListener('resize', calcFormPaddingLeft);

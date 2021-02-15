@@ -1,18 +1,8 @@
-import Swiper, { Pagination } from 'swiper';
-
-Swiper.use([Pagination]);
-
-export default function toggleSwiper(swiper, props, target, media) {
-	const matchMedia = window.matchMedia(`(${media})`);
-	if (matchMedia.matches) {
-		if (target.dataset.swiper === 'false') {
-			target.dataset.swiper = 'true';
-		}
-		return new Swiper(target, props);
-	}
-	if (target.dataset.swiper === 'true') {
-		swiper.destroy();
-		target.dataset.swiper = 'false';
-		return null;
-	}
+export default function displayFraction(section) {
+	const pagination = document.querySelector(`.${section} .splide__pagination`);
+	const { length } = pagination.children;
+	const activeSlide = document.querySelector(`.${section} .splide__pagination__page.is-active`).closest('li');
+	const indexActiveSlide = Array.from(pagination.children).indexOf(activeSlide) + 1;
+	const sliderArrows = document.querySelector(`.${section} .splide__arrows`);
+	sliderArrows.setAttribute(`data-${section}-fractions`, `${indexActiveSlide} / ${length}`);
 }

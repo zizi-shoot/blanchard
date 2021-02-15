@@ -1,23 +1,21 @@
 import Choices from 'choices.js';
 import Splide from '@splidejs/splide';
 import Grid from '@splidejs/splide-extension-grid';
+import displayFraction from '../../js/lib';
 
 const element = document.getElementById('gallery-filter');
 const choices = new Choices(element, {
 	searchEnabled: false,
 	itemSelectText: '',
-
 });
-const sliderList = document.querySelector('.gallery__list');
 const galleryOptions = {
-	pagination: false,
-	gap: '50px',
+	gap: 50,
 	grid: {
 		rows: 2,
 		cols: 3,
 		gap: {
-			col: '50px',
-			row: '50px',
+			col: 50,
+			row: 50,
 		},
 	},
 	classes: {
@@ -25,6 +23,7 @@ const galleryOptions = {
 		arrow: 'gallery__arrow splide__arrow',
 		prev: 'gallery__arrow--prev splide__arrow--prev',
 		next: 'gallery__arrow--next splide__arrow--next',
+		pagination: 'gallery__pagination splide__pagination',
 	},
 	breakpoints: {
 		1366: {
@@ -71,24 +70,9 @@ const galleryOptions = {
 };
 const gallerySlider = new Splide('.gallery__slider', galleryOptions);
 
-function calcFraction() {
-	const activeSlide = document.querySelector('.splide__list > .splide__slide.is-active');
-	const activeSlideIndex = Array.from(sliderList.children).indexOf(activeSlide);
-	const sliderLength = sliderList.children.length;
-	return {
-		activeSlideIndex,
-		sliderLength,
-	};
-}
-
-function displayFraction() {
-	const { activeSlideIndex: index, sliderLength: length } = calcFraction();
-	const sliderArrows = document.querySelector('.gallery__arrows');
-	sliderArrows.setAttribute('data-fractions', `${index + 1} / ${length}`);
-}
-
 gallerySlider
 	.mount({ Grid })
 	.on('active', () => {
-		displayFraction();
+		displayFraction('gallery');
 	});
+displayFraction('gallery');

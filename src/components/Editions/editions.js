@@ -1,44 +1,40 @@
-import toggleSwiper from '../../js/lib';
+import Splide from '@splidejs/splide';
+import displayFraction from '../../js/lib';
 
 const categories = document.querySelectorAll('.categories__label');
 const form = document.querySelector('.categories');
 const root = document.documentElement;
 const title = document.querySelector('.categories__title');
-const editionsSwiperTarget = document.querySelector('.editions__swiper');
-// eslint-disable-next-line prefer-const
-let editionsSwiper = null;
-const editionsProps = {
-	pagination: {
-		el: '.editions__pagination',
-		type: 'fraction',
+const editionsOptions = {
+	classes: {
+		arrows: 'editions__arrows splide__arrows',
+		arrow: 'editions__arrow splide__arrow',
+		prev: 'editions__arrow--prev splide__arrow--prev',
+		next: 'editions__arrow--next splide__arrow--next',
+		pagination: 'editions__pagination splide__pagination',
 	},
-	navigation: {
-		nextEl: '.editions__btn-next',
-		prevEl: '.editions__btn-prev',
-	},
+	gap: 50,
+	perPage: 3,
 	breakpoints: {
-		576: {
-			slidesPerView: 2,
-			slidesPerGroup: 2,
-			spaceBetween: 34,
-		},
-		767: {
-			slidesPerView: 2,
-			slidesPerGroup: 2,
-			spaceBetween: 34,
+		1366: {
+			gap: 50,
+			perPage: 2,
+			arrows: true,
+			pagination: true,
 		},
 		1024: {
-			slidesPerView: 2,
-			slidesPerGroup: 2,
-			spaceBetween: 50,
+			gap: 34,
+			perPage: 2,
+			mount: true,
+			arrows: true,
+			pagination: true,
 		},
-		1366: {
-			slidesPerView: 3,
-			slidesPerGroup: 3,
-			spaceBetween: 50,
+		576: {
+			destroy: 'completely',
 		},
 	},
 };
+const editionsSlider = new Splide('.editions__slider', editionsOptions);
 
 function expandForm(target) {
 	const totalHeight = title.offsetHeight + (title.offsetHeight - 1) * categories.length;
@@ -60,12 +56,24 @@ function calcFormHeight() {
 	return title.offsetHeight + (title.offsetHeight - 1) * selectedCategories.length;
 }
 
-collapseForm(form, calcFormHeight());
-editionsSwiper = toggleSwiper(editionsSwiper, editionsProps, editionsSwiperTarget, 'min-width: 577px');
+editionsSlider
+	.mount()
+	.on('active mounted', () => {
+		displayFraction('editions');
+	});
 
 window.addEventListener('resize', () => {
-	editionsSwiper = toggleSwiper(editionsSwiper, editionsProps, editionsSwiperTarget, 'min-width: 577px');
+	if (window.innerWidth > 576 && editionsSlider.State.is(editionsSlider.STATES.DESTROYED)) {
+		editionsSlider
+			.mount()
+			.on('active mounted', () => {
+				displayFraction('editions');
+			});
+		displayFraction('editions');
+	}
 });
+
+collapseForm(form, calcFormHeight());
 
 title.addEventListener('click', () => {
 	const isExpanded = form.classList.contains('categories--expanded');

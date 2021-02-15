@@ -120,26 +120,26 @@
 			color: var(--focus_click);
 		}
 	}
-}
 
-.splide {
-	&__pagination {
-		bottom: -35px;
+	.splide {
+		&__pagination {
+			bottom: -35px;
 
-		.is-active {
-			background: var(--background-slider);
-			transform: none;
+			.is-active {
+				background: var(--background-slider);
+				transform: none;
+			}
 		}
-	}
 
-	&__pagination__page {
-		width: 10px;
-		height: 10px;
-		margin: 0 7.5px;
-	}
+		&__pagination__page {
+			width: 10px;
+			height: 10px;
+			margin: 0 7.5px;
+		}
 
-	&__track {
-		overflow: unset;
+		&__track {
+			overflow: unset;
+		}
 	}
 }
 
@@ -250,9 +250,10 @@
 		&__title {
 			margin-bottom: 36px;
 		}
-	}
-	.splide__track {
-		overflow: hidden;
+
+		.splide__track {
+			overflow: hidden;
+		}
 	}
 }
 
