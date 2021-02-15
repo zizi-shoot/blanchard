@@ -1,34 +1,37 @@
-import Swiper, { Navigation } from 'swiper';
+import Splide from '@splidejs/splide';
 import tippy from 'tippy.js';
 
-Swiper.use([Navigation]);
-const projectsSwiper = new Swiper('.projects__swiper', {
-	navigation: {
-		nextEl: '.projects__btn-next',
-		prevEl: '.projects__btn-prev',
+const projectsOptions = {
+	classes: {
+		arrows: 'projects__arrows splide__arrows',
+		arrow: 'projects__arrow splide__arrow',
+		prev: 'projects__arrow--prev splide__arrow--prev',
+		next: 'projects__arrow--next splide__arrow--next',
 	},
+	pagination: false,
+	gap: 50,
+	perPage: 3,
 	breakpoints: {
-		767: {
-			slidesPerView: 2,
-			slidesPerGroup: 2,
-			spaceBetween: 34,
-		},
 		1024: {
-			slidesPerView: 2,
-			slidesPerGroup: 2,
-			spaceBetween: 50,
+			perPage: 2,
+			gap: 50,
 		},
-		1366: {
-			slidesPerView: 3,
-			slidesPerGroup: 3,
-			spaceBetween: 50,
+		768: {
+			perPage: 2,
+			gap: 34,
+		},
+		567: {
+			perPage: 1,
+			gap: 21,
 		},
 	},
-});
+};
 const tippySettings = {
 	theme: 'tooltip',
 	maxWidth: 264,
 };
+const projectsSlider = new Splide('.projects__slider', projectsOptions);
+projectsSlider.mount();
 
 tippy('#tooltip-1', {
 	content: 'Пример современных тенденций - современная методология разработки',

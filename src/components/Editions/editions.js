@@ -5,9 +5,7 @@ const categories = document.querySelectorAll('.categories__label');
 const form = document.querySelector('.categories');
 const root = document.documentElement;
 const title = document.querySelector('.categories__title');
-const editionsProps = {
-	gap: 50,
-	perPage: 3,
+const editionsOptions = {
 	classes: {
 		arrows: 'editions__arrows splide__arrows',
 		arrow: 'editions__arrow splide__arrow',
@@ -15,6 +13,8 @@ const editionsProps = {
 		next: 'editions__arrow--next splide__arrow--next',
 		pagination: 'editions__pagination splide__pagination',
 	},
+	gap: 50,
+	perPage: 3,
 	breakpoints: {
 		1366: {
 			gap: 50,
@@ -34,7 +34,7 @@ const editionsProps = {
 		},
 	},
 };
-const editionsSlider = new Splide('.editions__slider', editionsProps);
+const editionsSlider = new Splide('.editions__slider', editionsOptions);
 
 function expandForm(target) {
 	const totalHeight = title.offsetHeight + (title.offsetHeight - 1) * categories.length;
@@ -71,7 +71,6 @@ window.addEventListener('resize', () => {
 			});
 		displayFraction('editions');
 	}
-	console.log(editionsSlider.State.is(editionsSlider.STATES.DESTROYED));
 });
 
 collapseForm(form, calcFormHeight());
