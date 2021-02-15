@@ -1,9 +1,37 @@
 .hero {
-	padding-top: 139px;
-	padding-bottom: 122px;
-	background: #000 url("../img/hero-1.jpg") center bottom/cover no-repeat;
+	position: relative;
+	overflow: hidden;
+	padding-top: 239px;
+	padding-bottom: 141px;
 	color: var(--font-alt);
 	font-weight: 700;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		background: #000 url("../img/hero-1.jpg") no-repeat center/cover;
+		//animation: 12s change infinite;
+	}
+
+	@keyframes change {
+		25% {
+			transform: scale(1.1);
+			background-image: url("../img/hero-2.jpg");
+		}
+		50% {
+			transform: none;
+			background-image: url("../img/hero-3.jpg");
+		}
+		75% {
+			transform: scale(1.1);
+			background-image: url("../img/hero-2.jpg");
+		}
+	}
 
 	&__title,
 	&__descr {
@@ -17,13 +45,13 @@
 	}
 
 	&__descr {
-		margin-bottom: 91px;
+		margin-bottom: 111px;
 		font-size: 18px;
 		line-height: 30px;
 	}
 
-	&__btn-subscribe {
-		padding: 20px 36px;
+	&__subscribe {
+		padding: 20px 32px;
 		border: 3px solid transparent;
 		background: #9d5cd0;
 		color: var(--font-alt);
@@ -52,7 +80,7 @@
 	}
 
 	@media (max-width: 1024px) {
-		padding-top: 112px;
+		padding-top: 212px;
 		padding-bottom: 114px;
 		&__title {
 			margin-bottom: 8px;
@@ -63,6 +91,10 @@
 		}
 	}
 	@media (max-width: 767px) {
+		&__container {
+			display: flex;
+			flex-direction: column;
+		}
 		&__title {
 			margin-bottom: 16px;
 			font-size: 60px;
@@ -79,7 +111,7 @@
 		}
 	}
 	@media (max-width: 576px) {
-		padding-top: 30px;
+		padding-top: 130px;
 		padding-bottom: 46px;
 		&__title {
 			margin-bottom: 12px;
@@ -95,6 +127,7 @@
 		}
 	}
 }
+
 
 
 

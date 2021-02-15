@@ -11,11 +11,7 @@ function init() {
 		zoom: 15,
 		controls: [],
 	});
-	const zoomControl = {
-		size: 'small',
-	};
-	const geolocationControl = {
-	};
+
 	const myPlacemark1 = new ymaps.Placemark([55.758463, 37.601079], {}, {
 		iconLayout: 'default#image',
 		iconImageHref: '/img/sprite.svg#placemark',
@@ -23,11 +19,11 @@ function init() {
 		iconImageOffset: [-15, -27],
 	});
 	mainMap.controls
-		.add('zoomControl', zoomControl)
-		.add('geolocationControl', geolocationControl);
+		.add('zoomControl', { size: 'small' })
+		.add('geolocationControl', {});
 	mainMap.geoObjects.add(myPlacemark1);
 	mobMap.controls
-		.add('zoomControl', zoomControl)
-		.add('geolocationControl', geolocationControl);
+		.add('zoomControl', { size: 'small' })
+		.add('geolocationControl', {});
 	mobMap.geoObjects.add(myPlacemark1);
 }
