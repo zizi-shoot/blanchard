@@ -19,15 +19,11 @@ const editionsOptions = {
 		1366: {
 			gap: 50,
 			perPage: 2,
-			arrows: true,
-			pagination: true,
 		},
-		1024: {
+		768: {
 			gap: 34,
 			perPage: 2,
 			mount: true,
-			arrows: true,
-			pagination: true,
 		},
 		576: {
 			destroy: 'completely',

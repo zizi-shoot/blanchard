@@ -17,7 +17,7 @@
 		flex-wrap: wrap;
 		align-content: center;
 		max-width: vw(682);
-		padding: 0 vw(122) 0 Max(30px, calc((100vw - 1600px) / 2));
+		padding: 11px vw(122) 0 Max(30px, calc((100vw - 1600px) / 2));
 		border: 1px solid var(--background-border);
 	}
 
@@ -54,7 +54,7 @@
 		transition-property: filter, box-shadow;
 
 		&:not(:last-child) {
-			margin-right: 20px;
+			margin-right: 15px;
 		}
 
 		&:focus-visible {
@@ -150,13 +150,16 @@
 @media (max-width: 1024px) {
 	.contacts {
 		&__connect {
-			padding-top: 32px;
-			padding-right: vw(102, 1024);
+			padding: 32px vw(102, 1024) 0 50px;
 		}
 
 		&__messenger {
 			width: 60px;
 			height: 60px;
+
+			&:not(:last-child) {
+				margin-right: 24px;
+			}
 		}
 	}
 }
