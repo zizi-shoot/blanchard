@@ -83,7 +83,7 @@
 	justify-content: center;
 	height: 150px;
 	padding: 0 35px;
-	border: 1px solid var(--background-tip);
+	border: 1px solid var(--background-border);
 	outline: none;
 	font-size: 0;
 	line-height: 0;
@@ -151,9 +151,13 @@
 		&__tooltip {
 			background-image: url(/img/sprite.svg#tooltip-touch);
 
-			&[aria-describedby*="tippy"] {
+			&--active {
 				background-image: url(/img/sprite.svg#tooltip-touch--active);
 			}
+
+			//&[aria-describedby*="tippy"] {
+			//	background-image: url(/img/sprite.svg#tooltip-touch--active);
+			//}
 		}
 	}
 	.partner {

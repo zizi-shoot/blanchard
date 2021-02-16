@@ -26,38 +26,26 @@ const projectsOptions = {
 		},
 	},
 };
-const tippySettings = {
-	theme: 'tooltip',
-	maxWidth: 264,
-};
 const projectsSlider = new Splide('.projects__slider', projectsOptions);
 projectsSlider.mount();
 
-tippy('#tooltip-1', {
-	content: 'Пример современных тенденций - современная методология разработки',
-	...tippySettings,
-});
-tippy('#tooltip-2', {
-	content: 'Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции',
-	...tippySettings,
-});
-tippy('#tooltip-3', {
-	content: 'В стремлении повысить качество',
-	...tippySettings,
-});
-
 const tooltips = document.querySelectorAll('[id*="tooltip-"]');
-const isIOS = /iPhone|iPad|iPod/.test(navigator.platform);
 tooltips.forEach((button) => {
 	tippy(button, {
+		theme: 'tooltip',
+		maxWidth: 264,
 		onShow() {
+			const isIOS = /iPhone|iPad|iPod/.test(navigator.platform);
 			if (isIOS) {
 				button.click();
-				console.log(isIOS);
 			}
+			button.classList.add('projects__tooltip--active');
+		},
+		onHide() {
+			button.classList.remove('projects__tooltip--active');
 		},
 	});
-	button.addEventListener('click', (ev) => {
-		console.log(ev.currentTarget.getAttribute('id'));
-	});
 });
+tooltips[0]._tippy.setContent('Пример современных тенденций - современная методология разработки');
+tooltips[1]._tippy.setContent('Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции');
+tooltips[2]._tippy.setContent('В стремлении повысить качество');

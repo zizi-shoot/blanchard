@@ -353,7 +353,7 @@
 		&__title,
 		&__label {
 			padding-bottom: 6px;
-			border-bottom: 1px solid var(--background-border);
+			border-bottom: 1px solid var(--background-category);
 		}
 
 		&__title {
@@ -361,7 +361,7 @@
 			display: flex;
 			align-items: center;
 			order: -2;
-			border-top: 1px solid var(--background-border);
+			border-top: 1px solid var(--background-category);
 
 			&::after {
 				content: "";

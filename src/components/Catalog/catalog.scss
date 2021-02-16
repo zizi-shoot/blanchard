@@ -129,13 +129,13 @@
 
 		&:first-child {
 			margin-top: 0;
-			border-top: 1px solid var(--background-tip);
+			border-top: 1px solid var(--background-border);
 		}
 	}
 
 	& &__period {
 		padding: 29px 0 34px;
-		border-bottom: 1px solid var(--background-tip);
+		border-bottom: 1px solid var(--background-border);
 	}
 
 	& &__btn {
