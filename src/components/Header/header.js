@@ -1,6 +1,6 @@
 import SimpleBar from 'simplebar';
 
-const menu = document.querySelector('.head-bar__menu');
+const dropdown = document.querySelector('.head-bar__menu');
 const scrollbarWrappers = document.querySelectorAll('.head-bar__scrollbar-wrapper');
 const burgerBtn = document.querySelector('.burger');
 const searchBtn = document.querySelector('.header__btn-search');
@@ -8,12 +8,13 @@ const searchForm = document.querySelector('.header__search');
 const triggerBtn = document.querySelector('.header__btn-trigger');
 const pageHeader = document.querySelector('header');
 const burgerMenu = document.querySelector('.header__nav');
+const navList = document.querySelector('.head-nav__list');
 
-function hideMenuFromOut(ev) {
+function hideDropdown(ev) {
 	if (!ev.target.closest('.head-bar__item')) {
 		scrollbarWrappers.forEach((el) => {
 			el.classList.remove('head-bar__scrollbar-wrapper--visible');
-			document.removeEventListener('click', hideMenuFromOut);
+			document.removeEventListener('click', hideDropdown);
 		});
 	}
 }
@@ -26,27 +27,21 @@ function toggleSearch() {
 	}, timeOut);
 }
 
-Array.prototype.forEach.call(
-	document.querySelectorAll('.simplebar'),
-	(el) => new SimpleBar(el, {
-		autoHide: false,
-		scrollbarMaxSize: 28,
-	}),
-);
-
 burgerBtn.addEventListener('click', (ev) => {
 	ev.currentTarget.classList.toggle('burger--active');
 	burgerMenu.classList.toggle('header__nav--opened');
+	document.body.classList.toggle('disable-scroll');
 });
 
-burgerMenu.addEventListener('click', () => {
+navList.addEventListener('click', () => {
+	document.body.classList.remove('disable-scroll');
 	setTimeout(() => {
 		burgerBtn.classList.remove('burger--active');
 		burgerMenu.classList.remove('header__nav--opened');
 	}, 700);
 });
 
-menu.addEventListener('click', (ev) => {
+dropdown.addEventListener('click', (ev) => {
 	scrollbarWrappers.forEach((e) => {
 		if (e !== ev.target.nextElementSibling) {
 			e.classList.remove('head-bar__scrollbar-wrapper--visible');
@@ -54,7 +49,7 @@ menu.addEventListener('click', (ev) => {
 	});
 	const target = ev.target.localName === 'button' ? ev.target : ev.target.querySelector('.head-bar__btn-open');
 	target.nextElementSibling.classList.toggle('head-bar__scrollbar-wrapper--visible');
-	document.addEventListener('click', hideMenuFromOut);
+	document.addEventListener('click', hideDropdown);
 });
 
 // Анимация дропдаунов
@@ -90,5 +85,15 @@ searchBtn.addEventListener('click', (ev) => {
 // Появление/скрытие строки поиска при ширине экрана меньше 576px
 
 triggerBtn.addEventListener('click', () => {
+	// eslint-disable-next-line no-unused-expressions
 	window.innerWidth <= 576 && toggleSearch();
 });
+
+// Simlebar
+Array.prototype.forEach.call(
+	document.querySelectorAll('.simplebar'),
+	(el) => new SimpleBar(el, {
+		autoHide: false,
+		scrollbarMaxSize: 28,
+	}),
+);
