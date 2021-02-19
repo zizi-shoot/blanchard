@@ -172,16 +172,3 @@ const htmlMinify = () => {
 
 exports.build = series(clean, parallel(htmlInclude, scriptsBuild, fonts, imgToApp, svgSprites), stylesBuild, htmlMinify);
 exports.cache = series(cache, rewrite);
-
-// HTML&CSS for VALIDATOR
-
-const validateStyles = () => {
-	return src('src/scss/**/*.scss')
-		.pipe(sass({
-			outputStyle: 'expanded',
-		})
-			.on('error', notify.onError()))
-		.pipe(gcmq())
-		.pipe(dest('app/css/'));
-};
-exports.validate = series(htmlInclude, validateStyles);
