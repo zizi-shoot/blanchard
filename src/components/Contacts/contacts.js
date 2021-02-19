@@ -14,7 +14,7 @@ function init() {
 
 	const myPlacemark1 = new ymaps.Placemark([55.758463, 37.601079], {}, {
 		iconLayout: 'default#image',
-		iconImageHref: '/img/sprite.svg#placemark',
+		iconImageHref: 'img/sprite.svg#placemark',
 		iconImageSize: [40, 40],
 		iconImageOffset: [-15, -27],
 	});

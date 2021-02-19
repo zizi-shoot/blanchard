@@ -1,7 +1,7 @@
 .editions {
 	padding-top: 80px;
 	padding-bottom: 79px;
-	background: url("/img/editions-back.jpg") no-repeat;
+	background: url("../img/editions-back.jpg") no-repeat;
 	background-size: cover;
 	color: var(--font-alt);
 
@@ -377,7 +377,7 @@
 				right: 0;
 				width: 11px;
 				height: 12px;
-				background: url(/img/sprite.svg#editions-arrow) no-repeat center/cover;
+				background: url(../img/sprite.svg#editions-arrow) no-repeat center/cover;
 				transition: transform .3s;
 				transform: rotateX(180deg);
 			}

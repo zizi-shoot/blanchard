@@ -16,7 +16,7 @@
 		height: 16px;
 		padding: 0;
 		border: none;
-		background: url("/img/sprite.svg#tooltip") no-repeat center/cover;
+		background: url("../img/sprite.svg#tooltip") no-repeat center/cover;
 	}
 
 	&__link-more {
@@ -149,10 +149,10 @@
 		}
 
 		&__tooltip {
-			background-image: url(/img/sprite.svg#tooltip-touch);
+			background-image: url(../img/sprite.svg#tooltip-touch);
 
 			&--active {
-				background-image: url(/img/sprite.svg#tooltip-touch--active);
+				background-image: url(../img/sprite.svg#tooltip-touch--active);
 			}
 		}
 	}
