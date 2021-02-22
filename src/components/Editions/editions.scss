@@ -17,8 +17,14 @@
 		grid-row: 1/-1;
 		grid-column: 2/3;
 		overflow: hidden;
-		padding-top: 33px;
+		margin: 0 -10px -10px;
+		padding: 33px 10px 10px;
 		line-height: 0;
+	}
+
+	&__track {
+		margin: -10px;
+		padding: 10px;
 	}
 
 	&__pagination {

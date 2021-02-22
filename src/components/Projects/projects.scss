@@ -88,13 +88,15 @@
 	font-size: 0;
 	line-height: 0;
 
-	&:focus-visible::after {
-		opacity: 1;
-	}
-
 	img {
 		filter: contrast(3) opacity(0.3) grayscale(1);
 		transition: filter .3s;
+	}
+
+	&:focus-visible {
+		img {
+			filter: unset;
+		}
 	}
 
 	@media (pointer: fine) {
@@ -158,6 +160,9 @@
 	}
 	.partner {
 		height: 128px;
+	}
+	.tippy-arrow {
+		display: none;
 	}
 }
 

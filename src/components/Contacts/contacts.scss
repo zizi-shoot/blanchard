@@ -3,9 +3,6 @@
 }
 
 .contacts {
-	//display: flex;
-	//flex-wrap: wrap;
-	//justify-content: space-between;
 	display: grid;
 	grid-template-columns: repeat(2, auto);
 
@@ -104,32 +101,20 @@
 		align-self: flex-start;
 		padding: 16px 32px;
 		border: 2px solid var(--background-control);
-		border-radius: 100px;
 		background-color: transparent;
 		color: var(--background-control);
-		outline: 2px solid transparent;
-		outline-offset: -18px;
-		font-weight: 700;
 		font-size: 18px;
 		font-family: "Open Sans", sans-serif;
 		line-height: 25px;
-		transition-duration: .3s;
 		transition-property: color, outline-color, background-color, border-color;
-
-		&:focus-visible {
-			outline-color: var(--focus_click);
-		}
 
 		@media (pointer: fine) {
 			&:hover {
-				background-color: var(--background-control);
 				color: var(--font-alt);
 			}
 		}
 
 		&:active {
-			border-color: var(--hover-main);
-			background-color: var(--focus_click);
 			color: var(--font-alt);
 		}
 	}

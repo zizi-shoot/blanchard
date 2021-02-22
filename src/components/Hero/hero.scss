@@ -59,10 +59,6 @@
 		font-size: 18px;
 		line-height: 25px;
 
-		&:focus-visible {
-			border-color: var(--focus_click);
-		}
-
 		@media (pointer: fine) {
 			&:hover {
 				border-color: var(--hover-main);

@@ -1,7 +1,7 @@
 
 .catalog {
 	padding-top: 80px;
-	padding-bottom: 75px;
+	padding-bottom: 78px;
 
 	&__container {
 		display: flex;
@@ -129,24 +129,31 @@
 
 		&:first-child {
 			margin-top: 0;
-			border-top: 1px solid var(--background-border);
+		}
+
+		&:last-child {
+			border-bottom: 1px solid var(--background-border);
+			transition: border-bottom-color .3s;
 		}
 	}
 
 	& &__period {
-		padding: 29px 0 34px;
-		border-bottom: 1px solid var(--background-border);
+		border-top: 1px solid var(--background-border);
+		border-bottom: 1px solid transparent;
+		transition: border-top-color .3s, border-bottom-color 1.2s;
 	}
 
 	& &__btn {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding: 0;
+		padding: 29px 0 34px;
+		outline: 2px solid transparent;
 		font-weight: 600;
 		font-size: 24px;
 		font-family: "Open Sans", sans-serif;
 		line-height: 32px;
+		transition: outline-color .3s;
 
 		&::after {
 			display: none;
@@ -177,34 +184,12 @@
 		}
 
 		&:focus-visible {
-			span {
-				outline-color: var(--focus_click);
-			}
-
-			svg {
-				border-color: var(--focus_click);
-			}
-		}
-
-		@media (pointer: fine) {
-			&:hover {
-				span {
-					color: var(--background-control);
-				}
-
-				svg {
-					background-color: var(--background-control);
-
-					path {
-						stroke: var(--font-alt);
-					}
-				}
-			}
+			outline-color: var(--focus_click);
 		}
 
 		&:active {
 			span {
-				color: var(--background-control);
+				color: var(--focus_click);
 			}
 
 			svg {
@@ -220,8 +205,39 @@
 }
 
 .period-item {
-	&__wrapper {
-		border-bottom: 1px solid var(--background-control);
+	outline: 2px solid transparent;
+	outline-offset: 2px;
+	transition-duration: .3s;
+	transition-property: outline-color, color;
+
+	&:focus-visible {
+		outline-color: var(--focus_click);
+	}
+
+	@media (pointer: fine) {
+		&:hover {
+			border-bottom-color: var(--background-control);
+
+			.artist-choice__period {
+				border-top-color: var(--background-control);
+			}
+
+			span {
+				color: var(--background-control);
+			}
+
+			svg {
+				background-color: var(--background-control);
+
+				path {
+					stroke: var(--font-alt);
+				}
+			}
+
+			& + .period-item .artist-choice__period {
+				border-top-color: var(--background-control);
+			}
+		}
 	}
 
 	&__artist-list {
@@ -267,6 +283,19 @@
 	&__btn-artist--active {
 		color: var(--background-control);
 		pointer-events: none;
+	}
+}
+
+.period-item.is-active {
+	border-bottom-color: var(--background-control);
+
+	.ac-header {
+		border-bottom-color: var(--background-control);
+		transition-duration: .3s;
+	}
+
+	& + .period-item .artist-choice__period {
+		border-top-color: var(--background-control);
 	}
 }
 

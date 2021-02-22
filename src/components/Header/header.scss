@@ -259,19 +259,12 @@
 	&__search {
 		display: flex;
 		align-items: baseline;
-		outline: 2px solid transparent;
-		outline-offset: var(--offset);
-		transition-duration: .3s;
-		transition-property: outline-color, border-color;
+		transition: border-color .3s;
 
 		svg {
 			path, rect {
 				transition: fill .3s;
 			}
-		}
-
-		&:focus-within {
-			outline-color: var(--focus_click);
 		}
 
 		&:hover {
@@ -310,6 +303,16 @@
 
 		&:focus-visible::placeholder {
 			opacity: 0;
+		}
+	}
+
+	&__btn-search,
+	&__input {
+		outline: 2px solid transparent;
+		outline-offset: var(--offset);
+
+		&:focus-visible {
+			outline-color: var(--focus_click);
 		}
 	}
 
