@@ -69,6 +69,7 @@ pageHeader.addEventListener('animationend', (e) => {
 
 searchBtn.addEventListener('click', (ev) => {
 	if (!searchForm.classList.contains('header__search--expanded')) {
+		ev.preventDefault();
 		searchForm.classList.add('header__search--expanded');
 		ev.stopPropagation();
 		document.addEventListener('click', (event) => {
@@ -97,3 +98,4 @@ Array.prototype.forEach.call(
 		scrollbarMaxSize: 28,
 	}),
 );
+

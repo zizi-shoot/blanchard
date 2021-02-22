@@ -3,11 +3,14 @@
 }
 
 .contacts {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+	//display: flex;
+	//flex-wrap: wrap;
+	//justify-content: space-between;
+	display: grid;
+	grid-template-columns: repeat(2, auto);
 
 	&__title {
+		grid-column: 1/-1;
 		width: 100%;
 		margin-bottom: 15px;
 	}
@@ -30,6 +33,7 @@
 	}
 
 	&__showroom-name {
+		width: 100%;
 		font-weight: 600;
 		font-size: 24px;
 	}
@@ -149,6 +153,9 @@
 
 @media (max-width: 1024px) {
 	.contacts {
+		display: flex;
+		flex-wrap: wrap;
+
 		&__connect {
 			padding: 32px vw(102, 1024) 0 50px;
 		}
@@ -279,5 +286,13 @@
 	}
 	.contacts__messenger:not(:last-child) {
 		margin-right: 15px;
+	}
+}
+
+@media (min-width: 2000px) {
+	.contacts__connect,
+	.contacts__map {
+		width: 50vw;
+		max-width: 50vw;
 	}
 }

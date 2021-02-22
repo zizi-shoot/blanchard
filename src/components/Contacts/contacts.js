@@ -11,19 +11,21 @@ function init() {
 		zoom: 15,
 		controls: [],
 	});
-
-	const myPlacemark1 = new ymaps.Placemark([55.758463, 37.601079], {}, {
+	const placeData = {
 		iconLayout: 'default#image',
-		iconImageHref: 'img/sprite.svg#placemark',
+		iconImageHref: '../img/sprite.svg#placemark',
 		iconImageSize: [40, 40],
 		iconImageOffset: [-15, -27],
-	});
+	};
+	const myPlacemarkMain = new ymaps.Placemark([55.758463, 37.601079], {}, placeData);
+	const myPlacemarkMob = new ymaps.Placemark([55.758463, 37.601079], {}, placeData);
+
 	mainMap.controls
 		.add('zoomControl', { size: 'small' })
 		.add('geolocationControl', {});
-	mainMap.geoObjects.add(myPlacemark1);
+	mainMap.geoObjects.add(myPlacemarkMain);
 	mobMap.controls
 		.add('zoomControl', { size: 'small' })
 		.add('geolocationControl', {});
-	mobMap.geoObjects.add(myPlacemark1);
+	mobMap.geoObjects.add(myPlacemarkMob);
 }

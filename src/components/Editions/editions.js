@@ -23,14 +23,13 @@ const editionsOptions = {
 		768: {
 			gap: 34,
 			perPage: 2,
-			mount: true,
 		},
 		576: {
 			destroy: 'completely',
 		},
 	},
 };
-const editionsSlider = new Splide('.editions__slider', editionsOptions);
+let editionsSlider = new Splide('.editions__slider', editionsOptions);
 
 function expandForm(target) {
 	const totalHeight = title.offsetHeight + (title.offsetHeight - 1) * categories.length;
@@ -60,7 +59,7 @@ editionsSlider
 
 window.addEventListener('resize', () => {
 	if (window.innerWidth > 576 && editionsSlider.State.is(editionsSlider.STATES.DESTROYED)) {
-		editionsSlider
+		editionsSlider = new Splide('.editions__slider', editionsOptions)
 			.mount()
 			.on('active mounted', () => {
 				displayFraction('editions');
