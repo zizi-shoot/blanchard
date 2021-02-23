@@ -66,6 +66,7 @@ window.addEventListener('resize', () => {
 			});
 		displayFraction('editions');
 	}
+	if (window.innerWidth <= 576) collapseForm(form, calcFormHeight());
 });
 
 collapseForm(form, calcFormHeight());
