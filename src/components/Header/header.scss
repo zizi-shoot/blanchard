@@ -1,8 +1,3 @@
-[type="search"] {
-	outline-offset: -2px; /* 2 */
-	-webkit-appearance: textfield; /* 1 */
-}
-
 .header {
 	position: absolute;
 	top: 0;
@@ -58,10 +53,6 @@
 	&__input {
 		width: 0;
 		padding: 0;
-		//border-top-left-radius: 0;
-		//border-top-right-radius: 0;
-		//border-bottom-right-radius: 0;
-		//border-bottom-left-radius: 0;
 		font-size: 20px;
 		transition: margin-left .3s, padding-right .3s, width .3s;
 	}
@@ -233,17 +224,13 @@
 				}
 
 				.head-bar__scrollbar-wrapper {
-					display: block;
-					animation: fade-in .3s both;
+					opacity: 1;
+					visibility: visible;
 				}
 
 				svg path {
 					stroke: var(--font-link);
 				}
-			}
-			&:not(:hover) .did-fade-in {
-				display: block;
-				animation: fade-out .3s;
 			}
 		}
 	}
@@ -319,12 +306,20 @@
 	&__scrollbar-wrapper {
 		position: absolute;
 		top: 50px;
-		display: none;
+		overflow: hidden;
 		width: 300px;
 		height: 300px;
 		padding: 40px;
 		background-color: rgba(0, 0, 0, .6);
 		opacity: 0;
+		visibility: hidden;
+		transition-duration: .3s;
+		transition-property: opacity, visibility;
+
+		&--visible {
+			opacity: 1;
+			visibility: visible;
+		}
 	}
 
 	&__artist-list {
@@ -337,27 +332,6 @@
 		}
 	}
 
-	&__menu &__item &__scrollbar-wrapper--visible {
-		display: block;
-		animation: fade-in .3s both;
-	}
-
-	@keyframes fade-in {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
-	}
-	@keyframes fade-out {
-		from {
-			opacity: 1;
-		}
-		to {
-			opacity: 0;
-		}
-	}
 
 	&__artist-item {
 		position: relative;

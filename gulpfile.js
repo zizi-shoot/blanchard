@@ -23,7 +23,6 @@ const revRewrite = require('gulp-rev-rewrite');
 const revdel = require('gulp-rev-delete-original');
 const htmlmin = require('gulp-htmlmin');
 const flatten = require('gulp-flatten');
-const gcmq = require('gulp-group-css-media-queries');
 
 // DEV TASKS
 
@@ -89,7 +88,6 @@ const styles = () => {
 		.pipe(rename({
 			suffix: '.min',
 		}))
-		.pipe(gcmq())
 		.pipe(sourcemaps.write('.'))
 		.pipe(dest('app/css/'))
 		.pipe(browserSync.stream());
@@ -126,7 +124,6 @@ const stylesBuild = () => {
 		.pipe(autoprefixer({
 			cascade: false,
 		}))
-		.pipe(gcmq())
 		.pipe(cleanCSS({
 			level: 2,
 		}))
