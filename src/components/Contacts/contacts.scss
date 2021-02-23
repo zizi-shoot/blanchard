@@ -107,7 +107,6 @@
 		font-family: "Open Sans", sans-serif;
 		line-height: 25px;
 		transition-property: color, outline-color, background-color, border-color;
-
 		@media (pointer: fine) {
 			&:hover {
 				color: var(--font-alt);
@@ -126,6 +125,9 @@
 
 @media (max-width: 1366px) {
 	.contacts {
+		display: flex;
+		flex-wrap: wrap;
+
 		&__connect {
 			max-width: calc(50% - 25px);
 		}
@@ -138,9 +140,6 @@
 
 @media (max-width: 1024px) {
 	.contacts {
-		display: flex;
-		flex-wrap: wrap;
-
 		&__connect {
 			padding: 32px vw(102, 1024) 0 50px;
 		}
