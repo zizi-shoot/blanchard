@@ -1,12 +1,10 @@
 import SimpleBar from 'simplebar';
 
-const dropdown = document.querySelector('.head-bar__menu');
 const scrollbarWrappers = document.querySelectorAll('.head-bar__scrollbar-wrapper');
 const burgerBtn = document.querySelector('.burger');
 const searchBtn = document.querySelector('.header__btn-search');
 const searchForm = document.querySelector('.header__search');
 const triggerBtn = document.querySelector('.header__btn-trigger');
-const pageHeader = document.querySelector('header');
 const burgerMenu = document.querySelector('.header__nav');
 const navList = document.querySelector('.head-nav__list');
 const dropDownBtns = document.querySelectorAll('.head-bar__btn-open');
@@ -65,7 +63,7 @@ navList.addEventListener('click', () => {
  Раскрытие/скрытие строки поиска при ширине экрана от 576 до 1024px
  */
 searchBtn.addEventListener('click', (ev) => {
-	if (!searchForm.classList.contains('header__search--expanded')) {
+	if (!searchForm.classList.contains('header__search--expanded') && window.innerWidth > 576) {
 		ev.preventDefault();
 		searchForm.classList.add('header__search--expanded');
 		ev.stopPropagation();
