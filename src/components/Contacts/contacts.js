@@ -1,3 +1,8 @@
+import Inputmask from 'inputmask';
+
+/*
+ Яндекс.Карта
+ */
 ymaps.ready(init);
 
 function init() {
@@ -29,3 +34,42 @@ function init() {
 		.add('geolocationControl', {});
 	mobMap.geoObjects.add(myPlacemarkMob);
 }
+
+/*
+ Маска для ввода телефона
+ */
+
+const im = new Inputmask('+7(999) 999-99-99');
+const inputTel = document.querySelector('.callback-form__input[type="tel"]');
+im.mask(inputTel);
+
+/*
+ Валидация формы обратного звонка
+ */
+const validateOptions = {
+	rules: {
+		name: {
+			required: true,
+			minLength: 2,
+		},
+		phone: {
+			required: true,
+			function: () => {
+				const phone = inputTel.inputmask.unmaskedvalue();
+				return Number(phone) && phone.length === 10;
+			},
+		},
+	},
+	messages: {
+		name: {
+			required: 'Укажите Ваше имя',
+			minLength: 'Имя должно содержать хотя бы 2 буквы',
+		},
+		phone: {
+			required: 'Укажите Ваш телефон',
+			function: 'Телефон должен содержать 10 цифр',
+		},
+	},
+	focusWrongField: true,
+};
+const validate = new window.JustValidate('.callback-form', validateOptions);

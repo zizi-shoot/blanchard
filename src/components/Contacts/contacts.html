@@ -6,9 +6,15 @@
 		<div aria-label="Шоурумы на карте" class="contacts__map" id="map-mobile"></div>
 		<h3 class="contacts__callback-title contacts-subtitle">Заказать обратный звонок</h3>
 		<form action="#" class="contacts__callback callback-form">
-			<input aria-label="Имя пользователя" autocomplete="name" class="callback-form__input" name="user-name" placeholder="Имя*" type="text">
-			<input aria-label="Номер телефона пользователя" autocomplete="tel" class="callback-form__input" name="user-tel" placeholder="Телефон*"
-			       type="tel">
+			<label class="callback-form__label">
+				<input aria-label="Имя пользователя" autocomplete="name" class="callback-form__input"
+				       data-validate-field="name" name="user-name" placeholder="Имя*" type="text">
+			</label>
+			<label class="callback-form__label">
+				<input aria-label="Номер телефона пользователя" autocomplete="tel" class="callback-form__input"
+				       data-validate-field="phone" name="user-tel"
+				       placeholder="Телефон*" type="tel">
+			</label>
 			<button class="callback-form__btn-submit btn" type="submit">Заказать</button>
 		</form>
 		<h3 class="contacts__messengers-title contacts-subtitle">Связаться в один клик</h3>
