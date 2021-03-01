@@ -227,6 +227,25 @@
 		&__btn-more {
 			display: none;
 		}
+
+		.splide__track {
+			overflow: hidden;
+		}
+
+		.splide__pagination {
+			bottom: -40px;
+
+			&__page {
+				width: 10px;
+				height: 10px;
+				margin: 7.5px;
+			}
+
+			.is-active {
+				background-color: var(--background-slider);
+				transform: none;
+			}
+		}
 	}
 	.event {
 		grid-template-columns: 28px 1fr 30px;
@@ -250,12 +269,10 @@
 		&__title {
 			margin-bottom: 36px;
 		}
-
-		.splide__track {
-			overflow: hidden;
-		}
 	}
 }
+
+
 
 
 

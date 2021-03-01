@@ -28,6 +28,7 @@ const galleryOptions = {
 	},
 	breakpoints: {
 		1366: {
+			heightRatio: 1,
 			gap: '34px',
 			grid: {
 				cols: 2,

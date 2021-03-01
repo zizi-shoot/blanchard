@@ -59,6 +59,13 @@
 		font-size: 18px;
 		line-height: 25px;
 
+		&::after {
+			top: -7px;
+			right: -7px;
+			bottom: -7px;
+			left: -7px;
+		}
+
 		@media (pointer: fine) {
 			&:hover {
 				border-color: var(--hover-main);

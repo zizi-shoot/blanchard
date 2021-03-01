@@ -44,10 +44,10 @@ body {
 	&::after {
 		content: "";
 		position: absolute;
-		top: -7px;
-		right: -7px;
-		bottom: -7px;
-		left: -7px;
+		top: 2px;
+		right: 2px;
+		bottom: 2px;
+		left: 2px;
 		border: 2px solid transparent;
 		border-radius: 100px;
 		transition: border-color .3s;

@@ -364,10 +364,6 @@
 		&__artist-list {
 			column-gap: 60px;
 		}
-
-		&__artist-item:nth-last-child(-n+2) {
-			display: none;
-		}
 	}
 	.ac .ac-panel .ac-text {
 		padding-bottom: 25px;
@@ -408,10 +404,6 @@
 		&__artist-list {
 			column-gap: 50px;
 			column-count: 3;
-		}
-
-		&__artist-item:nth-last-child(-n+2) {
-			display: list-item;
 		}
 	}
 	.ac .ac-panel .ac-text {
@@ -454,6 +446,8 @@
 	}
 	.artist-choice {
 		& &__btn {
+			padding: 0;
+
 			span {
 				font-weight: 600;
 				font-size: 18px;
@@ -474,10 +468,6 @@
 	.period-item {
 		&__artist-list {
 			column-count: 1;
-		}
-
-		&__artist-item:nth-last-child(-n+2) {
-			display: none;
 		}
 	}
 	.ac .ac-panel .ac-text {
