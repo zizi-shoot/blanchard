@@ -1,6 +1,8 @@
 import Splide from '@splidejs/splide';
 import tippy from 'tippy.js';
+import { disableArrowPaginationA11y } from '../../js/lib';
 
+const projectsSection = document.querySelector('.projects');
 const projectsOptions = {
 	classes: {
 		arrows: 'projects__arrows splide__arrows',
@@ -28,6 +30,7 @@ const projectsOptions = {
 };
 const projectsSlider = new Splide('.projects__slider', projectsOptions);
 projectsSlider.mount();
+projectsSlider.on('active mounted', () => disableArrowPaginationA11y(projectsSection));
 
 const tooltips = document.querySelectorAll('[id*="tooltip-"]');
 tooltips.forEach((button) => {

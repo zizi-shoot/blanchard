@@ -1,11 +1,13 @@
 import Splide from '@splidejs/splide';
-import displayFraction from '../../js/lib';
+import { disableArrowPaginationA11y, displayFraction } from '../../js/lib';
 
 const categories = document.querySelectorAll('.categories__label');
 const form = document.querySelector('.categories');
 const root = document.documentElement;
 const title = document.querySelector('.categories__title');
+const editionsSection = document.querySelector('.editions');
 const editionsOptions = {
+	accessibility: false,
 	classes: {
 		arrows: 'editions__arrows splide__arrows',
 		arrow: 'editions__arrow splide__arrow',
@@ -54,6 +56,7 @@ function calcFormHeight() {
 editionsSlider
 	.mount()
 	.on('active mounted', () => {
+		disableArrowPaginationA11y(editionsSection);
 		displayFraction('editions');
 	});
 
@@ -62,6 +65,7 @@ window.addEventListener('resize', () => {
 		editionsSlider = new Splide('.editions__slider', editionsOptions)
 			.mount()
 			.on('active mounted', () => {
+				disableArrowPaginationA11y(editionsSection);
 				displayFraction('editions');
 			});
 		displayFraction('editions');

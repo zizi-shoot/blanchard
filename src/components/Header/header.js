@@ -59,6 +59,12 @@ navList.addEventListener('click', () => {
 	}, 700);
 });
 
+window.addEventListener('resize', () => {
+	if (window.innerWidth <= 1024 && burgerMenu.getAttribute('aria-hidden') !== 'true' && !burgerMenu.classList.contains('header__nav--opened')) {
+		burgerMenu.setAttribute('aria-hidden', 'true');
+	}
+});
+
 /*
  Раскрытие/скрытие строки поиска при ширине экрана от 576 до 1024px
  */

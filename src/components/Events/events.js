@@ -4,6 +4,7 @@ const moreBtn = document.querySelector('.events__btn-more');
 const eventList = document.querySelector('.events__list');
 const events = document.querySelectorAll('.events__item');
 const eventsOptions = {
+	accessibility: false,
 	destroy: true,
 	arrows: false,
 	breakpoints: {

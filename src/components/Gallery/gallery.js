@@ -1,7 +1,7 @@
 import Choices from 'choices.js';
 import Splide from '@splidejs/splide';
 import Grid from '@splidejs/splide-extension-grid';
-import displayFraction from '../../js/lib';
+import { disableArrowPaginationA11y, displayFraction } from '../../js/lib';
 
 const element = document.getElementById('gallery-filter');
 const choices = new Choices(element, {
@@ -9,6 +9,7 @@ const choices = new Choices(element, {
 	itemSelectText: '',
 });
 const galleryOptions = {
+	accessibilty: false,
 	gap: 50,
 	grid: {
 		rows: 2,
@@ -69,10 +70,12 @@ const galleryOptions = {
 	},
 };
 const gallerySlider = new Splide('.gallery__slider', galleryOptions);
+const gallerySection = document.querySelector('.gallery');
 
 gallerySlider
 	.mount({ Grid })
 	.on('active', () => {
+		disableArrowPaginationA11y(gallerySection);
 		displayFraction('gallery');
 	});
 displayFraction('gallery');
