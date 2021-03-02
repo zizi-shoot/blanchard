@@ -23,11 +23,21 @@ const revRewrite = require('gulp-rev-rewrite');
 const revdel = require('gulp-rev-delete-original');
 const htmlmin = require('gulp-htmlmin');
 const flatten = require('gulp-flatten');
+const gulpif = require('gulp-if');
+const { readFileSync } = require('fs');
+
+let isProd = false;
+let buildDest = 'app';
+const toProd = (done) => {
+	isProd = true;
+	buildDest = 'build';
+	done();
+};
 
 // DEV TASKS
 
 const clean = () => {
-	return del(['app/*']);
+	return del([`${buildDest}/*`]);
 };
 const htmlInclude = () => {
 	return src(['src/index.html'])
@@ -35,8 +45,8 @@ const htmlInclude = () => {
 			prefix: '@',
 			basePath: '@file',
 		}))
-		.pipe(dest('app'))
-		.pipe(browserSync.stream());
+		.pipe(dest(buildDest))
+		.pipe((gulpif(isProd, browserSync.stream())));
 };
 const scripts = () => {
 	return src('src/js/main.js')
@@ -47,21 +57,21 @@ const scripts = () => {
 				filename: 'main.min.js',
 			},
 		}))
-		.on('error', function (err) {
+		.on('error', (err) => {
 			console.error('WEBPACK ERROR', err);
 			this.emit('end');
 		})
-		.pipe(dest('app/js'))
-		.pipe(browserSync.stream());
+		.pipe(dest(`${buildDest}/js`))
+		.pipe((gulpif(isProd, browserSync.stream())));
 };
 const fonts = () => {
 	return src('src/fonts/**.woff2')
-		.pipe(dest('app/fonts/'));
+		.pipe(dest(`${buildDest}/fonts`));
 };
 const imgToApp = () => {
 	return src(['src/img/*.ico', 'src/**/*.jpg', 'src/**/*.jpeg', 'src/**/*.png'])
 		.pipe(flatten())
-		.pipe(dest('app/img'));
+		.pipe(dest(`${buildDest}/img`));
 };
 const svgSprites = () => {
 	return src(['src/**/*.svg'])
@@ -73,7 +83,7 @@ const svgSprites = () => {
 				},
 			},
 		}))
-		.pipe(dest('app/img/'));
+		.pipe(dest(`${buildDest}/img`));
 };
 const styles = () => {
 	return src('src/scss/**/*.scss')
@@ -127,7 +137,7 @@ const stylesBuild = () => {
 		.pipe(cleanCSS({
 			level: 2,
 		}))
-		.pipe(dest('app/css/'));
+		.pipe(dest('build/css/'));
 };
 const scriptsBuild = () => {
 	return src('src/js/main.js')
@@ -137,35 +147,40 @@ const scriptsBuild = () => {
 				filename: 'main.min.js',
 			},
 		}))
-		.on('error', function(err) {
+		.on('error', (err) => {
 			console.error('WEBPACK ERROR', err);
 			this.emit('end');
 		})
-		.pipe(dest('app/js'));
+		.pipe(dest('build/js'));
 };
 const cache = () => {
-	return src('app/**/*.{css,js,svg,png,jpg,jpeg,woff2}', { base: 'app' })
+	return src('build/**/*.{css,js,svg,png,jpg,jpeg,woff2}', { base: 'build' })
 		.pipe(rev())
 		.pipe(revdel())
-		.pipe(dest('app'))
+		.pipe(dest('build'))
 		.pipe(rev.manifest('rev.json'))
-		.pipe(dest('app'));
+		.pipe(dest('build'));
 };
 const rewrite = () => {
-	const manifest = src('app/rev.json');
-	return src('app/**/*.html')
+	const manifest = readFileSync('build/rev.json');
+	src('build/css/*.css')
 		.pipe(revRewrite({
 			manifest,
 		}))
-		.pipe(dest('app'));
+		.pipe(dest('build/css'));
+	return src('build/*.html')
+		.pipe(revRewrite({
+			manifest,
+		}))
+		.pipe(dest('build'));
 };
 const htmlMinify = () => {
-	return src('app/**/*.html')
+	return src('build/**/*.html')
 		.pipe(htmlmin({
 			collapseWhitespace: true,
 		}))
-		.pipe(dest('app'));
+		.pipe(dest('build'));
 };
 
-exports.build = series(clean, parallel(htmlInclude, scriptsBuild, fonts, imgToApp, svgSprites), stylesBuild, htmlMinify);
+exports.build = series(toProd, clean, parallel(htmlInclude, scriptsBuild, fonts, imgToApp, svgSprites), stylesBuild, htmlMinify);
 exports.cache = series(cache, rewrite);
