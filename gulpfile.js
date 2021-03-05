@@ -25,6 +25,7 @@ const htmlmin = require('gulp-htmlmin');
 const flatten = require('gulp-flatten');
 const gulpif = require('gulp-if');
 const { readFileSync } = require('fs');
+const replace = require('gulp-replace');
 
 let isProd = false;
 let buildDest = 'app';
@@ -46,7 +47,7 @@ const htmlInclude = () => {
 			basePath: '@file',
 		}))
 		.pipe(dest(buildDest))
-		.pipe((gulpif(isProd, browserSync.stream())));
+		.pipe((gulpif(!isProd, browserSync.stream())));
 };
 const scripts = () => {
 	return src('src/js/main.js')
@@ -62,7 +63,7 @@ const scripts = () => {
 			this.emit('end');
 		})
 		.pipe(dest(`${buildDest}/js`))
-		.pipe((gulpif(isProd, browserSync.stream())));
+		.pipe((gulpif(!isProd, browserSync.stream())));
 };
 const fonts = () => {
 	return src('src/fonts/**.woff2')
@@ -74,7 +75,7 @@ const imgToApp = () => {
 		.pipe(dest(`${buildDest}/img`));
 };
 const svgSprites = () => {
-	return src(['src/**/*.svg'])
+	return src(['src/img/**/*.svg', 'src/components/**/*.svg'])
 		.pipe(flatten())
 		.pipe(svgSprite({
 			mode: {
@@ -114,7 +115,8 @@ const watchFiles = () => {
 	watch('src/**/**.jpg', imgToApp);
 	watch('src/**/*.jpeg', imgToApp);
 	watch('src/components/**/*.png', imgToApp);
-	watch('src/**/*.svg', svgSprites);
+	watch('src/img/**/*.svg', svgSprites);
+	watch('src/components/**/*.svg', svgSprites);
 	watch('src/fonts/**.ttf', fonts);
 	watch('src/**/*.js', scripts);
 };
@@ -122,6 +124,10 @@ const watchFiles = () => {
 exports.default = series(clean, parallel(htmlInclude, scripts, fonts, imgToApp, svgSprites), styles, watchFiles);
 
 // BUILD TASKS
+const imgToBuild = () => {
+	return src('src/compressed_img/*')
+		.pipe(dest('build/img'));
+};
 const stylesBuild = () => {
 	return src('src/scss/**/*.scss')
 		.pipe(sass({
@@ -153,8 +159,19 @@ const scriptsBuild = () => {
 		})
 		.pipe(dest('build/js'));
 };
+const renameImg = () => {
+	src('build/css/*.css')
+		.pipe(replace(/.jpg|.png/g, '.webp'))
+		.pipe(dest('build/css'));
+	src('build/js/*.js')
+		.pipe(replace(/.jpg|.png/g, '.webp'))
+		.pipe(dest('build/js'));
+	return src('build/*.html')
+		.pipe(replace(/.jpg|.png/g, '.webp'))
+		.pipe(dest('build'));
+};
 const cache = () => {
-	return src('build/**/*.{css,js,svg,png,jpg,jpeg,woff2}', { base: 'build' })
+	return src('build/**/*.{css,js,svg,webp,woff2}', { base: 'build' })
 		.pipe(rev())
 		.pipe(revdel())
 		.pipe(dest('build'))
@@ -163,11 +180,18 @@ const cache = () => {
 };
 const rewrite = () => {
 	const manifest = readFileSync('build/rev.json');
+
+	src('build/js/*.js')
+		.pipe(revRewrite({
+			manifest,
+		}))
+		.pipe(dest('build/js'));
 	src('build/css/*.css')
 		.pipe(revRewrite({
 			manifest,
 		}))
 		.pipe(dest('build/css'));
+
 	return src('build/*.html')
 		.pipe(revRewrite({
 			manifest,
@@ -182,5 +206,5 @@ const htmlMinify = () => {
 		.pipe(dest('build'));
 };
 
-exports.build = series(toProd, clean, parallel(htmlInclude, scriptsBuild, fonts, imgToApp, svgSprites), stylesBuild, htmlMinify);
+exports.build = series(toProd, clean, parallel(htmlInclude, scriptsBuild, fonts, imgToBuild), stylesBuild, renameImg, htmlMinify);
 exports.cache = series(cache, rewrite);
