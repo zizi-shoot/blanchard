@@ -2,7 +2,7 @@
 	position: relative;
 	overflow: hidden;
 	padding-top: 239px;
-	padding-bottom: 141px;
+	padding-bottom: 121px;
 	color: var(--font-alt);
 	font-weight: 700;
 
@@ -45,7 +45,7 @@
 	}
 
 	&__descr {
-		margin-bottom: 111px;
+		margin-bottom: 92px;
 		font-size: 18px;
 		line-height: 30px;
 	}
@@ -86,13 +86,13 @@
 
 	@media (max-width: 1024px) {
 		padding-top: 212px;
-		padding-bottom: 132px;
+		padding-bottom: 112px;
 		&__title {
 			margin-bottom: 8px;
 		}
 		&__descr {
 			max-width: 660px;
-			margin-bottom: 154px;
+			margin-bottom: 134px;
 		}
 	}
 	@media (max-width: 767px) {
