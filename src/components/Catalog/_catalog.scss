@@ -31,11 +31,6 @@
 			line-height: 0;
 			transition-duration: .3s;
 			transition-property: filter, border-color, box-shadow;
-
-			&:focus-visible {
-				box-shadow: 0 0 0 4px var(--focus_click);
-			}
-
 			@media (pointer: fine) {
 				&:hover {
 					box-shadow: 0 0 20px var(--background-control70);
@@ -108,6 +103,10 @@
 	}
 }
 
+.catalog-nav__btn.focus-visible:focus {
+	box-shadow: 0 0 0 4px var(--focus_click);
+}
+
 .artist-choice {
 	&__period-list {
 		.is-active svg path {
@@ -174,10 +173,6 @@
 			transition-property: outline-color, color;
 		}
 
-		&:focus-visible {
-			outline-color: var(--focus_click);
-		}
-
 		&:active {
 			span {
 				color: var(--focus_click);
@@ -195,13 +190,17 @@
 	}
 }
 
+.artist-choice .artist-choice__btn.focus-visible:focus {
+	outline-color: var(--focus_click);
+}
+
 .period-item {
 	outline: 2px solid transparent;
 	outline-offset: 2px;
 	transition-duration: .3s;
 	transition-property: outline-color, color;
 
-	&:focus-visible {
+	&:focus {
 		outline-color: var(--focus_click);
 	}
 
@@ -256,7 +255,7 @@
 		transition-property: color, outline-color, text-decoration-color;
 		animation-duration: .3s;
 
-		&:focus-visible {
+		&:focus {
 			outline-color: var(--focus_click);
 		}
 
@@ -278,8 +277,6 @@
 }
 
 .period-item.is-active {
-	border-bottom-color: var(--background-control);
-
 	.ac-header {
 		border-bottom-color: var(--background-control);
 		transition-duration: .3s;
@@ -328,7 +325,7 @@
 	padding: 29px 0 31px 4px;
 }
 
-.ac .ac-trigger:focus-visible {
+.ac .ac-trigger.focus-visible:focus {
 	color: var(--font-main);
 }
 

@@ -33,7 +33,7 @@
 		outline-offset: 4px;
 		transition: color .2s, outline-color .2s;
 
-		&:focus-visible {
+		&:focus {
 			outline-color: var(--focus_click);
 		}
 
@@ -93,7 +93,7 @@
 			background: #00000080 url("../img/sprite.svg#lens") center/60% no-repeat;
 		}
 
-		&:focus-visible {
+		&:focus {
 			outline-color: var(--focus_click);
 		}
 
@@ -147,10 +147,6 @@
 	margin-top: 10px;
 	border-radius: 6px;
 
-	&:focus-visible {
-		box-shadow: 0 0 0 2px var(--focus_click);
-	}
-
 	&__inner,
 	&__list,
 	&__list--dropdown &__item--selectable.is-highlighted,
@@ -170,11 +166,6 @@
 		outline: none;
 		transition-duration: .3s;
 		transition-property: background-color, border-color;
-
-		&:focus-visible {
-			border-color: var(--focus_click);
-		}
-
 		@media (pointer: fine) {
 			&:hover {
 				background-color: var(--background-control);
@@ -237,17 +228,24 @@
 		outline: none;
 		transition-duration: .3s;
 		transition-property: background-color, border-color;
-
-		&:focus-visible {
-			border-color: var(--focus_click);
-		}
-
 		@media (pointer: fine) {
 			&:hover {
 				background-color: var(--background-control);
 			}
 		}
 	}
+}
+
+.choices.focus-visible:focus {
+	box-shadow: 0 0 0 2px var(--focus_click);
+}
+
+.choices__inner.focus-visible:focus {
+	border-color: var(--focus_click);
+}
+
+.choices__list--dropdown .choices__item.focus-visible:focus {
+	border-color: var(--focus_click);
 }
 
 @media (max-width: 1366px) {

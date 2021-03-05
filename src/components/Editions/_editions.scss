@@ -125,7 +125,7 @@
 			}
 		}
 
-		&:focus-visible + span + span {
+		&:focus + span + span {
 			outline-color: var(--focus_click);
 		}
 

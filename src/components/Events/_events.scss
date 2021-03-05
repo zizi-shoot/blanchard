@@ -108,7 +108,7 @@
 		transition-duration: .3s;
 		transition-property: outline-color, font-weight, color;
 
-		&:focus-visible {
+		&:focus {
 			outline-color: var(--focus_click);
 		}
 

@@ -54,7 +54,7 @@ body {
 		transition: border-color .3s;
 	}
 
-	&:focus-visible {
+	&:focus {
 		outline-color: var(--focus_click);
 
 		&::after {
@@ -133,6 +133,10 @@ body {
 
 .visually-hidden {
 	@include visually-hidden;
+}
+
+.js-focus-visible :focus:not(.focus-visible) {
+	outline-color: transparent;
 }
 
 

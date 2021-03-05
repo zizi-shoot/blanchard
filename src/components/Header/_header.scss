@@ -161,7 +161,7 @@
 	transition-duration: .3s;
 	transition-property: color, outline-color;
 
-	&:focus-visible {
+	&:focus {
 		outline-color: var(--focus_click);
 	}
 }
@@ -196,7 +196,7 @@
 		transition-duration: .3s;
 		transition-property: color, outline-color;
 
-		&:focus-visible {
+		&:focus {
 			outline-color: var(--focus_click);
 		}
 	}
@@ -288,7 +288,7 @@
 			opacity: .85;
 		}
 
-		&:focus-visible::placeholder {
+		&:focus::placeholder {
 			opacity: 0;
 		}
 	}
@@ -298,7 +298,7 @@
 		outline: 2px solid transparent;
 		outline-offset: var(--offset);
 
-		&:focus-visible {
+		&:focus {
 			outline-color: var(--focus_click);
 		}
 	}
@@ -379,7 +379,7 @@
 			opacity: .4;
 		}
 
-		&:focus-visible {
+		&:focus {
 			outline-color: var(--focus_click);
 		}
 	}
@@ -545,7 +545,7 @@
 			font-weight: 600;
 			transition-duration: .3s;
 
-			&:focus-visible {
+			&:focus {
 				outline-color: var(--focus_click);
 			}
 

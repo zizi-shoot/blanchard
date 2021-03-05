@@ -27,7 +27,7 @@
 		outline: 2px solid transparent;
 		outline-offset: 6px;
 
-		&:focus-visible {
+		&:focus {
 			outline-color: var(--focus_click);
 		}
 
@@ -48,10 +48,6 @@
 			border-radius: 50%;
 			outline: none;
 			transition: box-shadow .3s;
-
-			&:focus-visible {
-				box-shadow: 0 0 0 5px var(--focus_click);
-			}
 
 			img {
 				object-fit: cover;
@@ -112,5 +108,9 @@
 			flex-direction: column;
 		}
 	}
+}
+
+.footer__networks-item a.focus-visible:focus {
+	box-shadow: 0 0 0 5px var(--focus_click);
 }
 

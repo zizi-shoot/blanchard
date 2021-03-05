@@ -29,7 +29,7 @@
 		transition-duration: .3s;
 		transition-property: outline-color, text-decoration-color, color;
 
-		&:focus-visible {
+		&:focus {
 			outline-color: var(--focus_click);
 		}
 
@@ -93,7 +93,7 @@
 		transition: filter .3s;
 	}
 
-	&:focus-visible {
+	&:focus {
 		img {
 			filter: unset;
 		}
@@ -106,25 +106,25 @@
 	}
 }
 
-.tippy-box[data-theme~='tooltip'] {
+.tippy-box[data-theme~="tooltip"] {
 	border-radius: 0;
 	background-color: var(--background-tip);
 	color: var(--font-alt);
 }
 
-.tippy-box[data-theme~='tooltip'][data-placement^='top'] > .tippy-arrow::before {
+.tippy-box[data-theme~="tooltip"][data-placement^="top"] > .tippy-arrow::before {
 	border-top-color: var(--background-tip);
 }
 
-.tippy-box[data-theme~='tooltip'][data-placement^='bottom'] > .tippy-arrow::before {
+.tippy-box[data-theme~="tooltip"][data-placement^="bottom"] > .tippy-arrow::before {
 	border-bottom-color: var(--background-tip);
 }
 
-.tippy-box[data-theme~='tooltip'][data-placement^='left'] > .tippy-arrow::before {
+.tippy-box[data-theme~="tooltip"][data-placement^="left"] > .tippy-arrow::before {
 	border-left-color: var(--background-tip);
 }
 
-.tippy-box[data-theme~='tooltip'][data-placement^='right'] > .tippy-arrow::before {
+.tippy-box[data-theme~="tooltip"][data-placement^="right"] > .tippy-arrow::before {
 	border-right-color: var(--background-tip);
 }
 
