@@ -1,53 +1,53 @@
 html {
-	box-sizing: border-box;
-	--scroll-behavior: smooth;
-	scroll-behavior: smooth;
+    box-sizing: border-box;
+    --scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 *,
 *::before,
 *::after {
-	box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 h2,
 h3,
 h4 {
-	margin: 0;
+    margin: 0;
 }
 
 body {
-	margin: 0;
+    margin: 0;
 }
 
 img {
-	max-width: 100%;
+    max-width: 100%;
 }
 
 a {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 button {
-	outline: none;
-	cursor: pointer;
-	transition: border-color .2s;
+    outline: none;
+    cursor: pointer;
+    transition: border-color .2s;
 }
 
 ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 input {
-	outline: none;
+    outline: none;
 }
 
 p,
 fieldset {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 

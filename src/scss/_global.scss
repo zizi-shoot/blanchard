@@ -1,136 +1,136 @@
 body {
-	background-color: var(--color-white);
-	color: var(--font-main);
-	font-size: 16px;
-	font-family: "OpenSans", sans-serif;
-	line-height: 32px;
+    background-color: var(--color-white);
+    color: var(--font-main);
+    font-size: 16px;
+    font-family: "OpenSans", sans-serif;
+    line-height: 32px;
 }
 
 .page-container {
-	max-width: 1660px;
-	margin: 0 auto;
-	padding: 0 30px;
-	@media (max-width: 1024px) {
-		padding: 0 50px;
-	}
-	@media (max-width: 576px) {
-		padding: 0 15px;
-	}
+    max-width: 1660px;
+    margin: 0 auto;
+    padding: 0 30px;
+    @media (max-width: 1024px) {
+        padding: 0 50px;
+    }
+    @media (max-width: 576px) {
+        padding: 0 15px;
+    }
 }
 
 .section-title {
-	font-weight: 400;
-	font-size: 48px;
-	line-height: 65px;
-	@media (max-width: 576px) {
-		font-weight: 400;
-		font-size: 28px;
-		line-height: 38px;
-	}
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 65px;
+    @media (max-width: 576px) {
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 38px;
+    }
 }
 
 .btn {
-	position: relative;
-	min-width: 110px;
-	border-radius: 100px;
-	font-weight: 700;
-	transition-duration: .3s;
+    position: relative;
+    min-width: 110px;
+    border-radius: 100px;
+    font-weight: 700;
+    transition-duration: .3s;
 
-	&::after {
-		content: "";
-		position: absolute;
-		top: 2px;
-		right: 2px;
-		bottom: 2px;
-		left: 2px;
-		border: 2px solid transparent;
-		border-radius: 100px;
-		transition: border-color .3s;
-	}
+    &::after {
+        content: "";
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        bottom: 2px;
+        left: 2px;
+        border: 2px solid transparent;
+        border-radius: 100px;
+        transition: border-color .3s;
+    }
 
-	&:focus {
-		outline-color: var(--focus_click);
+    &:focus {
+        outline-color: var(--focus_click);
 
-		&::after {
-			border-color: var(--focus_click-alt);
-		}
-	}
+        &::after {
+            border-color: var(--focus_click-alt);
+        }
+    }
 
-	@media (pointer: fine) {
-		&:hover {
-			background-color: var(--background-control);
-		}
-	}
+    @media (pointer: fine) {
+        &:hover {
+            background-color: var(--background-control);
+        }
+    }
 
-	&:active {
-		border-color: var(--hover-main);
-		background-color: var(--focus_click);
-	}
+    &:active {
+        border-color: var(--hover-main);
+        background-color: var(--focus_click);
+    }
 }
 
 .splide__arrow {
-	position: static;
-	opacity: 1;
-	transition-duration: .3s;
-	transition-property: box-shadow, background-color, opacity;
-	transform: none;
+    position: static;
+    opacity: 1;
+    transition-duration: .3s;
+    transition-property: box-shadow, background-color, opacity;
+    transform: none;
 
-	svg {
-		display: none;
-	}
+    svg {
+        display: none;
+    }
 
-	&::after {
-		content: "";
-		width: 7px;
-		height: 7px;
-		border-top: 1px solid;
-		border-left: 1px solid;
-	}
+    &::after {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-top: 1px solid;
+        border-left: 1px solid;
+    }
 
-	&--prev::after {
-		transform: translateX(20%) rotate(-45deg);
-	}
+    &--prev::after {
+        transform: translateX(20%) rotate(-45deg);
+    }
 
-	&--next::after {
-		transform: translateX(-20%) rotate(135deg);
-	}
+    &--next::after {
+        transform: translateX(-20%) rotate(135deg);
+    }
 
-	&:focus-visible {
-		box-shadow: 0 0 0 3px var(--focus_click);
-	}
+    &:focus-visible {
+        box-shadow: 0 0 0 3px var(--focus_click);
+    }
 
-	@media (pointer: fine) {
-		&:hover, {
-			background-color: var(--background-control);
-		}
-	}
+    @media (pointer: fine) {
+        &:hover, {
+            background-color: var(--background-control);
+        }
+    }
 
-	&:active {
-		border-color: var(--hover-main);
-		background-color: var(--focus_click);
-	}
+    &:active {
+        border-color: var(--hover-main);
+        background-color: var(--focus_click);
+    }
 
-	&:disabled {
-		opacity: .35;
-		pointer-events: none;
-	}
+    &:disabled {
+        opacity: .35;
+        pointer-events: none;
+    }
 }
 
 .disable-scroll {
-	position: fixed;
-	top: 0;
-	left: 0;
-	overflow: hidden;
-	width: 100%;
-	height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
 }
 
 .visually-hidden {
-	@include visually-hidden;
+    @include visually-hidden;
 }
 
 .js-focus-visible :focus:not(.focus-visible) {
-	outline-color: transparent;
+    outline-color: transparent;
 }
 
 

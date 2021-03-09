@@ -14,7 +14,7 @@
 	"rules": {
 		"indent": [
 			"error",
-			"tab"
+			4
 		],
 		"no-tabs": "off",
 		"max-len": "off",
