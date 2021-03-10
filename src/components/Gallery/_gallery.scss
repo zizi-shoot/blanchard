@@ -183,21 +183,23 @@
         }
 
         &::after {
-            content: url("../img/sprite.svg#gallery-filter-button");
+            content: "";
             position: absolute;
-            top: 50%;
-            right: 0;
-            width: 40px;
-            height: unset;
+            right: 16px;
+            width: 8px;
+            height: 8px;
             margin-top: 0;
             border: none;
-            transform: translateY(-50%);
+            transform: translateY(-50%) rotate(-45deg);
+            border-bottom: 1px solid var(--font-alt);
+            border-left: 1px solid var(--font-alt);
         }
     }
 
     &[data-type*=select-one].is-open::after {
-        margin-top: -15px;
-        transform: rotateX(180deg);
+        transform: translateY(-50%) rotate(135deg);
+        margin-top: 0;
+        border-color: var(--font-alt);
     }
 
     &__list {
