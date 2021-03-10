@@ -25,9 +25,10 @@
         outline: 2px solid transparent;
         outline-offset: 2px;
         font-weight: 600;
-        text-decoration: underline transparent;
+        line-height: 1.5;
+        border-bottom: 1px solid transparent;
         transition-duration: .3s;
-        transition-property: outline-color, text-decoration-color, color;
+        transition-property: outline-color, border-bottom-color, color;
 
         &:focus {
             outline-color: var(--focus_click);
@@ -35,13 +36,13 @@
 
         @media (pointer: fine) {
             &:hover {
-                text-decoration-color: inherit;
+                border-bottom-color: inherit;
             }
         }
 
         &:active {
             color: var(--focus_click);
-            text-decoration-color: inherit;
+            border-bottom-color: inherit;
         }
     }
 

@@ -65,6 +65,7 @@
 
     &__tab {
         transition: opacity .3s;
+        display: flex;
 
         &--preanimated {
             opacity: 0;
@@ -96,10 +97,6 @@
                 opacity: 0;
             }
         }
-    }
-
-    &__tab {
-        display: flex;
     }
 }
 
@@ -242,7 +239,6 @@
     }
 
     &__btn-artist {
-        padding: 0;
         border: none;
         background-color: transparent;
         color: var(--font-main);
@@ -251,9 +247,10 @@
         font-size: 16px;
         font-family: "Open Sans", sans-serif;
         line-height: 1;
-        text-decoration: underline transparent;
-        transition-property: color, outline-color, text-decoration-color;
-        animation-duration: .3s;
+        border-bottom: 1px solid transparent;
+        padding: 0 0 3px;
+        transition-property: color, outline-color, border-bottom-color;
+        transition-duration: .3s;
 
         &:focus {
             outline-color: var(--focus_click);
@@ -262,7 +259,7 @@
         @media (pointer: fine) {
             &:hover {
                 color: var(--font-link);
-                text-decoration-color: var(--font-link);
+                border-bottom-color: var(--font-link);
             }
         }
 

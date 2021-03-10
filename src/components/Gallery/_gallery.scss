@@ -31,7 +31,10 @@
         color: var(--font-link-alt);
         outline: 2px solid transparent;
         outline-offset: 4px;
-        transition: color .2s, outline-color .2s;
+        transition-property: color, outline-color, border-bottom-color;
+        transition-duration: .3s;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
 
         &:focus {
             outline-color: var(--focus_click);
@@ -39,7 +42,7 @@
 
         @media (pointer: fine) {
             &:hover {
-                text-decoration: underline;
+                border-bottom-color: var(--font-link-alt);
             }
         }
 
