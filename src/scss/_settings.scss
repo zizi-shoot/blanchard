@@ -41,13 +41,17 @@ ul {
 }
 
 input {
-    outline: none;
+  outline: none;
 }
 
 p,
 fieldset {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+}
+
+picture {
+  display: inline-block;
 }
 
 

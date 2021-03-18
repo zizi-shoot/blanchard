@@ -1,18 +1,21 @@
 .gallery {
-    padding-top: 80px;
-    padding-bottom: 78px;
-    background: #000 url("../img/gallery-back.jpg") center center/cover no-repeat;
-    color: var(--font-alt);
+  padding-top: 80px;
+  padding-bottom: 78px;
+  background: #000 url("../img/gallery-back.jpg") center center/cover no-repeat;
+  color: var(--font-alt);
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    background-image: url("../img/gallery-back@2x.jpg");
+  }
 
-    &__container {
-        display: grid;
-        grid-template-rows: repeat(4, auto);
-        grid-template-columns: 400px 1fr;
-        column-gap: 50px;
-    }
+  &__container {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: 400px 1fr;
+    column-gap: 50px;
+  }
 
-    &__title {
-        margin-bottom: 16px;
+  &__title {
+    margin-bottom: 16px;
     }
 
     &__label {
@@ -260,9 +263,15 @@
 }
 
 @media (max-width: 1024px) {
-    .gallery__container {
-        grid-template-columns: 280px 1fr;
+  .gallery {
+    background-image: url("../img/gallery-back-tab.jpg");
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+      background-image: url("../img/gallery-back@2x-tab.jpg");
     }
+  }
+  .gallery__container {
+    grid-template-columns: 280px 1fr;
+  }
 }
 
 @media (max-width: 992px) {
@@ -287,18 +296,19 @@
 
 @media (max-width: 576px) {
     .gallery {
-        padding-top: 50px;
-        padding-bottom: 80px;
+      padding-top: 50px;
+      padding-bottom: 80px;
+      background-image: url("../img/gallery-back-mob.jpg");
 
-        &__title {
-            margin-bottom: 12px;
-        }
+      &__title {
+        margin-bottom: 12px;
+      }
 
-        &__label {
-            width: 100%;
-        }
+      &__label {
+        width: 100%;
+      }
 
-        &__slider {
+      &__slider {
             display: flex;
             flex-direction: column;
             align-items: center;

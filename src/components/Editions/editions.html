@@ -1,125 +1,174 @@
 <section class="editions" id="editions">
-	<div class="editions__container page-container">
-		<h2 class="editions__title section-title">Издания</h2>
-		<form class="editions__categories categories">
-			<h3 class="categories__title filters-title">Категории</h3>
-			<label class="categories__label" data-checked="false"><input class="categories__input visually-hidden"
-			                                                             type="checkbox"><span></span><span>Бестселлеры</span></label>
-			<label class="categories__label" data-checked="false"><input class="categories__input visually-hidden"
-			                                                             type="checkbox"><span></span><span>Искусство</span></label>
-			<label class="categories__label" data-checked="false"><input class="categories__input visually-hidden"
-			                                                             type="checkbox"><span></span><span>Архитектура</span></label>
-			<label class="categories__label" data-checked="true"><input checked class="categories__input visually-hidden"
-			                                                            type="checkbox"><span></span><span>Дизайн</span></label>
-			<label class="categories__label" data-checked="false"><input class="categories__input visually-hidden"
-			                                                             type="checkbox"><span></span><span>Мода</span></label>
-			<label class="categories__label" data-checked="false"><input class="categories__input visually-hidden"
-			                                                             type="checkbox"><span></span><span>Детям</span></label>
-			<label class="categories__label" data-checked="false"><input class="categories__input visually-hidden"
-			                                                             type="checkbox"><span></span><span>Художественная литература</span></label>
-			<label class="categories__label" data-checked="false"><input class="categories__input visually-hidden"
-			                                                             type="checkbox"><span></span><span>Публицистика</span></label>
-			<label class="categories__label" data-checked="false"><input class="categories__input visually-hidden"
-			                                                             type="checkbox"><span></span><span>Путеводители</span></label>
-			<label class="categories__label" data-checked="false"><input class="categories__input visually-hidden"
-			                                                             type="checkbox"><span></span><span>Философия</span></label>
-			<label class="categories__label" data-checked="false"><input class="categories__input visually-hidden"
-			                                                             type="checkbox"><span></span><span>Учебная литература</span></label>
-			<label class="categories__label" data-checked="false"><input class="categories__input visually-hidden"
-			                                                             type="checkbox"><span></span><span>Журналы и газеты</span></label>
+  <div class="editions__container page-container">
+    <h2 class="editions__title section-title">Издания</h2>
+    <form class="editions__categories categories">
+      <h3 class="categories__title filters-title">Категории</h3>
+      <label class="categories__label" data-checked="false">
+        <input class="categories__input visually-hidden" type="checkbox"><span></span><span>Бестселлеры</span>
+      </label>
+      <label class="categories__label" data-checked="false">
+        <input class="categories__input visually-hidden" type="checkbox"><span></span><span>Искусство</span>
+      </label>
+      <label class="categories__label" data-checked="false">
+        <input class="categories__input visually-hidden" type="checkbox"><span></span><span>Архитектура</span>
+      </label>
+      <label class="categories__label" data-checked="true">
+        <input checked class="categories__input visually-hidden" type="checkbox"><span></span><span>Дизайн</span>
+      </label>
+      <label class="categories__label" data-checked="false">
+        <input class="categories__input visually-hidden" type="checkbox"><span></span><span>Мода</span>
+      </label>
+      <label class="categories__label" data-checked="false">
+        <input class="categories__input visually-hidden" type="checkbox"><span></span><span>Детям</span>
+      </label>
+      <label class="categories__label" data-checked="false">
+        <input class="categories__input visually-hidden" type="checkbox"><span></span><span>Художественная литература</span>
+      </label>
+      <label class="categories__label" data-checked="false">
+        <input class="categories__input visually-hidden" type="checkbox"><span></span><span>Публицистика</span>
+      </label>
+      <label class="categories__label" data-checked="false">
+        <input class="categories__input visually-hidden" type="checkbox"><span></span><span>Путеводители</span>
+      </label>
+      <label class="categories__label" data-checked="false">
+        <input class="categories__input visually-hidden" type="checkbox"><span></span><span>Философия</span>
+      </label>
+      <label class="categories__label" data-checked="false">
+        <input class="categories__input visually-hidden" type="checkbox"><span></span><span>Учебная литература</span>
+      </label>
+      <label class="categories__label" data-checked="false">
+        <input class="categories__input visually-hidden" type="checkbox"><span></span><span>Журналы и газеты</span>
+      </label>
 
-		</form>
-		<form class="editions__prices prices">
-			<h3 class="prices__title filters-title">Цена</h3>
-			<div class="prices__wrapper">
-				<label class="prices__label min-price"><span>От</span><input class="prices__input" placeholder="50" type="number"></label>
-				<label class="prices__label max-price"><span>до</span><input class="prices__input" placeholder="25 000" type="number"></label>
-				<span class="prices__currency">руб.</span>
-			</div>
-		</form>
-		<div class="editions__slider splide">
-			<div class="editions__track splide__track">
-				<ul class="editions__list splide__list" title="Издания">
-					<li class="splide__slide">
-						<article class="editions__item edition">
-							<img alt="Обложка издания" class="edition__pic" src="img/editions-1.jpg">
-							<div class="edition__wrapper">
-								<h3 class="edition__title">Искусство цвета</h3>
-								<p class="edition__author">Иттен, Иоханнес</p>
-							</div>
-							<p class="edition__price">620</p>
-							<button class="edition__btn-order btn">Заказать</button>
-						</article>
-					</li>
-					<li class="splide__slide">
-						<article class="editions__item edition">
-							<img alt="Обложка издания" class="edition__pic" src="img/editions-2.jpg">
-							<div class="edition__wrapper">
-								<h3 class="edition__title">Типографика</h3>
-								<p class="edition__author">Рудер, Эмиль </p>
-							</div>
-							<p class="edition__price">2 450</p>
-							<button class="edition__btn-order btn">Заказать</button>
-						</article>
-					</li>
-					<li class="splide__slide">
-						<article class="editions__item edition">
-							<img alt="Обложка издания" class="edition__pic" src="img/editions-3.jpg">
-							<div class="edition__wrapper">
-								<h3 class="edition__title">Книга про буквы</h3>
-								<p class="edition__author">Гордон, Юрий</p>
-							</div>
-							<p class="edition__price">2 200</p>
-							<button class="edition__btn-order btn">Заказать</button>
-						</article>
-					</li>
-					<li class="splide__slide">
-						<article class="editions__item edition">
-							<img alt="Обложка издания" class="edition__pic" src="img/editions-4.jpg">
-							<div class="edition__wrapper">
-								<h3 class="edition__title">Николай Ильин</h3>
-								<p class="edition__author">Кричевский, Владимир </p>
-							</div>
-							<p class="edition__price">1 100</p>
-							<button class="edition__btn-order btn">Заказать</button>
-						</article>
-					</li>
-					<li class="splide__slide">
-						<article class="editions__item edition">
-							<img alt="Обложка издания" class="edition__pic" src="img/editions-5.jpg">
-							<div class="edition__wrapper">
-								<h3 class="edition__title">Модульные сетки в граф...</h3>
-								<p class="edition__author">Мюллер-Брокманн, Йозеф </p>
-							</div>
-							<p class="edition__price">1 450</p>
-							<button class="edition__btn-order btn">Заказать</button>
-						</article>
-					</li>
-					<li class="splide__slide">
-						<article class="editions__item edition">
-							<img alt="Обложка издания" class="edition__pic" src="img/editions-6.jpg">
-							<div class="edition__wrapper">
-								<h3 class="edition__title">Эволюция графических ст...</h3>
-								<p class="edition__author">Хеллер, Чваст</p>
-							</div>
-							<p class="edition__price">3 200</p>
-							<button class="edition__btn-order btn">Заказать</button>
-						</article>
-					</li>
-					<li class="splide__slide">
-						<article class="editions__item edition">
-							<img alt="Обложка издания" class="edition__pic" src="img/editions-7.jpg">
-							<div class="edition__wrapper">
-								<h3 class="edition__title">Искусство и визуальное в...</h3>
-								<p class="edition__author">Арнхейм, Рудольф </p>
-							</div>
-							<p class="edition__price">2 200</p>
-							<button class="edition__btn-order btn">Заказать</button>
-						</article>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
+    </form>
+    <form class="editions__prices prices">
+      <h3 class="prices__title filters-title">Цена</h3>
+      <div class="prices__wrapper">
+        <label class="prices__label min-price"><span>От</span><input class="prices__input" placeholder="50"
+                                                                     type="number"></label>
+        <label class="prices__label max-price"><span>до</span><input class="prices__input" placeholder="25 000"
+                                                                     type="number"></label>
+        <span class="prices__currency">руб.</span>
+      </div>
+    </form>
+    <div class="editions__slider splide">
+      <div class="editions__track splide__track">
+        <ul class="editions__list splide__list" title="Издания">
+          <li class="splide__slide">
+            <article class="editions__item edition">
+              <picture class="edition__picture">
+                <source media="(min-width: 1025px)" srcset="img/editions-1@2x.jpg 2x, img/editions-1.jpg">
+                <source media="(min-width: 577px)" srcset="img/editions-1@2x-tab.jpg 2x, img/editions-1-tab.jpg">
+                <source srcset="img/editions-1-mob.jpg">
+                <img alt="Обложка издания" src="img/editions-1.jpg">
+              </picture>
+              <div class="edition__wrapper">
+                <h3 class="edition__title">Искусство цвета</h3>
+                <p class="edition__author">Иттен, Иоханнес</p>
+              </div>
+              <p class="edition__price">620</p>
+              <button class="edition__btn-order btn">Заказать</button>
+            </article>
+          </li>
+          <li class="splide__slide">
+            <article class="editions__item edition">
+              <picture class="edition__picture">
+                <source media="(min-width: 1025px)" srcset="img/editions-2@2x.jpg 2x, img/editions-2.jpg">
+                <source media="(min-width: 577px)" srcset="img/editions-2@2x-tab.jpg 2x, img/editions-2-tab.jpg">
+                <source srcset="img/editions-2-mob.jpg">
+                <img alt="Обложка издания" src="img/editions-2.jpg">
+              </picture>
+              <div class="edition__wrapper">
+                <h3 class="edition__title">Типографика</h3>
+                <p class="edition__author">Рудер, Эмиль </p>
+              </div>
+              <p class="edition__price">2 450</p>
+              <button class="edition__btn-order btn">Заказать</button>
+            </article>
+          </li>
+          <li class="splide__slide">
+            <article class="editions__item edition">
+              <picture class="edition__picture">
+                <source media="(min-width: 1025px)" srcset="img/editions-3@2x.jpg 2x, img/editions-3.jpg">
+                <source media="(min-width: 577px)" srcset="img/editions-3@2x-tab.jpg 2x, img/editions-3-tab.jpg">
+                <source srcset="img/editions-3-mob.jpg">
+                <img alt="Обложка издания" src="img/editions-3.jpg">
+              </picture>
+              <div class="edition__wrapper">
+                <h3 class="edition__title">Книга про буквы</h3>
+                <p class="edition__author">Гордон, Юрий</p>
+              </div>
+              <p class="edition__price">2 200</p>
+              <button class="edition__btn-order btn">Заказать</button>
+            </article>
+          </li>
+          <li class="splide__slide">
+            <article class="editions__item edition">
+              <picture class="edition__picture">
+                <source media="(min-width: 1025px)" srcset="img/editions-4@2x.jpg 2x, img/editions-4.jpg">
+                <source media="(min-width: 577px)" srcset="img/editions-4@2x-tab.jpg 2x, img/editions-4-tab.jpg">
+                <source srcset="img/editions-4-mob.jpg">
+                <img alt="Обложка издания" src="img/editions-4.jpg">
+              </picture>
+              <div class="edition__wrapper">
+                <h3 class="edition__title">Николай Ильин</h3>
+                <p class="edition__author">Кричевский, Владимир </p>
+              </div>
+              <p class="edition__price">1 100</p>
+              <button class="edition__btn-order btn">Заказать</button>
+            </article>
+          </li>
+          <li class="splide__slide">
+            <article class="editions__item edition">
+              <picture class="edition__picture">
+                <source media="(min-width: 1025px)" srcset="img/editions-5@2x.jpg 2x, img/editions-5.jpg">
+                <source media="(min-width: 577px)" srcset="img/editions-5@2x-tab.jpg 2x, img/editions-5-tab.jpg">
+                <source srcset="img/editions-5-mob.jpg">
+                <img alt="Обложка издания" src="img/editions-5.jpg">
+              </picture>
+              <div class="edition__wrapper">
+                <h3 class="edition__title">Модульные сетки в граф...</h3>
+                <p class="edition__author">Мюллер-Брокманн, Йозеф </p>
+              </div>
+              <p class="edition__price">1 450</p>
+              <button class="edition__btn-order btn">Заказать</button>
+            </article>
+          </li>
+          <li class="splide__slide">
+            <article class="editions__item edition">
+              <picture class="edition__picture">
+                <source media="(min-width: 1025px)" srcset="img/editions-6@2x.jpg 2x, img/editions-6.jpg">
+                <source media="(min-width: 577px)" srcset="img/editions-6@2x-tab.jpg 2x, img/editions-6-tab.jpg">
+                <source srcset="img/editions-6-mob.jpg">
+                <img alt="Обложка издания" src="img/editions-6.jpg">
+              </picture>
+              <div class="edition__wrapper">
+                <h3 class="edition__title">Эволюция графических ст...</h3>
+                <p class="edition__author">Хеллер, Чваст</p>
+              </div>
+              <p class="edition__price">3 200</p>
+              <button class="edition__btn-order btn">Заказать</button>
+            </article>
+          </li>
+          <li class="splide__slide">
+            <article class="editions__item edition">
+              <picture class="edition__picture">
+                <source media="(min-width: 1025px)" srcset="img/editions-7@2x.jpg 2x, img/editions-7.jpg">
+                <source media="(min-width: 577px)" srcset="img/editions-7@2x-tab.jpg 2x, img/editions-7-tab.jpg">
+                <source srcset="img/editions-7-mob.jpg">
+                <img alt="Обложка издания" src="img/editions-7.jpg">
+              </picture>
+              <div class="edition__wrapper">
+                <h3 class="edition__title">Искусство и визуальное в...</h3>
+                <p class="edition__author">Арнхейм, Рудольф </p>
+              </div>
+              <p class="edition__price">2 200</p>
+              <button class="edition__btn-order btn">Заказать</button>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
