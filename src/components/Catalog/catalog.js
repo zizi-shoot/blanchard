@@ -13,14 +13,16 @@ const artist = {
   srcSet1025: picture.querySelector('[media="(min-width: 1025px)"]'),
   srcSet577: picture.querySelector('[media="(min-width: 577px)"]'),
   srcSet: picture.querySelector('source:nth-last-of-type(1)'),
+  src: picture.querySelector('img'),
   name: document.querySelector('.artist__name'),
   lifeTime: document.querySelector('.artist__lifetime'),
   descr: document.querySelector('.artist__descr'),
 
-  set srcSets(value) {
-    this.srcSet1025.srcset = `img/${value}@2x.jpg 2x, img/${value}.jpg`;
-    this.srcSet577.srcset = `img/${value}@2x-tab.jpg 2x, img/${value}-tab.jpg`;
-    this.srcSet.srcset = `img/${value}-tab.jpg`;
+  set srcSets([value1025, value577, value, src]) {
+    this.srcSet1025.srcset = value1025;
+    this.srcSet577.srcset = value577;
+    this.srcSet.srcset = value;
+    this.src.src = src;
   },
   set nameVal(value) {
     this.name.innerText = value;
@@ -78,10 +80,10 @@ function setArtistList(country) {
 
 function setArtistBio(country, artistIndex) {
   const {
-    lifeTime, descr, name, picName,
+    lifeTime, descr, name, srcSet1025, srcSet577, srcSet, src,
   } = catalog.artistBio[country][artistIndex];
 
-  artist.srcSets = picName;
+  artist.srcSets = [srcSet1025, srcSet577, srcSet, src];
   artist.nameVal = name;
   artist.lifeTimeVal = lifeTime;
   artist.descrVal = descr;
