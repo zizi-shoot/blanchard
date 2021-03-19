@@ -11,10 +11,10 @@ export function disableArrowPaginationA11y(section) {
   const arrowsWrapper = section.querySelector('.splide__arrows');
   const arrows = section.querySelectorAll('.splide__arrow');
   const pagination = section.querySelector('.splide__pagination');
-  arrowsWrapper.setAttribute('aria-hidden', true);
+  arrowsWrapper.setAttribute('aria-hidden', 'true');
   arrows.forEach((arrow) => {
     arrow.setAttribute('aria-hidden', true);
     arrow.setAttribute('tabindex', '-1');
   });
-  pagination && pagination.setAttribute('aria-hidden', true);
+  pagination && pagination.setAttribute('aria-hidden', 'true');
 }

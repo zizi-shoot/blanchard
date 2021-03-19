@@ -56,4 +56,3 @@ eventsSlider.mount();
 calcEventsPerLine();
 moreBtn.addEventListener('click', showMoreEvents);
 window.addEventListener('resize', calcEventsPerLine);
-
