@@ -23,7 +23,7 @@
     left: 0;
     z-index: -1;
     background: #000 var(--hero-img-1) no-repeat center/cover;
-    animation: 12s 3s change infinite;
+    animation: 12s change infinite;
   }
 
   @keyframes change {

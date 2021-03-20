@@ -1,301 +1,301 @@
 #map-mobile {
-    display: none;
+  display: none;
 }
 
 .contacts {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
+  display: grid;
+  grid-template-columns: repeat(2, auto);
 
-    &__title {
-        grid-column: 1/-1;
-        width: 100%;
-        margin-bottom: 15px;
+  &__title {
+    grid-column: 1/-1;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  &__connect {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    max-width: vw(682);
+    padding: 11px vw(122) 0 Max(30px, calc((100vw - 1600px) / 2));
+    border: 1px solid var(--background-border);
+  }
+
+  &-subtitle {
+    width: 100%;
+    margin-bottom: 15px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  &__showroom-name {
+    width: 100%;
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  &__address {
+    margin-bottom: 30px;
+    font-style: normal;
+  }
+
+  &__callback {
+    margin-bottom: 36px;
+  }
+
+  &__messenger {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: no-repeat center/cover;
+    outline: none;
+    transition-duration: .3s;
+    transition-property: filter, box-shadow;
+
+    &:not(:last-child) {
+      margin-right: 15px;
     }
 
-    &__connect {
-        display: flex;
-        flex-wrap: wrap;
-        align-content: center;
-        max-width: vw(682);
-        padding: 11px vw(122) 0 Max(30px, calc((100vw - 1600px) / 2));
-        border: 1px solid var(--background-border);
+    @media (pointer: fine) {
+      &:hover {
+        filter: brightness(.7);
+      }
     }
 
-    &-subtitle {
-        width: 100%;
-        margin-bottom: 15px;
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 32px;
+    &:active {
+      filter: brightness(.5);
     }
+  }
 
-    &__showroom-name {
-        width: 100%;
-        font-weight: 600;
-        font-size: 24px;
-    }
-
-    &__address {
-        margin-bottom: 30px;
-        font-style: normal;
-    }
-
-    &__callback {
-        margin-bottom: 36px;
-    }
-
-    &__messenger {
-        display: inline-block;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: no-repeat center/cover;
-        outline: none;
-        transition-duration: .3s;
-        transition-property: filter, box-shadow;
-
-        &:not(:last-child) {
-            margin-right: 15px;
-        }
-
-        @media (pointer: fine) {
-            &:hover {
-                filter: brightness(.7);
-            }
-        }
-
-        &:active {
-            filter: brightness(.5);
-        }
-    }
-
-    &__map {
-        width: vw(1238);
-        height: 700px;
-    }
+  &__map {
+    width: vw(1238);
+    height: 700px;
+  }
 }
 
 .contacts__messenger.focus-visible:focus {
-    box-shadow: 0 0 0 3px var(--focus_click);
+  box-shadow: 0 0 0 3px var(--focus_click);
 }
 
 .callback-form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__label {
+    position: relative;
+    margin-bottom: 23px;
+  }
+
+  &__input {
     width: 100%;
+    padding: 10px 24px;
+    border: 1px solid var(--font-main);
+    border-radius: 100px;
+    font-size: 16px;
+    transition: box-shadow .3s;
 
-    &__label {
-        position: relative;
-        margin-bottom: 23px;
+    &:focus {
+      box-shadow: 0 0 0 2px var(--focus_click);
+    }
+  }
+
+  &__btn-submit {
+    align-self: flex-start;
+    padding: 16px 32px;
+    border: 2px solid var(--background-control);
+    background-color: transparent;
+    color: var(--background-control);
+    font-size: 18px;
+    font-family: "OpenSans", sans-serif;
+    line-height: 25px;
+    transition-property: color, outline-color, background-color, border-color;
+    @media (pointer: fine) {
+      &:hover {
+        color: var(--font-alt);
+      }
     }
 
-    &__input {
-        width: 100%;
-        padding: 10px 24px;
-        border: 1px solid var(--font-main);
-        border-radius: 100px;
-        font-size: 16px;
-        transition: box-shadow .3s;
-
-        &:focus {
-            box-shadow: 0 0 0 2px var(--focus_click);
-        }
+    &:active {
+      color: var(--font-alt);
     }
-
-    &__btn-submit {
-        align-self: flex-start;
-        padding: 16px 32px;
-        border: 2px solid var(--background-control);
-        background-color: transparent;
-        color: var(--background-control);
-        font-size: 18px;
-        font-family: "OpenSans", sans-serif;
-        line-height: 25px;
-        transition-property: color, outline-color, background-color, border-color;
-        @media (pointer: fine) {
-            &:hover {
-                color: var(--font-alt);
-            }
-        }
-
-        &:active {
-            color: var(--font-alt);
-        }
-    }
+  }
 }
 
 .js-validate-error-label {
-    position: absolute;
-    bottom: -1.2em;
-    left: 24px;
-    font-size: 14px;
-    line-height: 1;
+  position: absolute;
+  bottom: -1.2em;
+  left: 24px;
+  font-size: 14px;
+  line-height: 1;
 }
 
 [class$="ground-pane"] {
-    filter: grayscale(1);
+  filter: grayscale(1);
 }
 
 @media (max-width: 1366px) {
-    .contacts {
-        display: flex;
-        flex-wrap: wrap;
+  .contacts {
+    display: flex;
+    flex-wrap: wrap;
 
-        &__connect {
-            max-width: calc(50% - 25px);
-        }
-
-        &__map {
-            max-width: calc(50% + 25px);
-        }
+    &__connect {
+      max-width: calc(50% - 25px);
     }
+
+    &__map {
+      max-width: calc(50% + 25px);
+    }
+  }
 }
 
 @media (max-width: 1024px) {
-    .contacts {
-        &__connect {
-            padding: 32px vw(102, 1024) 0 50px;
-        }
-
-        &__messenger {
-            width: 60px;
-            height: 60px;
-
-            &:not(:last-child) {
-                margin-right: 24px;
-            }
-        }
+  .contacts {
+    &__connect {
+      padding: 32px vw(102, 1024) 0 50px;
     }
-    .ymaps-2-1-78-events-pane {
-        pointer-events: none;
+
+    &__messenger {
+      width: 60px;
+      height: 60px;
+
+      &:not(:last-child) {
+        margin-right: 24px;
+      }
     }
+  }
+  .ymaps-2-1-78-events-pane {
+    pointer-events: none;
+  }
 }
 
 @media (max-width: 992px) {
-    .contacts {
-        &__connect {
-            max-width: calc(50% + 46px);
-            padding-right: 44px;
-        }
-
-        &__callback {
-            margin-bottom: 36px;
-        }
-
-        &__map {
-            max-width: calc(50% - 46px);
-        }
+  .contacts {
+    &__connect {
+      max-width: calc(50% + 46px);
+      padding-right: 44px;
     }
+
+    &__callback {
+      margin-bottom: 36px;
+    }
+
+    &__map {
+      max-width: calc(50% - 46px);
+    }
+  }
 }
 
 @media (max-width: 767px) {
-    #map-mobile {
-        display: block;
+  #map-mobile {
+    display: block;
+  }
+  #map {
+    display: none;
+  }
+  .contacts {
+    padding-bottom: 20px;
+
+    &__title {
+      padding: 0 50px;
     }
-    #map {
-        display: none;
+
+    &__showroom-name {
+      font-size: 18px;
+      line-height: 25px;
     }
-    .contacts {
-        padding-bottom: 20px;
 
-        &__title {
-            padding: 0 50px;
-        }
-
-        &__showroom-name {
-            font-size: 18px;
-            line-height: 25px;
-        }
-
-        &__address {
-            margin-bottom: 17px;
-            font-size: 14px;
-            line-height: 16px;
-        }
-
-        &__connect {
-            flex-flow: column nowrap;
-            align-items: flex-start;
-            width: 100%;
-            max-width: 100%;
-            padding: 0;
-            border: none;
-
-            & > *:not(.contacts__map) {
-                padding-right: 50px;
-                padding-left: 50px;
-            }
-        }
-
-        &__map {
-            width: 100%;
-            max-width: 100%;
-            height: 100vw;
-            margin-bottom: 20px;
-        }
+    &__address {
+      margin-bottom: 17px;
+      font-size: 14px;
+      line-height: 16px;
     }
-    .callback-form__input {
-        max-width: 70%;
-        padding: 16px 32px;
+
+    &__connect {
+      flex-flow: column nowrap;
+      align-items: flex-start;
+      width: 100%;
+      max-width: 100%;
+      padding: 0;
+      border: none;
+
+      & > *:not(.contacts__map) {
+        padding-right: 50px;
+        padding-left: 50px;
+      }
     }
+
+    &__map {
+      width: 100%;
+      max-width: 100%;
+      height: 100vw;
+      margin-bottom: 20px;
+    }
+  }
+  .callback-form__input {
+    max-width: 70%;
+    padding: 16px 32px;
+  }
 }
 
 @media (max-width: 576px) {
-    .contacts {
-        &__title {
-            margin-bottom: 12px;
-            padding: 0 15px;
-        }
-
-        &__connect > *:not(&__map) {
-            padding: 0 15px;
-        }
-
-        &__callback {
-            margin-bottom: 18px;
-        }
-
-        &__messengers-wrapper {
-            line-height: 0;
-        }
-
-        &__messengers-title {
-            margin-bottom: 7px;
-        }
-
-        &__messenger {
-            width: 50px;
-            height: 50px;
-        }
+  .contacts {
+    &__title {
+      margin-bottom: 12px;
+      padding: 0 15px;
     }
-    .contacts-subtitle {
-        font-size: 18px;
-    }
-    .callback-form {
-        &__label {
-            margin-bottom: 19px;
-        }
 
-        &__input {
-            max-width: 100%;
-            padding: 11px 24px;
-        }
+    &__connect > *:not(&__map) {
+      padding: 0 15px;
+    }
 
-        &__btn-submit {
-            padding: 11px 33px;
-            font-size: 12px;
-            line-height: 16px;
-        }
+    &__callback {
+      margin-bottom: 18px;
     }
-    .contacts__messenger:not(:last-child) {
-        margin-right: 15px;
+
+    &__messengers-wrapper {
+      line-height: 0;
     }
+
+    &__messengers-title {
+      margin-bottom: 7px;
+    }
+
+    &__messenger {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  .contacts-subtitle {
+    font-size: 18px;
+  }
+  .callback-form {
+    &__label {
+      margin-bottom: 19px;
+    }
+
+    &__input {
+      max-width: 100%;
+      padding: 11px 24px;
+    }
+
+    &__btn-submit {
+      padding: 11px 33px;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+  .contacts__messenger:not(:last-child) {
+    margin-right: 15px;
+  }
 }
 
 @media (min-width: 2000px) {
-    .contacts__connect,
-    .contacts__map {
-        width: 50vw;
-        max-width: 50vw;
-    }
+  .contacts__connect,
+  .contacts__map {
+    width: 50vw;
+    max-width: 50vw;
+  }
 }

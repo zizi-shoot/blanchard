@@ -1,115 +1,115 @@
 .footer {
-    padding: 47px 0;
-    background: var(--background-head-foot);
+  padding: 47px 0;
+  background: var(--background-head-foot);
 
+  a {
+    line-height: 0;
+    transition-duration: .3s;
+    transition-property: outline-color, filter, box-shadow;
+    @media (pointer: fine) {
+      &:hover {
+        filter: brightness(.7);
+      }
+    }
+
+    &:active {
+      filter: brightness(.5);
+    }
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    outline: 2px solid transparent;
+    outline-offset: 6px;
+
+    &:focus {
+      outline-color: var(--focus_click);
+    }
+
+    img {
+      object-fit: cover;
+      width: 173px;
+      height: 40px;
+    }
+  }
+
+  &__networks-list {
+    display: flex;
+  }
+
+  &__networks-item {
     a {
-        line-height: 0;
-        transition-duration: .3s;
-        transition-property: outline-color, filter, box-shadow;
-        @media (pointer: fine) {
-            &:hover {
-                filter: brightness(.7);
-            }
-        }
+      display: block;
+      border-radius: 50%;
+      outline: none;
 
-        &:active {
-            filter: brightness(.5);
-        }
+      img {
+        object-fit: cover;
+        width: 45px;
+        height: 45px;
+      }
     }
 
-    &__container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    &:not(:last-child) {
+      margin-right: 20px;
     }
+  }
 
-    &__logo {
-        outline: 2px solid transparent;
-        outline-offset: 6px;
-
-        &:focus {
-            outline-color: var(--focus_click);
-        }
-
-        img {
-            object-fit: cover;
-            width: 173px;
-            height: 40px;
-        }
-    }
-
-    &__networks-list {
-        display: flex;
-    }
-
+  @media (max-width: 1024px) {
+    padding: 40px 0;
     &__networks-item {
-        a {
-            display: block;
-            border-radius: 50%;
-            outline: none;
+      a img {
+        width: 60px;
+        height: 60px;
+      }
 
-            img {
-                object-fit: cover;
-                width: 45px;
-                height: 45px;
-            }
-        }
-
-        &:not(:last-child) {
-            margin-right: 20px;
-        }
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
     }
+  }
+  @media (max-width: 992px) {
+    &__networks-item a img {
+      width: 60px;
+      height: 60px;
 
-    @media (max-width: 1024px) {
-        padding: 40px 0;
-        &__networks-item {
-            a img {
-                width: 60px;
-                height: 60px;
-            }
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    padding: 25px 0;
+  }
+  @media (max-width: 576px) {
+    padding: 20px 0;
+    &__logo {
+      order: 1;
 
-            &:not(:last-child) {
-                margin-right: 30px;
-            }
-        }
+      img {
+        width: 96px;
+        height: 23px;
+      }
     }
-    @media (max-width: 992px) {
-        &__networks-item a img {
-            width: 60px;
-            height: 60px;
-
-            &:not(:last-child) {
-                margin-right: 30px;
-            }
-        }
+    &__networks-list {
+      margin-bottom: 20px;
     }
-    @media (max-width: 767px) {
-        padding: 25px 0;
+    &__networks-item a img {
+      width: 50px;
+      height: 50px;
     }
-    @media (max-width: 576px) {
-        padding: 20px 0;
-        &__logo {
-            order: 1;
-
-            img {
-                width: 96px;
-                height: 23px;
-            }
-        }
-        &__networks-list {
-            margin-bottom: 20px;
-        }
-        &__networks-item a img {
-            width: 50px;
-            height: 50px;
-        }
-        &__container {
-            flex-direction: column;
-        }
+    &__container {
+      flex-direction: column;
     }
+  }
 }
 
 .footer__networks-item a.focus-visible:focus {
-    box-shadow: 0 0 0 5px var(--focus_click);
+  box-shadow: 0 0 0 5px var(--focus_click);
 }
 
