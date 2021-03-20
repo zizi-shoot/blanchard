@@ -136,6 +136,10 @@
   filter: grayscale(1);
 }
 
+ymaps[class$="image"] {
+  background-repeat: no-repeat;
+}
+
 @media (max-width: 1366px) {
   .contacts {
     display: flex;

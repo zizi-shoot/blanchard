@@ -70,12 +70,20 @@ const fonts = () => {
     .pipe(dest(`${buildDest}/fonts`));
 };
 const imgToApp = () => {
-  return src(['src/img/*.ico', 'src/**/*.jpg', 'src/**/*.jpeg', 'src/**/*.png'])
+  return src(['src/**/*.jpg', 'src/**/*.jpeg', 'src/**/*.png'])
     .pipe(flatten())
     .pipe(dest(`${buildDest}/img`));
 };
+const favIcon = () => {
+  return src('src/img/*')
+    .pipe(dest('app/'));
+};
+const manifest = () => {
+  return src('src/manifest.json')
+    .pipe(dest('app/'));
+};
 const svgSprites = () => {
-  return src(['src/img/**/*.svg', 'src/components/**/*.svg'])
+  return src([/* 'src/img/!**!/!*.svg', */'src/components/**/*.svg'])
     .pipe(flatten())
     .pipe(svgSprite({
       mode: {
@@ -121,12 +129,20 @@ const watchFiles = () => {
   watch('src/**/*.js', scripts);
 };
 
-exports.default = series(clean, parallel(htmlInclude, scripts, fonts, imgToApp, svgSprites), styles, watchFiles);
+exports.default = series(clean, parallel(htmlInclude, scripts, fonts, imgToApp, favIcon, manifest, svgSprites), styles, watchFiles);
 
 // BUILD TASKS
 const imgToBuild = () => {
   return src('src/compressed_img/*')
     .pipe(dest('build/img'));
+};
+const favIconBuild = () => {
+  return src('src/img/*')
+    .pipe(dest('build/'));
+};
+const manifestBuild = () => {
+  return src('src/manifest.json')
+    .pipe(dest('build/'));
 };
 const stylesBuild = () => {
   return src('src/scss/**/*.scss')
@@ -206,5 +222,5 @@ const htmlMinify = () => {
     .pipe(dest('build'));
 };
 
-exports.build = series(toProd, clean, parallel(htmlInclude, scriptsBuild, fonts, imgToBuild), stylesBuild, renameImg, htmlMinify);
+exports.build = series(toProd, clean, parallel(htmlInclude, scriptsBuild, fonts, imgToBuild, favIconBuild, manifestBuild), stylesBuild, renameImg, htmlMinify);
 exports.cache = series(cache, rewrite);
