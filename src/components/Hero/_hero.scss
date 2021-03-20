@@ -22,22 +22,30 @@
     bottom: 0;
     left: 0;
     z-index: -1;
-    background: #000 var(--hero-img-1) no-repeat center/cover;
+    background: #000 no-repeat center/cover;
     animation: 12s change infinite;
   }
 
   @keyframes change {
-    25% {
-      transform: scale(1.1);
+    0% {
+      transform: scale(1);
       background-image: var(--hero-img-1);
     }
-    50% {
-      transform: none;
+    25% {
+      transform: scale(1.1);
       background-image: var(--hero-img-2);
+    }
+    50% {
+      transform: scale(1);
+      background-image: var(--hero-img-3);
     }
     75% {
       transform: scale(1.1);
-      background-image: var(--hero-img-3);
+      background-image: var(--hero-img-2);
+    }
+    100% {
+      transform: scale(1);
+      background-image: var(--hero-img-1);
     }
   }
 
