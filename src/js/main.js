@@ -6,3 +6,4 @@ import '../components/Events/events';
 import '../components/Editions/editions';
 import '../components/Projects/projects';
 import '../components/Contacts/contacts';
+import '../components/Modal/modal';

@@ -6,7 +6,6 @@ import LazyLoad from 'vanilla-lazyload';
 
 const lazyLoadInstance = new LazyLoad();
 smoothscrollPolyfill.polyfill();
-
 /*
  * Расчёт высоты вьюпорта для мобильных устройств
  * Safari iOS по умолчанию не вычитает высоту адресной строки из 100vh
