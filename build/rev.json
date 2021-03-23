@@ -1,9 +1,10 @@
 {
-  "css/main.min.css": "css/main-696e25d6ab.min.css",
+  "css/main.min.css": "css/main-f59c727fc0.min.css",
   "fonts/OpenSans-Bold.woff2": "fonts/OpenSans-Bold-c9e6ced6ee.woff2",
   "fonts/OpenSans-Italic.woff2": "fonts/OpenSans-Italic-5a91bee86d.woff2",
   "fonts/OpenSans-Regular.woff2": "fonts/OpenSans-Regular-a725497524.woff2",
   "fonts/OpenSans-SemiBold.woff2": "fonts/OpenSans-SemiBold-dbee1c4201.woff2",
+  "icon.svg": "icon-ca76e73533.svg",
   "img/bergognone-tab.webp": "img/bergognone-tab-b77b5af6bd.webp",
   "img/bergognone.webp": "img/bergognone-13f1ef2bc9.webp",
   "img/bergognone@2x-tab.webp": "img/bergognone@2x-tab-4583c090c5.webp",
@@ -16,6 +17,7 @@
   "img/bissolo.webp": "img/bissolo-ffab199fae.webp",
   "img/bissolo@2x-tab.webp": "img/bissolo@2x-tab-ce8ca07c04.webp",
   "img/bissolo@2x.webp": "img/bissolo@2x-6f372a2bd2.webp",
+  "img/canvas-1.webp": "img/canvas-1-602c49d9af.webp",
   "img/cat-bel.webp": "img/cat-bel-6f0a44c130.webp",
   "img/cat-fra.webp": "img/cat-fra-10a15e992d.webp",
   "img/cat-ger.webp": "img/cat-ger-1697145074.webp",
@@ -71,7 +73,6 @@
   "img/events-4@2x.webp": "img/events-4@2x-c9f285255b.webp",
   "img/events-5.webp": "img/events-5-0591f52449.webp",
   "img/events-5@2x.webp": "img/events-5@2x-177b290260.webp",
-  "img/favicon.webp": "img/favicon-ac466e1ef9.webp",
   "img/gallery-1-mob.webp": "img/gallery-1-mob-25505753a4.webp",
   "img/gallery-1-tab.webp": "img/gallery-1-tab-c1adf6c9f8.webp",
   "img/gallery-1.webp": "img/gallery-1-8356b3f1bc.webp",
@@ -266,6 +267,7 @@
   "img/hero-3.webp": "img/hero-3-eee151a792.webp",
   "img/hero-3@2x-tab.webp": "img/hero-3@2x-tab-ad47f9bda7.webp",
   "img/hero-3@2x.webp": "img/hero-3@2x-264f1e60bd.webp",
+  "img/icon.svg": "img/icon-ca76e73533.svg",
   "img/partner-1.webp": "img/partner-1-3431cc7afd.webp",
   "img/partner-2.webp": "img/partner-2-802132db9e.webp",
   "img/partner-3.webp": "img/partner-3-15cc044844.webp",
@@ -284,6 +286,6 @@
   "img/partner1-7.webp": "img/partner1-7-ced85fe1ad.webp",
   "img/partner1-8.webp": "img/partner1-8-1990e3c16c.webp",
   "img/partner1-9.webp": "img/partner1-9-d3dbc2a91f.webp",
-  "img/sprite.svg": "img/sprite-ef0f1ed091.svg",
-  "js/main.min.js": "js/main-e261c70f1f.min.js"
+  "img/sprite.svg": "img/sprite-4417de9584.svg",
+  "js/main.min.js": "js/main-735913ec5c.min.js"
 }
