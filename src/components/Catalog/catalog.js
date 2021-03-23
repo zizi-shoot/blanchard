@@ -142,5 +142,12 @@ countryBtns.forEach((btn) => {
 artistChoice.addEventListener('click', (ev) => {
   if (ev.target.classList.contains('period-item__btn-artist')) {
     chooseArtist(ev);
+    if (window.innerWidth <= 992) {
+      const artistPosition = document.querySelector('.catalog-tab__artist-wrapper').offsetTop;
+      window.scrollTo({
+        top: artistPosition - 15,
+        behavior: 'smooth',
+      });
+    }
   }
 });
