@@ -1,13 +1,13 @@
 .hero {
-  --hero-img-1: url("../img/hero-1.jpg");
-  --hero-img-2: url("../img/hero-2.jpg");
-  --hero-img-3: url("../img/hero-3.jpg");
   position: relative;
   overflow: hidden;
   padding-top: 239px;
   padding-bottom: 121px;
-  color: var(--font-alt);
   font-weight: 700;
+  color: var(--font-alt);
+  --hero-img-1: url("../img/hero-1.jpg");
+  --hero-img-2: url("../img/hero-2.jpg");
+  --hero-img-3: url("../img/hero-3.jpg");
   @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     --hero-img-1: url("../img/hero-1@2x.jpg");
     --hero-img-2: url("../img/hero-2@2x.jpg");
@@ -22,32 +22,9 @@
     bottom: 0;
     left: 0;
     z-index: -1;
-    background: #000 no-repeat center/cover;
-    animation: 12s change infinite;
+    background: #000 var(--hero-img-1) no-repeat center/cover;
   }
 
-  @keyframes change {
-    0% {
-      transform: scale(1);
-      background-image: var(--hero-img-1);
-    }
-    25% {
-      transform: scale(1.1);
-      background-image: var(--hero-img-2);
-    }
-    50% {
-      transform: scale(1);
-      background-image: var(--hero-img-3);
-    }
-    75% {
-      transform: scale(1.1);
-      background-image: var(--hero-img-2);
-    }
-    100% {
-      transform: scale(1);
-      background-image: var(--hero-img-1);
-    }
-  }
 
   &__title,
   &__descr {

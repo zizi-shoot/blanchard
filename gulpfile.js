@@ -140,6 +140,12 @@ const favIconBuild = () => {
   return src('src/img/*')
     .pipe(dest('build/'));
 };
+const replacePHPMailer = () => {
+  src('src/mail.php')
+    .pipe(dest('build/'));
+  return src('src/PHPMailer/**')
+    .pipe(dest('build/PHPMailer/'));
+};
 const manifestBuild = () => {
   return src('src/manifest.json')
     .pipe(dest('build/'));
@@ -222,5 +228,5 @@ const htmlMinify = () => {
     .pipe(dest('build'));
 };
 
-exports.build = series(toProd, clean, parallel(htmlInclude, scriptsBuild, fonts, imgToBuild, favIconBuild, manifestBuild), stylesBuild, renameImg, htmlMinify);
+exports.build = series(toProd, clean, parallel(htmlInclude, scriptsBuild, fonts, imgToBuild, favIconBuild, manifestBuild, replacePHPMailer), stylesBuild, renameImg, htmlMinify);
 exports.cache = series(cache, rewrite);

@@ -253,8 +253,9 @@ textarea {
  * 2. Correct the outline style in Safari.
  */
 [type="search"] {
+  border-radius: 0;
   outline-offset: -2px; /* 2 */
-  -webkit-appearance: textfield; /* 1 */
+  -webkit-appearance: none; /* 1 */
 }
 
 /**

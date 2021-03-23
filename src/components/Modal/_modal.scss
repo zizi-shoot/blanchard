@@ -64,6 +64,39 @@
   }
 }
 
+.mail {
+  max-width: 600px;
+  max-height: 300px;
+  border-radius: 10px;
+  font-size: 20px;
+  color: #558b2f;
+  background-color: #d7f8a9;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    text-align: center;
+  }
+
+  &__descr {
+    &:last-of-type {
+      margin-bottom: 32px;
+    }
+  }
+
+  svg {
+    width: 50px;
+    height: 50px;
+
+    path {
+      fill: #558b2f;
+    }
+  }
+}
+
 @media (max-width: 1024px) {
   .modal__container {
     width: 594px;
