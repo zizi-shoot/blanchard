@@ -59,9 +59,10 @@
     }
 
     &__icon {
-      max-height: 46px;
       width: auto;
       height: auto;
+      max-height: 46px;
+      pointer-events: none;
     }
   }
 

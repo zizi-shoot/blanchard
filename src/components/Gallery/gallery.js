@@ -3,8 +3,8 @@ import Splide from '@splidejs/splide';
 import Grid from '@splidejs/splide-extension-grid';
 import { disableArrowPaginationA11y, displayFraction } from '../../js/lib';
 
-const element = document.getElementById('gallery-filter');
-const choices = new Choices(element, {
+const filter = document.getElementById('gallery-filter');
+const choices = new Choices(filter, {
   searchEnabled: false,
   itemSelectText: '',
 });
@@ -73,6 +73,7 @@ const galleryOptions = {
 const gallerySlider = new Splide('.gallery__slider', galleryOptions);
 const gallerySection = document.querySelector('.gallery');
 const choice = document.querySelector('.choices');
+
 choice.setAttribute('aria-label', 'Список фильтров');
 gallerySlider
   .mount({ Grid })

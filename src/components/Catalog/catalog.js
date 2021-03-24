@@ -1,12 +1,8 @@
 import Accordion from 'accordion-js';
 import * as catalog from './editions_data';
 
-const countryBtns = document.querySelectorAll('.catalog-nav__btn');
-const countryDescr = document.querySelector('.catalog-tab__descr');
+const countryNav = document.querySelector('.catalog-nav__list');
 const artistLists = document.querySelectorAll('.period-item__artist-list');
-const artistChoice = document.querySelector('.catalog-tab__choice');
-const tab = document.querySelector('.catalog__tab');
-const artistWrapper = document.querySelector('.catalog-tab__artist-wrapper');
 const picture = document.querySelector('.artist__picture');
 const artist = {
   picture,
@@ -59,7 +55,7 @@ const selectedArtist = {
 const accordion = new Accordion('.accordion-container');
 
 function setCountryDescr(country) {
-  countryDescr.innerText = catalog.descrData[country];
+  document.querySelector('.catalog-tab__descr').innerText = catalog.descrData[country];
 }
 
 function setArtistList(country) {
@@ -91,10 +87,12 @@ function setArtistBio(country, artistIndex) {
 
 function chooseArtist(ev) {
   const [country, period, artistIndex] = ev.target.dataset.artistBtn.split('-');
+  const artistWrapper = document.querySelector('.catalog-tab__artist-wrapper');
+
   artistWrapper.classList.add('catalog-tab__artist-wrapper--preanimated');
   setTimeout(() => {
     setArtistBio(country, artistIndex);
-    const activeBtn = artistChoice.querySelector('.period-item__btn-artist--active');
+    const activeBtn = document.querySelector('.period-item__btn-artist--active');
     activeBtn.classList.remove('period-item__btn-artist--active');
     ev.target.classList.add('period-item__btn-artist--active');
     selectedArtist[country] = {
@@ -117,17 +115,20 @@ function setStartCatalog(country, period, artistIndex) {
   accordion.open(+period);
 }
 
-function switchTab() {
-  tab.classList.add('catalog__tab--preanimated');
+function switchTab(target) {
+  const tab = document.querySelector('.catalog__tab');
 
+  tab.classList.add('catalog__tab--preanimated');
   setTimeout(() => {
+    const countryBtns = document.querySelectorAll('.catalog-nav__btn');
+
     accordion.closeAll();
     countryBtns.forEach((btn) => btn.classList.remove('catalog-nav__btn--active'));
-    this.classList.add('catalog-nav__btn--active');
+    target.classList.add('catalog-nav__btn--active');
     artistLists.forEach((list) => {
       list.innerHTML = '';
     });
-    const { country } = this.dataset;
+    const { country } = target.dataset;
     const { artistIndex, period } = selectedArtist[country];
     setStartCatalog(country, period, artistIndex);
     accordion.open(+period);
@@ -136,10 +137,12 @@ function switchTab() {
 }
 
 setStartCatalog('ita', 0, 11);
-countryBtns.forEach((btn) => {
-  btn.addEventListener('click', switchTab);
+countryNav.addEventListener('click', (e) => {
+  if (e.target.classList.contains('catalog-nav__btn')) {
+    switchTab(e.target);
+  }
 });
-artistChoice.addEventListener('click', (ev) => {
+document.querySelector('.catalog-tab__choice').addEventListener('click', (ev) => {
   if (ev.target.classList.contains('period-item__btn-artist')) {
     chooseArtist(ev);
     if (window.innerWidth <= 992) {

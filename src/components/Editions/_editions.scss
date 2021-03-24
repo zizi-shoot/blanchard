@@ -1,9 +1,9 @@
 .editions {
   padding-top: 80px;
   padding-bottom: 79px;
+  color: var(--font-alt);
   background: url("../img/editions-back.jpg") no-repeat;
   background-size: cover;
-  color: var(--font-alt);
   @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     background-image: url("../img/editions-back@2x.jpg");
   }
@@ -17,6 +17,7 @@
   }
 
   &__slider {
+    //visibility: visible;
     grid-row: 1/-1;
     grid-column: 2/3;
     overflow: hidden;

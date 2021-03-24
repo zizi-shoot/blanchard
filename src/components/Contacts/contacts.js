@@ -34,7 +34,15 @@ function init() {
   mobMap.geoObjects.add(myPlacemarkMob);
 }
 
-ymaps.ready(init);
+let flag = 0;
+window.addEventListener('scroll', () => {
+  const { scrollY, innerHeight } = window;
+  const contactsOffset = document.querySelector('.contacts').offsetTop;
+  if ((scrollY + innerHeight >= contactsOffset - 500) && (flag === 0)) {
+    ymaps.ready(init);
+    flag = 1;
+  }
+});
 
 /*
  Маска для ввода телефона

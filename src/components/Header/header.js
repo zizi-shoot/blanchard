@@ -7,16 +7,16 @@ const searchForm = document.querySelector('.header__search');
 const triggerBtn = document.querySelector('.header__btn-trigger');
 const burgerMenu = document.querySelector('.header__nav');
 const navList = document.querySelector('.head-nav__list');
-const dropDownBtns = document.querySelectorAll('.head-bar__btn-open');
+const headBarMenu = document.querySelector('.head-bar__menu');
 
-function toggleDropdown() {
+function toggleDropdown(e) {
   scrollbarWrappers.forEach((wrapper) => {
-    if (wrapper !== this.nextElementSibling) {
+    if (wrapper !== e.target.nextElementSibling) {
       wrapper.classList.remove('head-bar__scrollbar-wrapper--visible');
     }
   });
 
-  this.nextElementSibling.classList.toggle('head-bar__scrollbar-wrapper--visible');
+  e.target.nextElementSibling.classList.toggle('head-bar__scrollbar-wrapper--visible');
 }
 
 function toggleSearch() {
@@ -30,8 +30,10 @@ function toggleSearch() {
 /*
  Открытие/скрытие дропдаунов
  */
-dropDownBtns.forEach((btn) => {
-  btn.addEventListener('click', toggleDropdown);
+headBarMenu.addEventListener('click', (e) => {
+  if (e.target.classList.contains('head-bar__btn-open')) {
+    toggleDropdown(e);
+  }
 });
 
 document.addEventListener('click', (ev) => {
@@ -95,10 +97,18 @@ triggerBtn.addEventListener('click', () => {
 /*
  Simlebar
  */
-Array.prototype.forEach.call(
-  document.querySelectorAll('.simplebar'),
-  (el) => new SimpleBar(el, {
-    autoHide: false,
-    scrollbarMaxSize: 28,
-  }),
-);
+function initSimpleBar() {
+  Array.prototype.forEach.call(
+    document.querySelectorAll('.simplebar'),
+    (el) => new SimpleBar(el, {
+      autoHide: false,
+      scrollbarMaxSize: 28,
+    }),
+  );
+}
+
+if (window.innerWidth >= 1024) initSimpleBar();
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 1024) initSimpleBar();
+});
