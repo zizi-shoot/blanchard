@@ -40,7 +40,7 @@ function setPictureData(index) {
 galleryList.addEventListener('click', (e) => {
   if (e.target.classList.contains('gallery__slide-btn')) {
     const pictureInner = e.target.previousElementSibling.innerHTML;
-    const pictureIndex = e.target.previousElementSibling.querySelector('img').ariaLabel.split('-')[1];
+    const pictureIndex = e.target.previousElementSibling.querySelector('img').getAttribute('aria-label').split('-')[1];
     const modalPicture = document.querySelector('.canvas__picture');
 
     modalPicture.innerHTML = pictureInner;

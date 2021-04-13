@@ -230,3 +230,4 @@ const htmlMinify = () => {
 
 exports.build = series(toProd, clean, parallel(htmlInclude, scriptsBuild, fonts, imgToBuild, favIconBuild, manifestBuild, replacePHPMailer), stylesBuild, renameImg, htmlMinify);
 exports.cache = series(cache, rewrite);
+
