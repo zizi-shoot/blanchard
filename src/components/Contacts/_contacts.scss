@@ -136,7 +136,7 @@
   filter: grayscale(1);
 }
 
-ymaps[class$="image"] {
+ymaps[class*="-image"] {
   background-repeat: no-repeat;
 }
 
